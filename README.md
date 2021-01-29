@@ -73,6 +73,7 @@ https://docs.google.com/spreadsheets/d/1PkiYkDD6HnzTGXp5kTyyHpQcwfRkdtvBbSseIAvt
 * carrierwave
 * mini_magick
 * kaminari
+* ransack
 
 ## 卒業課題要件
 * 就業Termの技術
