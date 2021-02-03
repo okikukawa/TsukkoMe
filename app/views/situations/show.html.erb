@@ -1,0 +1,4 @@
+<h2>ツッコミ詳細</h2>
+<p><%= @situation.title %></p>
+<p><%= link_to "削除", situation_path(@situation.id), method: :delete, data: { confirm: "本当に削除しますか？" } %></p>
+<%= link_to "シチュエーション一覧に戻る", situations_path %>

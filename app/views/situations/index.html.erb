@@ -1,0 +1,14 @@
+<h2>シチュエーション一覧</h2>
+<%= notice %>
+<table>
+  <tr>
+    <th>シチュエーション</th>
+  </tr>
+  <% @situation.each do |situation| %>
+    <tr>
+      <td><%= link_to situation.title, situation_path(situation.id) %></td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<%= link_to "シチュエーションを作成する", new_situation_path %>
