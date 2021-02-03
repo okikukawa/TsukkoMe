@@ -9,8 +9,12 @@ class SituationsController < ApplicationController
   end
 
   def create
-    Situation.create(situation_params)
-    redirect_to situations_path, notice: "シチュエーションを作成しました。"
+    @situation = Situation.create(situation_params)
+    if @situation.save
+      redirect_to situations_path, notice: "シチュエーションを作成しました。"
+    else
+      render :new
+    end
   end
 
   def show
