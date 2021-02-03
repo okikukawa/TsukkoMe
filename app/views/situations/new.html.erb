@@ -1,0 +1,10 @@
+<h2>シチュエーションを登録する</h2>
+<%= form_with(model: @situation, local: true) do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <%= f.submit %>
+<% end %>
+<br>
+<%= link_to "シチュエーション一覧に戻る", situations_path %>
