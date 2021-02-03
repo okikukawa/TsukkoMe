@@ -1,5 +1,8 @@
 FactoryBot.define do
   factory :situation do
-    title { "MyString" }
+    title { "シチュエーションのタイトル1" }
+  end
+  factory :second_situation, class: Situation do
+    title { "シチュエーションのタイトル2" }
   end
 end
