@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'tsukkomis/show'
   get 'tsukkomis/edit'
   get 'tsukkomis/destroy'
-  resources :situations, only: [:index, :show, :new, :create, :destroy]
-  resources :tsukkomis
+  resources :situations, only: [:index, :show, :new, :create, :destroy] do
+    resources :tsukkomis
+  end
 end

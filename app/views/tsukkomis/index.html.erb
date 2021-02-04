@@ -1,2 +1,11 @@
-<h1>Tsukkomis#index</h1>
-<p>Find me in app/views/tsukkomis/index.html.erb</p>
+<h2>ツッコミ一覧</h2>
+<%= notice %>
+<% @tsukkomis.each do |tsukkomi| %>
+  <h4>シチュエーション</h4>
+  <p><%= link_to tsukkomi.situation.title, situation_path(tsukkomi.situation.id) %></p>
+  <h4>ツッコミ</h4>
+  <p><%= link_to tsukkomi.phrase %></p>
+  <br>
+<% end %>
+<br>
+<%= link_to "シチュエーション一覧に戻る", situations_path %>

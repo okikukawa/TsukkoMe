@@ -1,2 +1,20 @@
-<h1>Tsukkomis#new</h1>
-<p>Find me in app/views/tsukkomis/new.html.erb</p>
+<h2>ツッコミを登録する</h2>
+シチュエーション：<%= @situation.title %>
+<%= form_with(model: [@situation, @tsukkomi], local: true) do |f| %>
+  <% if @tsukkomi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @tsukkomi.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @tsukkomi.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= f.label :phrase %>
+    <%= f.text_field :phrase %>
+  </div>
+  <%= f.submit %>
+<% end %>
+<%= link_to "戻る", situation_path(@situation.id) %>

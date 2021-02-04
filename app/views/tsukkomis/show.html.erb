@@ -1,2 +1,4 @@
-<h1>Tsukkomis#show</h1>
-<p>Find me in app/views/tsukkomis/show.html.erb</p>
+<h2>ツッコミ詳細</h2>
+<p><%= @tsukkomi.title %></p>
+<p><%= link_to "削除", tsukkomi_path(@tsukkomi.id), method: :delete, data: { confirm: "本当に削除しますか？" } %></p>
+<%= link_to "ツッコミ一覧に戻る", tsukkomis_path %>
