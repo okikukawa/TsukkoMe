@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_062144) do
+ActiveRecord::Schema.define(version: 2021_02_04_083243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,4 +21,13 @@ ActiveRecord::Schema.define(version: 2021_02_03_062144) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tsukkomis", force: :cascade do |t|
+    t.string "phrase", null: false
+    t.bigint "situation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["situation_id"], name: "index_tsukkomis_on_situation_id"
+  end
+
+  add_foreign_key "tsukkomis", "situations"
 end
