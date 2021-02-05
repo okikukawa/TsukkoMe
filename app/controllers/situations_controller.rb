@@ -1,7 +1,7 @@
 class SituationsController < ApplicationController
   before_action :set_situation, only:[:show, :destroy]
   def index
-    @situation = Situation.all
+    @situations = Situation.all
   end
 
   def new
@@ -26,6 +26,7 @@ class SituationsController < ApplicationController
   end
 
   private
+  
   def situation_params
     params.require(:situation).permit(:title)
   end

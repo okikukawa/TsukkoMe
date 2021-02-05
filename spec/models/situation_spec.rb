@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 RSpec.describe Situation, type: :model do
   describe '新規作成機能' do
     context 'titleを空で登録した場合' do

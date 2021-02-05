@@ -1,0 +1,8 @@
+<h2>ツッコミ詳細</h2>
+<%= notice %>
+<p><%= @tsukkomi.phrase %></p>
+<%= link_to "編集", edit_situation_tsukkomi_path(@situation, @tsukkomi) %>
+<%= link_to "削除", situation_tsukkomi_path(@situation, @tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+<br>
+<br>
+<%= link_to "戻る", situation_path(@situation) %>
