@@ -1,2 +1,4 @@
-<h1>Tsukkomis#edit</h1>
-<p>Find me in app/views/tsukkomis/edit.html.erb</p>
+<h2>ツッコミを編集する</h2>
+シチュエーション：<%= @situation.title %>
+<%= render 'form' %>
+<%= link_to "戻る", situation_tsukkomi_path(@situation, @tsukkomi) %>

@@ -1,10 +1,14 @@
 <h2>シチュエーション詳細</h2>
+<h4>シチュエーション</h4>
 <p><%= @situation.title %></p>
-<p><%= link_to "このシチュエーションを削除", situation_path(@situation.id), method: :delete, data: { confirm: "本当に削除しますか？" } %></p>
+<p><%= link_to "削除", situation_path(@situation.id), method: :delete, data: { confirm: "本当に削除しますか？" } %></p>
+<br>
+<h4>ツッコミ</h4>
+<% @situation.tsukkomis.each do |tsukkomi| %>
+  <p><%= link_to tsukkomi.phrase, situation_tsukkomi_path(@situation, tsukkomi.id) %></p>
+<% end %>
 <br>
 <%= link_to "ツッコミを作成する", new_situation_tsukkomi_path(@situation.id) %>
 <br>
 <br>
 <%= link_to "シチュエーション一覧に戻る", situations_path %>
-<br>
-<%= link_to "ツッコミ一覧に戻る", tsukkomis_index_path %>

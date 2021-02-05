@@ -1,20 +1,20 @@
 class TsukkomisController < ApplicationController
+  before_action :set_situation, only:[:new, :create, :show,:edit, :update, :destroy]
   before_action :set_tsukkomi, only:[:show,:edit, :update, :destroy]
+
   def index
-    @situations = Situation.all
     @tsukkomis = Tsukkomi.all
+    @situations = Situation.all
   end
 
   def new
-    @situation = Situation.find(params[:situation_id])
     @tsukkomi = Tsukkomi.new
   end
 
   def create
-    @situation = Situation.find(params[:situation_id])
     @tsukkomi = @situation.tsukkomis.build(tsukkomi_params)
     if @tsukkomi.save
-      redirect_to situation_tsukkomis_path, notice: "ツッコミを登録しました。"
+      redirect_to situation_path(@situation), notice: "ツッコミを登録しました。"
     else
       render :new
     end
@@ -27,11 +27,16 @@ class TsukkomisController < ApplicationController
   end
 
   def update
+    if @tsukkomi.update(tsukkomi_params)
+      redirect_to situation_tsukkomi_path(@situation, @tsukkomi), notice: "ツッコミを編集しました。"
+    else
+      render :edit
+    end
   end
 
   def destroy
     @tsukkomi.destroy
-    redirect_to tsukkomis_path, notice: "ツッコミを削除しました。"
+    redirect_to situation_path(@situation), notice: "ツッコミを削除しました。"
   end
 
   private
@@ -40,7 +45,11 @@ class TsukkomisController < ApplicationController
     params.require(:tsukkomi).permit(:phrase, :situation_id)
   end
 
+  def set_situation
+    @situation = Situation.find(params[:situation_id])
+  end
+
   def set_tsukkomi
-    @tsukkomi = Tsukkkomi.find(params[:id])
+    @tsukkomi = @situation.tsukkomis.find(params[:id])
   end
 end
