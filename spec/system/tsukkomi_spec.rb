@@ -9,7 +9,7 @@ RSpec.describe 'ツッコミ機能' ,type: :system do
       it '作成したツッコミが表示される' do
         visit situation_path(@situation)
         click_link 'ツッコミを作成する'
-        fill_in 'Phrase', with: 'new_tsukkomi1'
+        fill_in 'フレーズ', with: 'new_tsukkomi1'
         click_button '登録する'
         expect(page).to have_content 'new_tsukkomi1'
       end
@@ -30,7 +30,7 @@ RSpec.describe 'ツッコミ機能' ,type: :system do
         visit situation_path(@situation)
         click_link 'ツッコミ1'
         click_link '編集'
-        fill_in 'Phrase', with: 'ツッコミ1！'
+        fill_in 'フレーズ', with: 'ツッコミ1！'
         click_button '更新する'
         expect(page).to have_content 'ツッコミ1！'
       end

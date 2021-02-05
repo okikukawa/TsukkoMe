@@ -17,7 +17,7 @@ RSpec.describe 'シチュエーション機能' ,type: :system do
     context '新しくシチュエーションを作成した場合' do
       it '作成したシチュエーションが表示される' do
         visit new_situation_path
-        fill_in 'Title', with: 'new_situation1'
+        fill_in 'タイトル', with: 'new_situation1'
         click_button '登録する'
         expect(page).to have_content 'new_situation1'
       end
