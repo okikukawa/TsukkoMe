@@ -1,5 +1,6 @@
 class SituationsController < ApplicationController
   before_action :set_situation, only:[:show, :destroy]
+  before_action :authenticate_user!, only:[:new, :create, :destroy]
   def index
     @situations = Situation.all
   end
@@ -26,7 +27,7 @@ class SituationsController < ApplicationController
   end
 
   private
-  
+
   def situation_params
     params.require(:situation).permit(:title)
   end
