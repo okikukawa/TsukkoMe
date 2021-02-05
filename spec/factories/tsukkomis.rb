@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :tsukkomi do
-    phrase { "MyString" }
-    situation { nil }
+    phrase { "ツッコミ1" }
   end
 end
