@@ -45,7 +45,6 @@ RSpec.describe 'ツッコミ機能' ,type: :system do
           click_link '削除', href: situation_tsukkomi_path(@situation, @tsukkomi)
         end
         expect(page).not_to have_content 'ツッコミ1'
-        save_and_open_page
       end
     end
   end
