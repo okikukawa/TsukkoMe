@@ -2,8 +2,12 @@
 <%= notice %>
 <p>投稿者：<%= link_to @tsukkomi.user.name, user_path(@tsukkomi.user) %></p>
 <p><%= @tsukkomi.phrase %></p>
-<%= link_to "編集", edit_situation_tsukkomi_path(@situation, @tsukkomi) %>
-<%= link_to "削除", situation_tsukkomi_path(@situation, @tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+<% if user_signed_in? %>
+  <% if @tsukkomi.user_id == current_user.id %>
+    <%= link_to "編集", edit_situation_tsukkomi_path(@situation, @tsukkomi) %>
+    <%= link_to "削除", situation_tsukkomi_path(@situation, @tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+  <% end %>
+<% end %>
 <br>
 <br>
 <%= link_to "戻る", situation_path(@situation) %>

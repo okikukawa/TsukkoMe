@@ -2,7 +2,11 @@
 <h4>シチュエーション</h4>
 <p>投稿者：<%= link_to @situation.user.name, user_path(@situation.user) %></p>
 <p><%= @situation.title %></p>
-<p><%= link_to "削除", situation_path(@situation.id), method: :delete, data: { confirm: "本当に削除しますか？" } %></p>
+<% if user_signed_in? %>
+  <% if @situation.user_id == current_user.id %>
+    <p><%= link_to "削除", situation_path(@situation.id), method: :delete, data: { confirm: "本当に削除しますか？" } %></p>
+  <% end %>
+<% end %>
 <br>
 <h4>ツッコミ</h4>
 <% @situation.tsukkomis.each do |tsukkomi| %>

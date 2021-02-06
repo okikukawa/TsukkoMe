@@ -2,6 +2,7 @@ class TsukkomisController < ApplicationController
   before_action :set_situation, only:[:new, :create, :show,:edit, :update, :destroy]
   before_action :set_tsukkomi, only:[:show,:edit, :update, :destroy]
   before_action :authenticate_user!, only:[:new, :create, :edit, :update, :destroy]
+  before_action :ensure_current_user, only:[:edit, :update, :destroy]
   def new
     @tsukkomi = Tsukkomi.new
   end

@@ -1,6 +1,7 @@
 class SituationsController < ApplicationController
   before_action :set_situation, only:[:show, :destroy]
   before_action :authenticate_user!, only:[:new, :create, :destroy]
+  before_action :ensure_current_user, only:[:destroy]
   def index
     @situations = Situation.all
   end
