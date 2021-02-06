@@ -1,6 +1,6 @@
 <h2>シチュエーション詳細</h2>
 <h4>シチュエーション</h4>
-<p>作成ユーザー：<%= @situation.user.name %></p>
+<p>投稿者：<%= link_to @situation.user.name, user_path(@situation.user) %></p>
 <p><%= @situation.title %></p>
 <p><%= link_to "削除", situation_path(@situation.id), method: :delete, data: { confirm: "本当に削除しますか？" } %></p>
 <br>

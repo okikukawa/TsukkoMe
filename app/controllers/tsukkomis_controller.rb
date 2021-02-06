@@ -8,6 +8,7 @@ class TsukkomisController < ApplicationController
 
   def create
     @tsukkomi = @situation.tsukkomis.build(tsukkomi_params)
+    @tsukkomi.user_id = current_user.id
     if @tsukkomi.save
       redirect_to situation_path(@situation), notice: "ツッコミを登録しました。"
     else
