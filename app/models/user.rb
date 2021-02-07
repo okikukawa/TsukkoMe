@@ -6,4 +6,5 @@ class User < ApplicationRecord
          :rememberable, :validatable
   has_many :situations
   has_many :tsukkomis
+  mount_uploader :image, ImageUploader
 end
