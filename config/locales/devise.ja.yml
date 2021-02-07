@@ -6,12 +6,13 @@ ja:
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻
         created_at: 作成日
-        current_password: 現在のパスワード
+        current_password: 現在のパスワード（変更を反映するには現在のパスワードを入力してください）
         current_sign_in_at: 現在のログイン時刻
         current_sign_in_ip: 現在のログインIPアドレス
         name: 名前
         email: Eメール
         image: 画像
+        profile: プロフィール
         encrypted_password: 暗号化パスワード
         failed_attempts: 失敗したログイン試行回数
         last_sign_in_at: 最終ログイン時刻

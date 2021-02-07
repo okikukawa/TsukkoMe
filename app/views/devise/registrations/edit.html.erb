@@ -33,7 +33,6 @@
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
     <% end %>
   </div>
 
@@ -43,7 +42,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br />
+    <!-- <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br /> -->
+    <%= f.label :current_password %><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 

@@ -15,7 +15,7 @@ RSpec.describe 'ツッコミ機能' ,type: :system do
       end
     end
   end
-  describe '詳細機能' do
+  describe '詳細画面' do
     context '詳細画面に遷移した場合' do
       it 'ツッコミの詳細を確認できる' do
         visit situation_path(@situation)

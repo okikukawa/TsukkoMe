@@ -1,0 +1,71 @@
+require 'rails_helper'
+RSpec.describe 'ユーザー機能' ,type: :system do
+  before do
+    @user1 = FactoryBot.create(:user)
+    @user2 = FactoryBot.create(:user2)
+  end
+  describe '新規ユーザー作成' do
+    context '新しくユーザーを作成した場合' do
+      it '登録完了のフラッシュメッセージが表示される' do
+        visit new_user_registration_path
+        fill_in '名前', with: 'ボブ'
+        fill_in 'Eメール', with: 'bob@bob.com'
+        fill_in 'パスワード', with: 'password'
+        fill_in 'パスワード（確認用）', with: 'password'
+        click_button 'アカウント登録'
+        expect(page).to have_content 'アカウント登録が完了しました。'
+      end
+    end
+  end
+  describe 'ログインに関する処理' do
+    before do
+      visit new_user_session_path
+      fill_in 'Eメール', with: 'user1@test.com'
+      fill_in 'パスワード', with: 'password'
+      click_button 'ログイン'
+    end
+    context 'ログインした場合' do
+      it 'ログイン完了のフラッシュメッセージが表示される' do
+        expect(page).to have_content 'ログインしました。'
+      end
+    end
+    context 'ログアウトした場合' do
+      it 'ログアウト完了のフラッシュメッセージが表示される' do
+        click_link 'ログアウト'
+        expect(page).to have_content 'ログアウトしました。'
+      end
+    end
+    context 'マイページに遷移した場合' do
+      it 'ログイン中のユーザー名が表示される' do
+        visit user_path(@user1)
+        expect(page).to have_content 'ユーザー1'
+      end
+    end
+    context '他のユーザーページに遷移した場合' do
+      before do
+        visit user_path(@user2)
+      end
+      it '遷移先のユーザー名が表示される' do
+        expect(page).to have_content 'ユーザー2'
+      end
+      it '編集ボタンは表示されない' do
+        expect(page).not_to have_content '編集'
+      end
+    end
+    context 'ユーザー情報を編集した場合' do
+      it '編集したユーザー情報が表示される' do
+        visit edit_user_registration_path(@user1)
+        fill_in '名前', with: 'アリス'
+        fill_in 'Eメール', with: 'alice@alice.com'
+        fill_in 'プロフィール', with: 'こんにちは！'
+        fill_in '現在のパスワード（変更を反映するには現在のパスワードを入力してください）', with: 'password'
+        click_button '更新'
+        visit user_path(@user1)
+        expect(page).to have_content 'アリス'
+        expect(page).to have_content 'alice@alice.com'
+        expect(page).to have_content 'こんにちは！'
+        save_and_open_page
+      end
+    end
+  end
+end
