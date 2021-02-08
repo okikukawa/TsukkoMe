@@ -1,8 +1,9 @@
 require 'rails_helper'
 RSpec.describe 'シチュエーション機能' ,type: :system do
   before do
-    FactoryBot.create(:situation)
-    FactoryBot.create(:second_situation)
+    user = FactoryBot.create(:user)
+    FactoryBot.create(:situation, user: user)
+    FactoryBot.create(:second_situation, user: user)
   end
   describe '一覧表示機能' do
     context '一覧画面に遷移した場合' do
@@ -16,6 +17,10 @@ RSpec.describe 'シチュエーション機能' ,type: :system do
   describe '新規作成機能' do
     context '新しくシチュエーションを作成した場合' do
       it '作成したシチュエーションが表示される' do
+        visit new_user_session_path
+        fill_in 'Eメール', with: 'user1@test.com'
+        fill_in 'パスワード', with: 'password'
+        click_button 'ログイン'
         visit new_situation_path
         fill_in 'タイトル', with: 'new_situation1'
         click_button '登録する'
@@ -35,12 +40,17 @@ RSpec.describe 'シチュエーション機能' ,type: :system do
   describe '削除機能' do
     context 'シチュエーションを削除した場合' do
       it 'シチュエーション一覧に表示されない' do
-        situation = Situation.find_by(title: "シチュエーションのタイトル2")
+        # ログインの重複をリファクタリング（let使う？）
+        visit new_user_session_path
+        fill_in 'Eメール', with: 'user1@test.com'
+        fill_in 'パスワード', with: 'password'
+        click_button 'ログイン'
+        situation = Situation.find_by(title: "シチュエーションのタイトル1")
         visit situation_path(situation)
         page.accept_confirm do
           click_link '削除', href: situation_path(situation)
         end
-        expect(page).not_to have_content 'シチュエーションのタイトル2'
+        expect(page).not_to have_content 'シチュエーションのタイトル1'
       end
     end
   end
