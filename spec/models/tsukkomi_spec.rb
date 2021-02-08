@@ -3,14 +3,10 @@ RSpec.describe Situation, type: :model do
   describe '新規作成機能' do
     context 'phraseを空で登録した場合' do
       it 'バリデーションに引っかかる' do
-        tsukkomi = Tsukkomi.create(phrase: "")
-        expect(tsukkomi).not_to be_valid
-      end
-    end
-    context 'phraseを空文字で登録した場合' do
-      it 'バリデーションに引っかかる' do
-        tsukkomi = Tsukkomi.create(phrase: " ")
-        expect(tsukkomi).not_to be_valid
+        tsukkomi = Tsukkomi.new(phrase: "")
+        tsukkomi.valid?
+        expect(tsukkomi.errors.messages[:phrase]).to include('を入力してください')
+        binding.irb
       end
     end
   end
