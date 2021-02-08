@@ -1,5 +1,7 @@
 class SituationsController < ApplicationController
   before_action :set_situation, only:[:show, :destroy]
+  before_action :authenticate_user!, only:[:new, :create, :destroy]
+  before_action :ensure_current_user_and_situation, only:[:destroy]
   def index
     @situations = Situation.all
   end
@@ -9,7 +11,7 @@ class SituationsController < ApplicationController
   end
 
   def create
-    @situation = Situation.create(situation_params)
+    @situation = current_user.situations.create(situation_params)
     if @situation.save
       redirect_to situations_path, notice: "シチュエーションを作成しました。"
     else
@@ -26,7 +28,7 @@ class SituationsController < ApplicationController
   end
 
   private
-  
+
   def situation_params
     params.require(:situation).permit(:title)
   end

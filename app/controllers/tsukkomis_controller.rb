@@ -1,18 +1,15 @@
 class TsukkomisController < ApplicationController
   before_action :set_situation, only:[:new, :create, :show,:edit, :update, :destroy]
   before_action :set_tsukkomi, only:[:show,:edit, :update, :destroy]
-
-  def index
-    @tsukkomis = Tsukkomi.all
-    @situations = Situation.all
-  end
-
+  before_action :authenticate_user!, only:[:new, :create, :edit, :update, :destroy]
+  before_action :ensure_current_user_and_tsukkomi, only:[:edit, :update, :destroy]
   def new
     @tsukkomi = Tsukkomi.new
   end
 
   def create
     @tsukkomi = @situation.tsukkomis.build(tsukkomi_params)
+    @tsukkomi.user_id = current_user.id
     if @tsukkomi.save
       redirect_to situation_path(@situation), notice: "ツッコミを登録しました。"
     else

@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  get 'tsukkomis/index'
-  get 'tsukkomis/new'
-  get 'tsukkomis/create'
-  get 'tsukkomis/show'
-  get 'tsukkomis/edit'
-  get 'tsukkomis/destroy'
+  devise_for :users
+  resources :users, only:[:show]
   resources :situations, only: [:index, :show, :new, :create, :destroy] do
     resources :tsukkomis
   end
+  root to: "situations#index"
 end
