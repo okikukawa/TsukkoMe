@@ -7,7 +7,10 @@
     <%= link_to "編集", edit_situation_tsukkomi_path(@situation, @tsukkomi) %>
     <%= link_to "削除", situation_tsukkomi_path(@situation, @tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
   <% end %>
+  <% if @favorite.present? %>
+    <p><%= link_to "お気に入り解除", favorite_path(@favorite), method: :delete %></p>
+  <% else %>
+    <p><%= link_to "お気に入り登録", favorites_path(tsukkomi_id: @tsukkomi.id),method: :create %></p>
+  <% end %>
 <% end %>
-<br>
-<br>
-<%= link_to "戻る", situation_path(@situation) %>
+<%= link_to "<< シチュエーション詳細", situation_path(@situation) %>

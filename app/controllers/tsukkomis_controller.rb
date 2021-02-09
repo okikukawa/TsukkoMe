@@ -18,6 +18,7 @@ class TsukkomisController < ApplicationController
   end
 
   def show
+    @favorite = current_user.favorites.find_by(tsukkomi_id: @tsukkomi.id)
   end
 
   def edit
