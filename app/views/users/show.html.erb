@@ -16,3 +16,16 @@
     <%= link_to "編集", edit_user_registration_path(current_user) %>
   <% end %>
 <% end %>
+<br>
+<br>
+<h3>投稿したツッコミ</h3>
+<% @user.tsukkomis.all.each do|tsukkomi| %>
+  <%= link_to tsukkomi.phrase, situation_tsukkomi_path(tsukkomi.situation_id, tsukkomi.id) %><br>
+  <label>お気に入り数：<%= tsukkomi.favorites.count %></label><br>
+<% end %>
+<br>
+<h3>お気に入り一覧</h3>
+<% @user.favorites.all.each do|fav| %>
+  <%= link_to fav.tsukkomi.phrase, situation_tsukkomi_path(fav.tsukkomi.situation_id, fav.tsukkomi.id) %><br>
+  <label>お気に入り数：<%= fav.tsukkomi.favorites.count %></label><br>
+<% end %>

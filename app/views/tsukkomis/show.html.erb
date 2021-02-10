@@ -1,5 +1,4 @@
 <h2>ツッコミ詳細</h2>
-<%= notice %>
 <p>投稿者：<%= link_to @tsukkomi.user.name, user_path(@tsukkomi.user) %></p>
 <p><%= @tsukkomi.phrase %></p>
 <% if user_signed_in? %>
