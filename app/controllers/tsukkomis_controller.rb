@@ -21,8 +21,10 @@ class TsukkomisController < ApplicationController
     if user_signed_in?
       @favorite = current_user.favorites.find_by(tsukkomi_id: @tsukkomi.id)
     end
+    @comments = @tsukkomi.comments
+    @comment = @tsukkomi.comments.build
   end
-  
+
   def edit
   end
 
