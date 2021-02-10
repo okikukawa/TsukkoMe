@@ -7,5 +7,6 @@ class User < ApplicationRecord
          :rememberable, :validatable
   has_many :situations
   has_many :tsukkomis
+  has_many :favorites, dependent: :destroy
   mount_uploader :image, ImageUploader
 end

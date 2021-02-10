@@ -18,8 +18,11 @@ class TsukkomisController < ApplicationController
   end
 
   def show
+    if user_signed_in?
+      @favorite = current_user.favorites.find_by(tsukkomi_id: @tsukkomi.id)
+    end
   end
-
+  
   def edit
   end
 
