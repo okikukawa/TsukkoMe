@@ -10,7 +10,7 @@
   <% if @favorite.present? %>
     <p><%= link_to "お気に入り解除", favorite_path(@favorite), method: :delete %></p>
   <% else %>
-    <p><%= link_to "お気に入り登録", favorites_path(tsukkomi_id: @tsukkomi.id),method: :create %></p>
+    <p><%= link_to "お気に入り登録", favorites_path(tsukkomi_id: @tsukkomi.id), method: :create %></p>
   <% end %>
 <% end %>
 <%= link_to "<< シチュエーション詳細", situation_path(@situation) %>
