@@ -27,6 +27,11 @@ class SituationsController < ApplicationController
     redirect_to situations_path, notice: "シチュエーションを削除しました。"
   end
 
+  def thousand_fungo
+    @situation = Situation.order("RANDOM()").first
+    @tsukkomis = @situation.tsukkomis.all
+  end
+
   private
 
   def situation_params
