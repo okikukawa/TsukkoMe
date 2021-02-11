@@ -1,7 +1,5 @@
 FactoryBot.define do
   factory :comment do
-    content { "MyString" }
-    user { nil }
-    tsukkomi { nil }
+    content { "コメント1" }
   end
 end
