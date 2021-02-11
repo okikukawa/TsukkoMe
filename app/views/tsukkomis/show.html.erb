@@ -1,3 +1,4 @@
+<p id="notice"><%= notice %></p>
 <h2>ツッコミ詳細</h2>
 <p>投稿者：<%= link_to @tsukkomi.user.name, user_path(@tsukkomi.user) %></p>
 <p><%= @tsukkomi.phrase %></p>
@@ -12,4 +13,13 @@
     <p><%= link_to "お気に入り登録", favorites_path(tsukkomi_id: @tsukkomi.id), method: :create %></p>
   <% end %>
 <% end %>
-<%= link_to "<< シチュエーション詳細", situation_path(@situation) %>
+<div>
+  <%= link_to "<< シチュエーション詳細", situation_path(@situation) %>
+</div>
+<hr>
+<p>コメント一覧</p>
+<div id="comments_area">
+  <%= render partial: 'comments/index', locals: { comments: @comments, tsukkomi: @tsukkomi, situation: @situation } %>
+</div>
+<%= render partial: 'comments/form', locals: { comment: @comment, tsukkomi: @tsukkomi, situation: @situation } %>
+<hr>

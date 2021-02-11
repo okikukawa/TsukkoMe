@@ -5,8 +5,9 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum:30 }
   devise :database_authenticatable, :registerable,
          :rememberable, :validatable
-  has_many :situations
-  has_many :tsukkomis
+  has_many :situations, dependent: :destroy
+  has_many :tsukkomis, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
   mount_uploader :image, ImageUploader
 end

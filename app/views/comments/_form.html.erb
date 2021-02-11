@@ -1,0 +1,8 @@
+<%= form_with(model: [situation, tsukkomi, comment]) do |form| %>
+  <div class="field">
+    <%= form.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

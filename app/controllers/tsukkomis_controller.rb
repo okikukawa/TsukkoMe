@@ -1,6 +1,6 @@
 class TsukkomisController < ApplicationController
   before_action :set_situation, only:[:new, :create, :show,:edit, :update, :destroy]
-  before_action :set_tsukkomi, only:[:show,:edit, :update, :destroy]
+  before_action :set_tsukkomi, only:[:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only:[:new, :create, :edit, :update, :destroy]
   before_action :ensure_current_user_and_tsukkomi, only:[:edit, :update, :destroy]
   def new
@@ -21,9 +21,12 @@ class TsukkomisController < ApplicationController
     if user_signed_in?
       @favorite = current_user.favorites.find_by(tsukkomi_id: @tsukkomi.id)
     end
+    @comments = @tsukkomi.comments
+    @comment = @tsukkomi.comments.build
   end
-  
+
   def edit
+
   end
 
   def update
