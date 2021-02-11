@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
         redirect_to situations_path
       end
     else
-      redirect_to new_user_registration_path, notice:"ログインが必要です"
+      redirect_to new_user_registration_path, notice: "ログインが必要です。"
     end
   end
   def ensure_current_user_and_tsukkomi
@@ -23,7 +23,17 @@ class ApplicationController < ActionController::Base
         redirect_to situations_path
       end
     else
-      redirect_to new_user_registration_path, notice:"ログインが必要です"
+      redirect_to new_user_registration_path, notice:"ログインが必要です。"
+    end
+  end
+  def ensure_current_user_and_comment
+    if user_signed_in?
+      unless current_user.id == @comment.user_id
+        flash[:notice] = "権限がありません。"
+        redirect_to situations_path
+      end
+    else
+      redirect_to new_user_registration_path, notice:"ログインが必要です。"
     end
   end
 end

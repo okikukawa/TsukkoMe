@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, only:[:show]
   resources :situations, only:[:index, :show, :new, :create, :destroy] do
     resources :tsukkomis do
-      resources :comments
+      resources :comments, only:[:create, :edit, :update, :destroy]
     end
     get 'thousand_fungo', on: :collection
   end
