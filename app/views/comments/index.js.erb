@@ -1,2 +1,3 @@
-$("#comments_area").html("<%= j(render partial: 'comments/index', locals: { comments: @comment.tsukkomi.comments, tsukkomi: @tsukkomi, situation: @situation }) %>")
-$("textarea").val('')
+$("#comments_area").html("<%= j(render partial: 'comments/index', locals: { comments: @comment.tsukkomi.comments, tsukkomi: @tsukkomi, situation: @tsukkomi.situation_id }) %>");
+$("textarea").val('');
+$("#notice").html("<%= j flash[:notice] %>");
