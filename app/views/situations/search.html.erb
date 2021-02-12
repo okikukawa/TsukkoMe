@@ -20,8 +20,15 @@
   <%= f.submit '検索' %>
 <% end %>
 
-<% @situation.tsukkomis.each do |tsukkomi| %>
+<% if params[:q][:phrase_cont].present? %>
+  <p>"<%= params[:q][:phrase_cont] %>"の検索結果（全<%= @results.count %>件）</p>
+<% end %>
+
+<% @results.each do |tsukkomi| %>
   <p><%= link_to tsukkomi.phrase, situation_tsukkomi_path(@situation, tsukkomi.id) %></p>
 <% end %>
+<div>
+  <%= link_to "戻る", situation_path(@situation) %>
+</div>
 <br>
-<%= link_to "ツッコミを作成する", new_situation_tsukkomi_path(@situation.id) %>
+<%= link_to "ツッコミを作成する", new_situation_tsukkomi_path(@situation) %>

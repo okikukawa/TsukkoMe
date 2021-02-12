@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :comments, only:[:create, :edit, :update, :destroy]
     end
     get 'thousand_fungo', on: :collection
+    get 'search', on: :member
   end
   resources :favorites, only:[:index, :create, :destroy]
   root to: "situations#index"

@@ -1,10 +1,14 @@
 <h2>千本ノック</h2>
 <h1>例えツッコみまくれ！！</h1>
 <h2>シチュエーション：<%= @situation.title %></h2>
+<%= link_to "次のツッコミへ >>", thousand_fungo_situations_path %>
 <% if @tsukkomis.present? %>
-  <p>他の人のツッコミ</p>
+  <h3>他の人のツッコミ</h3>
   <% @tsukkomis.each do|tsukkomi| %>
-    <%= tsukkomi.phrase %><br>
+    <div>
+      <%= tsukkomi.user.name %>さん
+      <br>
+      <%= link_to tsukkomi.phrase, situation_tsukkomi_path(@situation, tsukkomi) %>
+    </div>
   <% end %>
 <% end %>
-<%= link_to "次のツッコミへ >>", thousand_fungo_situations_path %>

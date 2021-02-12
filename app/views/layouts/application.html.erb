@@ -10,8 +10,9 @@
   </head>
 
   <body>
-      <%= link_to "シチュエーション一覧", situations_path %>
-      <%= link_to "ツッコミ千本ノック", thousand_fungo_situations_path %>
+    <%= link_to "シチュエーション一覧", situations_path %>
+    <%= link_to "ツッコミ千本ノック", thousand_fungo_situations_path %>
+
     <% if user_signed_in? %>
       <%= link_to "マイページ", user_path(current_user) %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
