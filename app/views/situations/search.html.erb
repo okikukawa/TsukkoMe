@@ -19,8 +19,9 @@
   <%= f.search_field :phrase_cont, placeholder: "キーワードを入力" %>
   <%= f.submit '検索' %>
 <% end %>
+
 <% if params[:q][:phrase_cont].present? %>
-  <p>"<%= params[:q][:phrase_cont] %>"の検索結果</p>
+  <p>"<%= params[:q][:phrase_cont] %>"の検索結果（全<%= @results.count %>件）</p>
 <% end %>
 
 <% @results.each do |tsukkomi| %>
