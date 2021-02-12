@@ -36,6 +36,7 @@ class SituationsController < ApplicationController
 
   def search
     @results = @search.result
+    # binding.irb
   end
 
   private
@@ -50,6 +51,6 @@ class SituationsController < ApplicationController
 
   def set_search
     @situation = Situation.find(params[:id])
-    @search = @situation.tsukkomis.ransack(params[:id])
+    @search = @situation.tsukkomis.ransack(params[:q])
   end
 end
