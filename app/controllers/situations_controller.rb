@@ -2,6 +2,8 @@ class SituationsController < ApplicationController
   before_action :set_situation, only:[:show, :destroy]
   before_action :authenticate_user!, only:[:new, :create, :destroy]
   before_action :ensure_current_user_and_situation, only:[:destroy]
+  before_action :set_search, only:[:show, :search]
+
   def index
     @situations = Situation.all
   end
@@ -32,6 +34,10 @@ class SituationsController < ApplicationController
     @tsukkomis = @situation.tsukkomis.all
   end
 
+  def search
+    @results = @search.result
+  end
+
   private
 
   def situation_params
@@ -40,5 +46,10 @@ class SituationsController < ApplicationController
 
   def set_situation
     @situation = Situation.find(params[:id])
+  end
+
+  def set_search
+    @situation = Situation.find(params[:id])
+    @search = @situation.tsukkomis.ransack(params[:id])
   end
 end
