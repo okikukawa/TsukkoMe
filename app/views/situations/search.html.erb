@@ -18,13 +18,13 @@
 </div>
 
 
-<div>
+<!-- <div>
   <%= link_to "<< シチュエーション一覧", situations_path %>
-</div>
+</div> -->
 
 <h4>ツッコミ</h4>
 
-<%= link_to "ツッコミを作成する", new_situation_tsukkomi_path(@situation) %>
+<%= link_to "このシチュエーションにツッコむ！", new_situation_tsukkomi_path(@situation) %>
 
 <%= search_form_for @search, url: search_situation_path(@situation) do |f| %>
   <%= f.search_field :phrase_cont, placeholder: "キーワードを入力" %>

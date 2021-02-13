@@ -17,9 +17,9 @@
   ツッコミ数：<%= @situation.tsukkomis.count %>
 </div>
 
-<div>
+<!-- <div>
   <%= link_to "<< シチュエーション一覧", situations_path %>
-</div>
+</div> -->
 
 <!-- デザイン調整時、以下消してよし -->
 <br>
@@ -27,7 +27,7 @@
 <b>ツッコミ</b>
 <br>
 
-<%= link_to "ツッコミを作成する", new_situation_tsukkomi_path(@situation.id) %>
+<%= link_to "このシチュエーションにツッコむ！", new_situation_tsukkomi_path(@situation.id) %>
 
 <%= search_form_for @search, url: search_situation_path(@situation) do |f| %>
   <%= f.search_field :phrase_cont, placeholder: "ツッコミをさがす" %>

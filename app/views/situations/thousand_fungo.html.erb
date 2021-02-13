@@ -1,14 +1,30 @@
 <h2>千本ノック</h2>
 <h1>例えツッコみまくれ！！</h1>
 <h2>シチュエーション：<%= @situation.title %></h2>
+
 <%= link_to "次のツッコミへ >>", thousand_fungo_situations_path %>
+
 <% if @tsukkomis.present? %>
   <h3>他の人のツッコミ</h3>
+  <p><%= notice %></p>
   <% @tsukkomis.each do|tsukkomi| %>
-    <div>
-      <%= tsukkomi.user.name %>さん
-      <br>
-      <%= link_to tsukkomi.phrase, situation_tsukkomi_path(@situation, tsukkomi) %>
-    </div>
+  <%= link_to tsukkomi.user.name, user_path(tsukkomi.user) %>
+  <%= tsukkomi.created_at.strftime("%Y年%-m月%-d日") %>
+  <% if user_signed_in? %>
+    <% if tsukkomi.user_id == current_user.id %>
+      <%= link_to "削除", situation_tsukkomi_path(@situation, tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+      <% end %>
+    <% end %>
+  <div class="">
+    <%= link_to tsukkomi.phrase, situation_tsukkomi_path(@situation, tsukkomi.id) %>
+  </div>
+
+  <!-- todo：お気に入り、コメント数はアイコン -->
+  お気に入り数：<%= tsukkomi.favorites.count %>
+  コメント数：<%= tsukkomi.comments.count %>
+  <br>
+  <!-- デザイン調整時、以下消してよし -->
+  <br>
+  <!-- ここまで -->
   <% end %>
 <% end %>

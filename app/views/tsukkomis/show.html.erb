@@ -1,6 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h2>ツッコミ詳細</h2>
+<h2><%= @tsukkomi.phrase %></h2>
+
+<div>
+  <%= link_to @tsukkomi.situation.user.name, user_path(@situation.user) %>
+  <%= @tsukkomi.situation.created_at.strftime("%Y年%-m月%-d日") %>
+  <% if user_signed_in? %>
+    <% if @situation.user_id == current_user.id %>
+      <%= link_to "削除", situation_path(@situation.id), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+    <% end %>
+  <% end %>
+  <div>
+    <%= link_to @tsukkomi.situation.title, situation_path(@tsukkomi.situation) %>
+  </div>
+  <!-- todo："ツッコミ数は"アイコンに変更 -->
+  ツッコミ数：<%= @tsukkomi.situation.tsukkomis.count %>
+</div>
+
+<h3>ツッコミ詳細</h3>
+
 <div>
   <%= link_to @tsukkomi.user.name, user_path(@tsukkomi.user) %>
   <%= @tsukkomi.created_at.strftime("%Y年%-m月%-d日") %>
@@ -27,13 +45,19 @@
   コメント数：<%= @tsukkomi.comments.count %>
 </div>
 
-<div>
+
+
+<!-- <div>
   <%= link_to "<< シチュエーション詳細", situation_path(@situation) %>
-</div>
+</div> -->
+
+<br>
 <hr>
 <p>コメント一覧</p>
 <div id="comments_area">
   <%= render partial: 'comments/index', locals: { comments: @comments, tsukkomi: @tsukkomi, situation: @situation } %>
 </div>
-<%= render partial: 'comments/form', locals: { comment: @comment, tsukkomi: @tsukkomi, situation: @situation } %>
+<% if user_signed_in? %>
+  <%= render partial: 'comments/form', locals: { comment: @comment, tsukkomi: @tsukkomi, situation: @situation } %>
+<% end %>
 <hr>
