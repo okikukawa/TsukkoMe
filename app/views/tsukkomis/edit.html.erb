@@ -1,4 +1,12 @@
 <h2>ツッコミを編集する</h2>
-シチュエーション：<%= @situation.title %>
+
+<div>
+  <%= link_to @situation.user.name, user_path(@situation.user) %>
+  <%= @situation.created_at.strftime("%Y年%-m月%-d日") %>
+  <div >
+    <%= @situation.title %>
+  </div>
+</div>
+
 <%= render 'form' %>
 <%= link_to "<< ツッコミ詳細", situation_tsukkomi_path(@situation, @tsukkomi) %>

@@ -1,18 +1,32 @@
 <p id="notice"><%= notice %></p>
+
 <h2>ツッコミ詳細</h2>
-<p>投稿者：<%= link_to @tsukkomi.user.name, user_path(@tsukkomi.user) %></p>
-<p><%= @tsukkomi.phrase %></p>
-<% if user_signed_in? %>
-  <% if @tsukkomi.user_id == current_user.id %>
-    <%= link_to "編集", edit_situation_tsukkomi_path(@situation, @tsukkomi) %>
-    <%= link_to "削除", situation_tsukkomi_path(@situation, @tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+<div>
+  <%= link_to @tsukkomi.user.name, user_path(@tsukkomi.user) %>
+  <%= @tsukkomi.created_at.strftime("%Y年%-m月%-d日") %>
+  <% if user_signed_in? %>
+    <% if @tsukkomi.user_id == current_user.id %>
+      <%= link_to "編集", edit_situation_tsukkomi_path(@situation, @tsukkomi) %>
+      <%= link_to "削除", situation_tsukkomi_path(@situation, @tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+    <% end %>
   <% end %>
-  <% if @favorite.present? %>
-    <p><%= link_to "お気に入り解除", favorite_path(@favorite), method: :delete %></p>
-  <% else %>
-    <p><%= link_to "お気に入り登録", favorites_path(tsukkomi_id: @tsukkomi.id), method: :create %></p>
+  <br>
+  <%= @tsukkomi.phrase %>
+  <% if user_signed_in? %>
+    <% if @favorite.present? %>
+      <br>
+      <%= link_to "お気に入り解除", favorite_path(@favorite), method: :delete %>
+      <br>
+    <% else %>
+      <br>
+      <%= link_to "お気に入り登録", favorites_path(tsukkomi_id: @tsukkomi.id), method: :create %>
+      <br>
+    <% end %>
   <% end %>
-<% end %>
+  お気に入り数：<%= @tsukkomi.favorites.count %>
+  コメント数：<%= @tsukkomi.comments.count %>
+</div>
+
 <div>
   <%= link_to "<< シチュエーション詳細", situation_path(@situation) %>
 </div>
