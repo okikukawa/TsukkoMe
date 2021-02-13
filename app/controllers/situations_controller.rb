@@ -5,7 +5,7 @@ class SituationsController < ApplicationController
   before_action :set_search, only:[:show, :search]
 
   def index
-    @situations = Situation.all
+    @situations = Situation.all.page(params[:page]).per(10)
   end
 
   def new
@@ -22,6 +22,7 @@ class SituationsController < ApplicationController
   end
 
   def show
+    @situations = @situation.tsukkomis.sort_created_at.page(params[:page]).per(10)
   end
 
   def destroy
@@ -31,7 +32,7 @@ class SituationsController < ApplicationController
 
   def thousand_fungo
     @situation = Situation.order("RANDOM()").first
-    @tsukkomis = @situation.tsukkomis.all
+    @tsukkomis = @situation.tsukkomis.limit(10)
   end
 
   def search

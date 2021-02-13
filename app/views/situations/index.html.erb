@@ -6,3 +6,4 @@
 <% @situations.each do |situation| %>
   <p>  <%= link_to situation.title, situation_path(situation) %></p>
 <% end %>
+<%= paginate @situations %>
