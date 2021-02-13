@@ -1,9 +1,27 @@
 <p><%= notice %></p>
+
 <h2>シチュエーション一覧</h2>
+
 <p><%= link_to "シチュエーションを作成する", new_situation_path %></p>
 <br>
 <h4>シチュエーション</h4>
 <% @situations.each do |situation| %>
-  <p>  <%= link_to situation.title, situation_path(situation) %></p>
+  <!-- ユーザーアイコンも表示させる -->
+  <%= link_to situation.user.name, user_path(situation.user) %>
+  <%= situation.created_at.strftime("%Y年%-m月%-d日") %>
+  <% if user_signed_in? %>
+    <% if situation.user_id == current_user.id %>
+      <%= link_to "削除", situation_path(situation), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+    <% end %>
+  <% end %>
+  <div>
+    <%= link_to situation.title, situation_path(situation) %>
+  </div>
+  <!-- todo："ツッコミ数は"アイコンに変更 -->
+  ツッコミ数：<%= situation.tsukkomis.count %>
+  <br>
+  <!-- デザイン調整時、以下消してよし -->
+  <br>
 <% end %>
+
 <%= paginate @situations %>

@@ -37,7 +37,6 @@ class SituationsController < ApplicationController
 
   def search
     @results = @search.result
-    # binding.irb
   end
 
   private

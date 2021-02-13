@@ -1,19 +1,30 @@
 <p><%= notice %></p>
 <h2>シチュエーション詳細</h2>
-<p>投稿者：<%= link_to @situation.user.name, user_path(@situation.user) %></p>
-<p><%= @situation.title %></p>
 
-<% if user_signed_in? %>
-  <% if @situation.user_id == current_user.id %>
-    <p><%= link_to "削除", situation_path(@situation.id), method: :delete, data: { confirm: "本当に削除しますか？" } %></p>
+<div>
+  <%= link_to @situation.user.name, user_path(@situation.user) %>
+  <%= @situation.created_at.strftime("%Y年%-m月%-d日") %>
+  <% if user_signed_in? %>
+    <% if @situation.user_id == current_user.id %>
+      <%= link_to "削除", situation_path(@situation.id), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+    <% end %>
   <% end %>
-<% end %>
+  <div >
+    <%= @situation.title %>
+  </div>
+
+  <!-- todo："ツッコミ数は"アイコンに変更 -->
+  ツッコミ数：<%= @situation.tsukkomis.count %>
+</div>
+
 
 <div>
   <%= link_to "<< シチュエーション一覧", situations_path %>
 </div>
-<br>
+
 <h4>ツッコミ</h4>
+
+<%= link_to "ツッコミを作成する", new_situation_tsukkomi_path(@situation) %>
 
 <%= search_form_for @search, url: search_situation_path(@situation) do |f| %>
   <%= f.search_field :phrase_cont, placeholder: "キーワードを入力" %>
@@ -24,11 +35,30 @@
   <p>"<%= params[:q][:phrase_cont] %>"の検索結果（全<%= @results.count %>件）</p>
 <% end %>
 
-<% @results.each do |tsukkomi| %>
-  <p><%= link_to tsukkomi.phrase, situation_tsukkomi_path(@situation, tsukkomi.id) %></p>
-<% end %>
+<div>
+  <% @results.each do |tsukkomi| %>
+    <%= link_to tsukkomi.user.name, user_path(tsukkomi.user) %>
+    <%= tsukkomi.created_at.strftime("%Y年%-m月%-d日") %>
+    <% if user_signed_in? %>
+      <% if tsukkomi.user_id == current_user.id %>
+        <%= link_to "削除", situation_tsukkomi_path(@situation, tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+        <% end %>
+      <% end %>
+    <div class="">
+      <%= link_to tsukkomi.phrase, situation_tsukkomi_path(@situation, tsukkomi.id) %>
+    </div>
+
+    <!-- todo：お気に入り、コメント数はアイコン -->
+    お気に入り数：<%= tsukkomi.favorites.count %>
+    コメント数：<%= tsukkomi.comments.count %>
+    <br>
+    <!-- デザイン調整時、以下消してよし -->
+    <br>
+  <% end %>
+</div>
+
 <div>
   <%= link_to "戻る", situation_path(@situation) %>
 </div>
-<br>
-<%= link_to "ツッコミを作成する", new_situation_tsukkomi_path(@situation) %>
+
+<!-- 検索結果後のページネーション -->
