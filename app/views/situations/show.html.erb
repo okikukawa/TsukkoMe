@@ -17,9 +17,9 @@
   ツッコミ数：<%= @situation.tsukkomis.count %>
 </div>
 
-<!-- <div>
+<div>
   <%= link_to "<< シチュエーション一覧", situations_path %>
-</div> -->
+</div>
 
 <!-- デザイン調整時、以下消してよし -->
 <br>
@@ -52,8 +52,12 @@
     </div>
 
     <!-- todo：お気に入り、コメント数はアイコン -->
-    お気に入り数：<%= tsukkomi.favorites.count %>
-    コメント数：<%= tsukkomi.comments.count %>
+    <% if tsukkomi.favorites.find_by(user_id: current_user.id).present? %>
+      <i class="far fa-grin-squint-tears fa-lg squint-tears"></i>  <%= tsukkomi.favorites.count %>
+    <% else %>
+      <i class="far fa-grin-squint-tears fa-lg"></i>  <%= tsukkomi.favorites.count %>
+    <% end %>
+    <i class="far fa-comment-dots fa-lg"></i>  <%= tsukkomi.comments.count %>
     <br>
     <!-- デザイン調整時、以下消してよし -->
     <br>
