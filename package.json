@@ -2,6 +2,7 @@
   "name": "tsukko_me",
   "private": true,
   "dependencies": {
+    "bootstrap": "4",
     "jquery": "^3.5.1"
   }
 }
