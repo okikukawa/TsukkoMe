@@ -1,3 +1,66 @@
 // Place all the styles related to the Situations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+  // position: relative;
+  min-height: 100%;
+  padding-bottom: 84px;
+  // box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+header {
+  width: 100%;
+  // background-size: cover;
+  // // background-color: #F24E2B;
+  // height: 50px;
+  // margin: 0;
+  // // position: fixed;
+  // top:0px;
+  background-color: #ff8906;
+  height: 78px
+}
+
+li {
+  list-style: none;
+}
+
+.header a{
+  color: #f8f9fa;
+  text-decoration: none;
+
+}
+
+.header_logo a{
+  float: left;
+  font-size: 1.5rem;
+  padding: 20px 30px;
+  margin-left: 100px;
+  // font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.header_right{
+  float: right;
+  margin-right: 80px;
+  display: block;
+}
+
+.header_right li{
+  float: left;
+  padding: 27px 10px;
+  font-size: 1rem;
+}
+
+
+.header_right ul{
+  text-align: right;
+}
+
+.text-center{
+  text-align: center;
+}

@@ -7,20 +7,29 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
 
   <body>
-    <%= link_to "シチュエーション一覧", situations_path %>
-    <%= link_to "ツッコミ千本ノック", thousand_fungo_situations_path %>
-
-    <% if user_signed_in? %>
-      <%= link_to "マイページ", user_path(current_user) %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
-
+    <header>
+      <div class="header header_logo">
+        <%= link_to "TsukkoMe", situations_path %>
+      </div>
+      <div class="header header_right">
+        <ul>
+          <li><%= link_to "ツッコミをみる", situations_path %></li>
+          <li><%= link_to "ツッコミをきたえる", thousand_fungo_situations_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "マイページ", user_path(current_user) %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
+        <% end %>
+        </ul>
+      </div>
+    </header>
     <!-- <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>
     <% end %>
@@ -28,5 +37,7 @@
       <p class="alert alert-error"><%= alert %></p>
     <% end %> -->
     <%= yield %>
+    <footer>
+    </footer>
   </body>
 </html>
