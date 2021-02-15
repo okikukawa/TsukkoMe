@@ -52,8 +52,12 @@
     </div>
 
     <!-- todo：お気に入り、コメント数はアイコン -->
-    <% if tsukkomi.favorites.find_by(user_id: current_user.id).present? %>
-      <i class="far fa-grin-squint-tears fa-lg squint-tears"></i>  <%= tsukkomi.favorites.count %>
+    <% if user_signed_in? %>
+      <% if tsukkomi.favorites.find_by(user_id: current_user.id).present? %>
+        <i class="far fa-grin-squint-tears fa-lg squint-tears"></i>  <%= tsukkomi.favorites.count %>
+      <% else %>
+        <i class="far fa-grin-squint-tears fa-lg"></i>  <%= tsukkomi.favorites.count %>
+      <% end %>
     <% else %>
       <i class="far fa-grin-squint-tears fa-lg"></i>  <%= tsukkomi.favorites.count %>
     <% end %>
