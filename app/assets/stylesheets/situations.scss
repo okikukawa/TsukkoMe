@@ -67,11 +67,7 @@ li {
 
 // ここからmain
 
-.main{
-
-}
-
-.situation-post{
+.main-post{
   padding: 15px 25px;
   margin: 10px;
   border: solid 1px #a79c8e;
@@ -82,22 +78,34 @@ li {
   float:right;
 }
 
-.post-delete li{
+.dropdown-menu a{
+  text-decoration: none;
+  color: #333030;
+}
+
+.post-delete {
   color: red;
 }
 
-.post-delete li a{
+.post-delete  a{
   text-decoration: none;
   color: red;
 }
 
+.small-icon{
+  padding-right: 10px;
+  padding-left: 14px;
+}
+
 .fa-trash-alt{
-  padding: 0px 10px;
+  padding-right: 14px;
 }
 
 .post-icons{
   text-align: right;
 }
+
+
 
 .pagination {
   justify-content: center;

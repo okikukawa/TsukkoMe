@@ -9,41 +9,43 @@
       <%= link_to "シチュエーションを作成する", new_situation_path, class:"btn btn-warning" %>
     </div>
     <h2 class="text-center">シチュエーション一覧</h2>
+
     <div class="situations-post">
       <% @situations.each do |situation| %>
-      <div class="main-post situation-post">
-        <!-- ユーザーアイコンも表示させる -->
-        <% if situation.user.image.present? %>
-          <%= link_to image_tag(situation.user.image.url, class:"small-icon-image"), user_path(situation.user) %>
-        <% else %>
-          <%= link_to image_tag("profile_icon.png", class: "small-icon-image"), user_path(situation.user) %>
-        <% end %>
-        <%= link_to situation.user.name, user_path(situation.user) %>
-        <%= situation.created_at.strftime("%Y年%-m月%-d日") %>
-        <% if user_signed_in? %>
-          <% if situation.user_id == current_user.id %>
-          <div class="dropdown post-menu">
-            <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              <i class="fas fa-ellipsis-v"></i>
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu post-delete" aria-labelledby="dropdownMenu1">
-              <li><i class="far fa-trash-alt"></i><%= link_to "削除する", situation_path(situation), method: :delete, data: { confirm: "本当に削除しますか？" } %>
-              </li>
-            </ul>
-          </div>
-          <% end %>
-        <% end %>
-        <div class="post-content text-center">
-          <%= link_to situation.title, situation_path(situation) %>
-        </div>
-        <div class="post-icons">
-          <i class="far fa-hand-paper fa-lg fa-rotate-225"></i>
-          <%= image_tag("surprise_yellow.png", class: "logo-image") %>
-          <%= situation.tsukkomis.count %>
-        </div>
-      </div>
+      <div class="main-post">
+      <% if situation.user.image.present? %>
+        <%= link_to image_tag(situation.user.image.url, class:"small-icon-image"), user_path(situation.user) %>
+      <% else %>
+        <%= link_to image_tag("profile_icon.png", class: "small-icon-image"), user_path(situation.user) %>
       <% end %>
+      <%= link_to situation.user.name, user_path(situation.user) %>
+      <%= situation.created_at.strftime("%Y年%-m月%-d日") %>
+      <% if user_signed_in? %>
+        <% if situation.user_id == current_user.id %>
+        <div class="dropdown post-menu">
+          <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <i class="fas fa-ellipsis-v"></i>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li class="post-delete small-icon">
+              <i class="far fa-trash-alt"></i>
+              <%= link_to "削除する", situation_path(situation), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+            </li>
+          </ul>
+        </div>
+        <% end %>
+      <% end %>
+      <div class="text-center">
+        <%= link_to situation.title, situation_path(situation) %>
+      </div>
+      <div class="post-icons">
+        <i class="far fa-hand-paper fa-lg fa-rotate-225"></i>
+        <%= image_tag("surprise_yellow.png", class: "logo-image") %>
+        <%= situation.tsukkomis.count %>
+      </div>
+    </div>
+    <% end %>
     </div>
   </div>
   <div class="pagination">

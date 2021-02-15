@@ -3,74 +3,104 @@
   <% key = "danger" if key == "alert" %>
   <%= content_tag(:div, value, class: "alert alert-#{key} text-center") %>
 <% end %>
-<h2>シチュエーション詳細</h2>
-
-<div>
-  <%= link_to @situation.user.name, user_path(@situation.user) %>
-  <%= @situation.created_at.strftime("%Y年%-m月%-d日") %>
-  <% if user_signed_in? %>
-    <% if @situation.user_id == current_user.id %>
-      <%= link_to "削除", situation_path(@situation.id), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+<h2 class="text-center">シチュエーション詳細</h2>
+<div class="container">
+  <div class="main-post">
+    <% if @situation.user.image.present? %>
+      <%= link_to image_tag(@situation.user.image.url, class:"small-icon-image"), user_path(@situation.user) %>
+    <% else %>
+      <%= link_to image_tag("profile_icon.png", class: "small-icon-image"), user_path(@situation.user) %>
     <% end %>
-  <% end %>
-  <div >
-    <%= @situation.title %>
+    <%= link_to @situation.user.name, user_path(@situation.user) %>
+    <%= @situation.created_at.strftime("%Y年%-m月%-d日") %>
+    <% if user_signed_in? %>
+      <% if @situation.user_id == current_user.id %>
+        <div class="dropdown post-menu">
+          <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <i class="fas fa-ellipsis-v"></i>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li class="post-delete small-icon">
+              <i class="far fa-trash-alt"></i>
+              <%= link_to "削除", situation_path(@situation.id), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
+    <div class="text-center">
+      <%= @situation.title %>
+    </div>
+    <div class="post-icons">
+      <i class="far fa-hand-paper fa-lg fa-rotate-225"></i>
+      <%= image_tag("surprise_yellow.png", class: "logo-image") %>
+      <%= @situation.tsukkomis.count %>
+    </div>
   </div>
 
-  <!-- todo："ツッコミ数は"アイコンに変更 -->
-  ツッコミ数：<%= @situation.tsukkomis.count %>
-</div>
+  <div>
+    <%= link_to "<< シチュエーション一覧", situations_path %>
+  </div>
 
-<div>
-  <%= link_to "<< シチュエーション一覧", situations_path %>
-</div>
+  <%= link_to "このシチュエーションにツッコむ！", new_situation_tsukkomi_path(@situation.id) %>
 
-<!-- デザイン調整時、以下消してよし -->
-<br>
-<!-- ここまで -->
-<b>ツッコミ</b>
-<br>
+  <%= search_form_for @search, url: search_situation_path(@situation) do |f| %>
+    <%= f.search_field :phrase_cont, placeholder: "ツッコミをさがす" %>
+    <%= f.submit '検索' %>
+  <% end %>
 
-<%= link_to "このシチュエーションにツッコむ！", new_situation_tsukkomi_path(@situation.id) %>
+  <!-- デザイン調整時、以下消してよし -->
+  <br>
+  <!-- ここまで -->
 
-<%= search_form_for @search, url: search_situation_path(@situation) do |f| %>
-  <%= f.search_field :phrase_cont, placeholder: "ツッコミをさがす" %>
-  <%= f.submit '検索' %>
-<% end %>
-
-<!-- デザイン調整時、以下消してよし -->
-<br>
-<!-- ここまで -->
-
-<div>
-  <% @situations.each do |tsukkomi| %>
-    <%= link_to tsukkomi.user.name, user_path(tsukkomi.user) %>
-    <%= tsukkomi.created_at.strftime("%Y年%-m月%-d日") %>
-    <% if user_signed_in? %>
-      <% if tsukkomi.user_id == current_user.id %>
-        <%= link_to "編集", edit_situation_tsukkomi_path(@situation, tsukkomi) %>
-        <%= link_to "削除", situation_tsukkomi_path(@situation, tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+  <div class="tsukkomis-post">
+    <% @situations.each do |tsukkomi| %>
+    <div class="main-post">
+      <% if tsukkomi.user.image.present? %>
+        <%= link_to image_tag(tsukkomi.user.image.url, class:"small-icon-image"), user_path(tsukkomi.user) %>
+      <% else %>
+        <%= link_to image_tag("profile_icon.png", class: "small-icon-image"), user_path(tsukkomi.user) %>
+      <% end %>
+      <%= link_to tsukkomi.user.name, user_path(tsukkomi.user) %>
+      <%= tsukkomi.created_at.strftime("%Y年%-m月%-d日") %>
+      <% if user_signed_in? %>
+        <% if tsukkomi.user_id == current_user.id %>
+        <div class="dropdown post-menu">
+          <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <i class="fas fa-ellipsis-v"></i>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li class="post-edit">
+              <i class="far fa-edit small-icon"></i>
+              <%= link_to "編集", edit_situation_tsukkomi_path(@situation, tsukkomi) %>
+            </li>
+            <li class="post-delete">
+              <i class="far fa-trash-alt small-icon"></i>
+              <%= link_to "削除", situation_tsukkomi_path(@situation, tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+            </li>
+          </ul>
+        </div>
         <% end %>
       <% end %>
-    <div class="">
-      <%= link_to tsukkomi.phrase, situation_tsukkomi_path(@situation, tsukkomi.id) %>
-    </div>
-
-    <!-- todo：お気に入り、コメント数はアイコン -->
-    <% if user_signed_in? %>
-      <% if tsukkomi.favorites.find_by(user_id: current_user.id).present? %>
-        <i class="far fa-grin-squint-tears fa-lg squint-tears"></i>  <%= tsukkomi.favorites.count %>
+      <div class="post-content text-center">
+        <%= link_to tsukkomi.phrase, situation_tsukkomi_path(@situation, tsukkomi.id) %>
+      </div>
+      <div class="post-icons">
+      <% if user_signed_in? %>
+        <% if tsukkomi.favorites.find_by(user_id: current_user.id).present? %>
+          <i class="far fa-grin-squint-tears fa-lg squint-tears"></i>  <%= tsukkomi.favorites.count %>
+        <% else %>
+          <i class="far fa-grin-squint-tears fa-lg"></i>  <%= tsukkomi.favorites.count %>
+        <% end %>
       <% else %>
         <i class="far fa-grin-squint-tears fa-lg"></i>  <%= tsukkomi.favorites.count %>
       <% end %>
-    <% else %>
-      <i class="far fa-grin-squint-tears fa-lg"></i>  <%= tsukkomi.favorites.count %>
+      <i class="far fa-comment-dots fa-lg"></i>  <%= tsukkomi.comments.count %>
+      </div>
+    </div>
     <% end %>
-    <i class="far fa-comment-dots fa-lg"></i>  <%= tsukkomi.comments.count %>
-    <br>
-    <!-- デザイン調整時、以下消してよし -->
-    <br>
-    <!-- ここまで -->
-  <% end %>
+  </div>
+  <%= paginate @situations %>
 </div>
-<%= paginate @situations %>
