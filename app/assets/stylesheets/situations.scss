@@ -70,6 +70,10 @@ li {
   transform: rotate(45deg);
 }
 
+.alert{
+  margin-bottom: 0px;
+}
+
 // ここまでheader
 
 
@@ -80,6 +84,7 @@ li {
   background-image: url("circle-blues.png");
   height: 500px;
   background-size: cover;
+  margin-bottom: 50px;
   // display: flex;
   // justify-content: center;
   // align-items: center;
@@ -96,9 +101,30 @@ li {
   font-size: 2.5rem;
 }
 
+.top-wrapper-center{
+  background-image: url("circle-blues.png");
+  height: 200px;
+  background-size: cover;
+  margin-bottom: 50px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  position: relative;
+}
+
+.top-content-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  color: #f8f9fa;
+  font-size: 2rem;
+}
+
 .top-button{
   position: absolute;
-  top: 65%;
+  top: 75%;
   left: 50%;
   -webkit-transform : translate(-50%,-50%);
   transform : translate(-50%,-50%);
@@ -118,7 +144,7 @@ li {
   background-color: #ff8e3c;
   border-radius: 6px;
   border: solid 1px #ff8e3c;
-  padding: 10px 20px;
+  padding: 8px 16px;
 }
 
 .main-post{
@@ -157,6 +183,33 @@ li {
 
 .post-icons{
   text-align: right;
+}
+
+.new-situation{
+  padding: 0px 200px;
+}
+
+.new-situation-content p{
+  text-align: left;
+}
+
+.submit-form{
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.submit-form input[type="text"] {
+  width: 400px;
+  height: 35px;
+  padding: 20px 15px;
+}
+
+.submit-button{
+  margin-bottom: 80px;
+}
+
+.hint{
+  color:#f25f4c;
 }
 
 
