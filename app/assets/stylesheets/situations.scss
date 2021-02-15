@@ -39,20 +39,28 @@ li {
   float: left;
   font-size: 1.5rem;
   padding: 20px 30px;
+  display: block;
   // font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 .header_right{
   float: right;
-  display: block;
 }
 
 .header_right li{
   float: left;
-  padding: 27px 10px;
   font-size: 1rem;
 }
 
+.header_right a{
+  padding:27px 10px;
+  display: block;
+}
+
+.header_right li:hover{
+  background-color: #f9bc60;
+  transition: 0.2s ;
+}
 
 .header_right ul{
   text-align: right;
@@ -66,6 +74,11 @@ li {
 
 
 // ここからmain
+
+// トップ部分
+.top-wrapper{
+
+}
 
 .main-post{
   padding: 15px 25px;
