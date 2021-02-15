@@ -27,7 +27,7 @@ class SituationsController < ApplicationController
 
   def destroy
     @situation.destroy
-    redirect_to situations_path, notice: "シチュエーションを削除しました。"
+    redirect_to situations_path, alert: "シチュエーションを削除しました。"
   end
 
   def thousand_fungo

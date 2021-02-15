@@ -39,7 +39,7 @@ class TsukkomisController < ApplicationController
 
   def destroy
     @tsukkomi.destroy
-    redirect_to situation_path(@situation), notice: "ツッコミを削除しました。"
+    redirect_to situation_path(@situation), alert: "ツッコミを削除しました。"
   end
 
   private
