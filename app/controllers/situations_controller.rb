@@ -5,7 +5,7 @@ class SituationsController < ApplicationController
   before_action :set_search, only:[:show, :search]
 
   def index
-    @situations = Situation.all.page(params[:page]).per(10)
+    @situations = Situation.all.sort_created_at.page(params[:page]).per(10)
   end
 
   def new
