@@ -148,11 +148,13 @@ li {
 
 .main-post{
   padding: 15px 25px;
-  margin-bottom: 10px;
-  border: solid 1px #a79c8e;
+  margin-bottom: 20px;
+  border: solid 1px #e3dede;
   border-radius: 10px;
   // width: 60%;
   // margin: 0 auto;
+  background-color: #FFFFFF;
+  box-shadow: 2px 2px 4px #a3a1a1;
 }
 
 .post-menu{
@@ -353,19 +355,59 @@ li {
 //   border: solid 1px #f9bc60;
 // }
 
-
 .new-tsukkomi-content{
   margin-top: 60px;
 }
+
+.profile-wrapper{
+  height: 280px;
+  width: 70%;
+  margin: 40px auto;
+  padding: 50px;
+  border: solid 1px #e3dede;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 2px 2px 4px #a3a1a1;
+}
+
+.big-icon-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.profile-image{
+  float: left;
+}
+
+.profile-text{
+  float: left;
+  padding-left: 40px;
+  color: #52616a;
+}
+
+.profile-username{
+  font-size: 2rem;
+}
+
+.profile-message{
+  float: left;
+  // background-color: #f25042;
+}
+
+.profile-edit{
+  float:right;
+}
+
+
+// ここまでmain
 
 .pagination {
   justify-content: center;
   margin-top: 15px;
   margin-bottom: 50px;
 }
-
-// ここまでmain
-
 
 // ここからfooter
 
@@ -405,13 +447,6 @@ footer {
 
 .fa-user{
   color: #a3a1a1;
-}
-
-.big-icon-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 100px;
-  object-fit: cover;
 }
 
 .small-icon-image{
