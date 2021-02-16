@@ -37,7 +37,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      flash.now[:notice] = 'コメントが削除されました。'
+      flash.now[:notice] = 'コメントを削除しました。'
       format.js { render :index }
     end
   end
