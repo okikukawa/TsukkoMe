@@ -22,8 +22,8 @@ RSpec.describe 'シチュエーション機能' ,type: :system do
         fill_in 'パスワード', with: 'password'
         click_button 'ログイン'
         visit new_situation_path
-        fill_in 'タイトル', with: 'new_situation1'
-        click_button '登録する'
+        fill_in 'situation_title', with: 'new_situation1'
+        click_button '投稿する！'
         expect(page).to have_content 'new_situation1'
       end
     end
@@ -47,6 +47,7 @@ RSpec.describe 'シチュエーション機能' ,type: :system do
         click_button 'ログイン'
         situation = Situation.find_by(title: "シチュエーションのタイトル1")
         visit situation_path(situation)
+        click_on 'dropdownMenu1'
         page.accept_confirm do
           click_link '削除', href: situation_path(situation)
         end
