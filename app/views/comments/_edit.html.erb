@@ -1,6 +1,6 @@
 <%= form_with(model: [situation, tsukkomi, comment], url: situation_tsukkomi_comment_path(tsukkomi.situation_id, tsukkomi, comment), method: :patch) do |form| %>
   <div class="field">
-    <%= form.text_area :content %>
+    <%= form.text_area :content, id: "comment-edit-field" %>
   </div>
   <div class="actions">
     <%= form.submit "更新" %>
