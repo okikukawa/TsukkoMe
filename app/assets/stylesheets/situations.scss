@@ -182,6 +182,11 @@ li {
   text-align: right;
 }
 
+.post-icons a{
+  text-decoration: none;
+  color: #333030;
+}
+
 .new-situation{
   padding: 0px 200px;
   margin-top: 50px;
@@ -279,6 +284,12 @@ li {
   padding: 0px 6px;
   border: solid 1px #8b8687;
 }
+
+.tsukkomi-detail-content{
+  padding-top: 60px;
+  font-size: 1.25rem;
+}
+
 
 .pagination {
   justify-content: center;
