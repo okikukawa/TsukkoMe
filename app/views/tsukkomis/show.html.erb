@@ -54,11 +54,11 @@
     <div class="post-icons">
     <% if user_signed_in? %>
       <% if @tsukkomi.favorites.find_by(user_id: current_user.id).present? %>
-        <%= link_to favorite_path(@favorite), method: :delete do %>
+        <%= link_to favorite_path(@favorite), method: :delete, id: "favorite-icon" do %>
           <i class="far fa-grin-squint-tears fa-lg squint-tears"></i>  <%= @tsukkomi.favorites.count %>
         <% end %>
       <% else %>
-        <%= link_to favorites_path(tsukkomi_id: @tsukkomi.id), method: :create do %>
+        <%= link_to favorites_path(tsukkomi_id: @tsukkomi.id), method: :create, id: "favorite-icon" do %>
           <i class="far fa-grin-squint-tears fa-lg"></i>  <%= @tsukkomi.favorites.count %>
         <% end %>
       <% end %>
