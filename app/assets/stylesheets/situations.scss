@@ -249,9 +249,23 @@ li {
   border: solid 1px #f9bc60;
 }
 
+.search-wrapper{
+  height: 50px;
+  position: relative;
+}
+
+.situation-detail-content{
+  float: left;
+  padding-left: 30px;
+  font-size: 2rem;
+}
+
 .search-form{
-  text-align: right;
+  float: right;
   padding-right: 30px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 .search-form a{
