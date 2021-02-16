@@ -16,7 +16,7 @@
       <%= link_to image_tag("profile_icon.png", class: "small-icon-image"), user_path(@situation.user) %>
     <% end %>
     <%= link_to @situation.user.name, user_path(@situation.user) %>
-    <%= @situation.created_at.strftime("%Y年%-m月%-d日") %>
+    <%= @situation.created_at.strftime("%Y/%-m/%-d %-H:%M") %>
     <% if user_signed_in? %>
       <% if @situation.user_id == current_user.id %>
         <div class="dropdown post-menu">
@@ -51,11 +51,16 @@
     <%= link_to "このシチュエーションにツッコむ！", new_situation_tsukkomi_path(@situation.id), class:"btn btn-warning" %>
   </div>
 
-  <div class="search-form">
-    <%= search_form_for @search, url: search_situation_path(@situation) do |f| %>
-      <%= f.search_field :phrase_cont, placeholder: "ツッコミをさがす" %>
-      <%= f.submit '検索' %>
-    <% end %>
+  <div class="search-wrapper">
+    <div class="situation-detail-content">
+      みんなのツッコミ
+    </div>
+    <div class="search-form">
+      <%= search_form_for @search, url: search_situation_path(@situation) do |f| %>
+        <%= f.search_field :phrase_cont, placeholder: "ツッコミをさがす" %>
+        <%= f.submit '検索' %>
+      <% end %>
+    </div>
   </div>
 
   <div class="tsukkomis-post">
@@ -67,7 +72,7 @@
         <%= link_to image_tag("profile_icon.png", class: "small-icon-image"), user_path(tsukkomi.user) %>
       <% end %>
       <%= link_to tsukkomi.user.name, user_path(tsukkomi.user) %>
-      <%= tsukkomi.created_at.strftime("%Y年%-m月%-d日") %>
+      <%= tsukkomi.created_at.strftime("%Y/%-m/%-d %-H:%M") %>
       <% if user_signed_in? %>
         <% if tsukkomi.user_id == current_user.id %>
         <div class="dropdown post-menu">

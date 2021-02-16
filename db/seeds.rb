@@ -13,15 +13,15 @@
   profile: "よろしくおねがいします。"
 )
 
-@situation = @user.situations.create!(
-  title: "このシチュエーションにツッコミが紐づく"
-)
-
 15.times do |n|
   @user.situations.create!(
     title: "シチュエーション#{n + 1}"
   )
 end
+
+@situation = @user.situations.create!(
+  title: "このシチュエーションにツッコミが紐づく"
+)
 
 15.times do |n|
   @situation.tsukkomis.create!(
