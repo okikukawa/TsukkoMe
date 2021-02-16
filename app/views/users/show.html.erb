@@ -7,7 +7,11 @@
 <% else %>
   <h2>ユーザー情報</h2>
 <% end %>
-<p><%= image_tag @user.image.url, class:"icon_image" if @user.image.url %></p>
+<% if @user.image.url %>
+  <p><%= image_tag @user.image.url, class:"big-icon-image" %></p>
+<% else %>
+  <%= image_tag("profile_icon.png", class: "big-icon-image") %>
+<% end %>
 <p>名前 : <%= @user.name %></p>
 <p>メールアドレス : <%= @user.email %></p>
 <p>プロフィール : <%= @user.profile %></p>
@@ -16,19 +20,48 @@
     <%= link_to "編集", edit_user_registration_path(current_user) %>
   <% end %>
 <% end %>
+
 <br>
 <br>
 <h3>投稿したツッコミ</h3>
-<% @tsukkomis.each do|tsukkomi| %>
+<div>
+  <% @tsukkomis.each do|tsukkomi| %>
+  <%= link_to tsukkomi.user.name, user_path(tsukkomi.user) %>
+  <%= tsukkomi.created_at.strftime("%Y年%-m月%-d日") %>
+  <% if user_signed_in? %>
+    <% if tsukkomi.user_id == current_user.id %>
+      <%= link_to "編集", edit_situation_tsukkomi_path(tsukkomi.situation, tsukkomi) %>
+      <%= link_to "削除", situation_tsukkomi_path(tsukkomi.situation, tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+    <% end %>
+  <% end %>
+  <br>
   <%= link_to tsukkomi.phrase, situation_tsukkomi_path(tsukkomi.situation_id, tsukkomi.id) %><br>
-  <label>お気に入り数：<%= tsukkomi.favorites.count %></label><br>
+  お気に入り数：<%= tsukkomi.favorites.count %>
+  コメント数：<%= tsukkomi.comments.count %>
+  <br>
+  <br>
 <% end %>
+</div>
+
 <br>
 <%= paginate @tsukkomis %>
 <br>
+
 <h3>お気に入り一覧</h3>
 <% @favorites.each do|fav| %>
+  <%= link_to fav.tsukkomi.user.name, user_path(fav.user) %>
+  <%= fav.tsukkomi.created_at.strftime("%Y年%-m月%-d日") %>
+  <% if user_signed_in? %>
+    <% if fav.tsukkomi.user_id == current_user.id %>
+      <%= link_to "編集", edit_situation_tsukkomi_path(fav.tsukkomi.situation, fav.tsukkomi) %>
+      <%= link_to "削除", situation_tsukkomi_path(fav.tsukkomi.situation, fav.tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+    <% end %>
+  <% end %>
+  <br>
   <%= link_to fav.tsukkomi.phrase, situation_tsukkomi_path(fav.tsukkomi.situation_id, fav.tsukkomi.id) %><br>
-  <label>お気に入り数：<%= fav.tsukkomi.favorites.count %></label><br>
+  お気に入り数：<%= fav.tsukkomi.favorites.count %>
+  コメント数：<%= fav.tsukkomi.comments.count %>
+  <br>
+  <br>
 <% end %>
 <%= paginate @favorites %>

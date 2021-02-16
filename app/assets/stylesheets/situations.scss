@@ -1,3 +1,330 @@
 // Place all the styles related to the Situations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 80px;
+  // box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background-color: #f8f9fa;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.text-center{
+  text-align: center;
+}
+
+// ここからheader
+
+header {
+  background-color: #ff8906;
+  height: 78px
+}
+
+li {
+  list-style: none;
+}
+
+.header a{
+  color: #f8f9fa;
+  text-decoration: none;
+}
+
+.header_logo a{
+  float: left;
+  font-size: 1.5rem;
+  padding: 20px 30px;
+  display: block;
+  // font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.header_right{
+  float: right;
+}
+
+.header_right li{
+  float: left;
+  font-size: 1rem;
+}
+
+.header_right a{
+  padding:27px 10px;
+  display: block;
+}
+
+.header_right li:hover{
+  background-color: #f9bc60;
+  transition: 0.2s ;
+}
+
+.header_right ul{
+  text-align: right;
+}
+
+.fa-hand-paper{
+  transform: rotate(45deg);
+}
+
+.alert{
+  margin-bottom: 0px;
+}
+
+// ここまでheader
+
+
+// ここからmain
+
+// トップ部分
+.top-wrapper{
+  background-image: url("circle-blues.png");
+  height: 500px;
+  background-size: cover;
+  margin-bottom: 50px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  position: relative;
+}
+
+.top-content{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  color: #f8f9fa;
+  font-size: 2.5rem;
+}
+
+.top-wrapper-center{
+  background-image: url("circle-blues.png");
+  height: 200px;
+  background-size: cover;
+  margin-bottom: 30px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  position: relative;
+}
+
+.top-content-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  color: #f8f9fa;
+  font-size: 2rem;
+}
+
+.top-button{
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+}
+
+.top-button a:hover{
+  background-color: #f9bc60;
+  color: #FFFFFF;
+  border: solid 1px #f9bc60;
+}
+
+.btn-warning{
+  background-color: #ff8e3c;
+  border-radius: 20px;
+  border: solid 1px #ff8e3c;
+  padding: 16px 32px;
+  color: #f8f9fa;
+}
+
+.main-post{
+  padding: 15px 25px;
+  margin: 10px;
+  border: solid 1px #a79c8e;
+  border-radius: 10px;
+}
+
+.post-menu{
+  float:right;
+}
+
+.dropdown-menu a{
+  text-decoration: none;
+  color: #333030;
+}
+
+.post-delete {
+  color: red;
+}
+
+.post-delete  a{
+  text-decoration: none;
+  color: red;
+}
+
+.small-icon{
+  padding-right: 10px;
+  padding-left: 14px;
+}
+
+.fa-trash-alt{
+  padding-right: 14px;
+}
+
+.post-icons{
+  text-align: right;
+}
+
+.new-situation{
+  padding: 0px 200px;
+  margin-top: 50px;
+}
+.new-situation-content{
+  margin-top: 20px;
+}
+
+.new-situation-content p{
+  text-align: left;
+}
+
+.submit-form{
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.submit-form input[type="text"] {
+  width: 400px;
+  height: 35px;
+  padding: 20px 15px;
+}
+
+.submit-button{
+  margin-bottom: 80px;
+}
+
+// シチュエーション新規投稿、投稿ボタンのhover時のcss
+// .submit-button a:hover{
+//   background-color: #f9bc60;
+//   color: #FFFFFF;
+//   border: solid 1px #f9bc60;
+// }
+
+.hint{
+  color:#f25f4c;
+}
+
+// シチュエーション/showの戻るボタンここから
+// .situation-list-button a:hover{
+//   background-color: #e3dede;
+//   color: #FFFFFF;
+//   border: solid 1px #e3dede;
+// }
+//
+// .btn-secondary{
+//   background-color: #a3a1a1;
+//   border-radius: 6px;
+//   border: solid 1px #a3a1a1;
+//   padding: 8px 16px;
+//   color: #f0f5f9;
+// }
+// ここまで
+
+
+
+.new-tsukkomi-button{
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.new-tsukkomi-button a:hover{
+  background-color: #f9bc60;
+  color: #FFFFFF;
+  border: solid 1px #f9bc60;
+}
+
+.search-form{
+  text-align: right;
+  padding-right: 30px;
+}
+
+.search-form a{
+  text-decoration: none;
+  color: #8b8687;
+}
+
+.search-form input[type="search"] {
+  width: 240px;
+  // height: 35px;
+  padding: 0px 6px;
+  border: solid 1px #8b8687;
+}
+
+.pagination {
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+// ここまでmain
+
+
+// ここからfooter
+
+footer {
+  width: 100%;
+  height: 80px;
+  background-image: url("circle-blues.png");
+  background-size: cover;
+  // background-color: #00214d;
+  padding: 24px 30px;
+  margin: auto;
+  color: #f8f9fa;
+  font-size: 0.75rem;
+  position: absolute;
+  bottom: 0;
+}
+
+
+.footer_logo a{
+  font-size: 1.25rem;
+  // font-family: 'M PLUS Rounded 1c', sans-serif;
+  text-decoration: none;
+  color: #f8f9fa;
+  padding: 0px 30px;
+}
+
+// ここまでfooter
+
+.logo-image{
+  width:20px;
+  height:20px;
+}
+
+.squint-tears{
+  color: #f25042;
+}
+
+.fa-user{
+  color: #a3a1a1;
+}
+
+.big-icon-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.small-icon-image{
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  object-fit: cover;
+}

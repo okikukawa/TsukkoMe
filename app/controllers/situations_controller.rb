@@ -27,17 +27,17 @@ class SituationsController < ApplicationController
 
   def destroy
     @situation.destroy
-    redirect_to situations_path, notice: "シチュエーションを削除しました。"
+    redirect_to situations_path, alert: "シチュエーションを削除しました。"
   end
 
   def thousand_fungo
     @situation = Situation.order("RANDOM()").first
     @tsukkomis = @situation.tsukkomis.limit(10)
+    flash.now[:notice] = "最新のツッコミ#{@tsukkomis.count}件を表示しています"
   end
 
   def search
     @results = @search.result
-    # binding.irb
   end
 
   private
