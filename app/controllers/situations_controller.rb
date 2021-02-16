@@ -37,7 +37,7 @@ class SituationsController < ApplicationController
   end
 
   def search
-    @results = @search.result
+    @results = @search.result.page(params[:page]).per(10)
   end
 
   private
