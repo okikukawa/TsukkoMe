@@ -411,7 +411,6 @@ li {
   display: block;
 }
 
-
 .changetab-mypage{
   border: solid 1px #e3dede;
   padding: 10px 0px;
@@ -432,8 +431,41 @@ li {
   background-color: #e3dede;
 }
 
+.not-selected-tab:hover{
+  background-color: #a79c8e;
+  opacity: 0.8;
+  transition: 0.3s;
+}
 
+.edit-profile-image{
+  background-color: white;
+  text-align: center;
+  padding-top: 50px;
+}
 
+.edit-profile-form{
+  background-color: white;
+  padding: 20px;
+}
+
+.field{
+  padding: 15px;
+}
+
+.update-btn{
+  padding: 10px 15px ;
+  text-align: right;
+}
+
+.back-btn {
+  text-align: right;
+  padding-top: 20px;
+}
+
+.back-btn a{
+  text-decoration: none;
+  color: #52616a;
+}
 
 .pagination {
   justify-content: center;
