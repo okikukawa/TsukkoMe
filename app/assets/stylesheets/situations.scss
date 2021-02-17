@@ -400,14 +400,50 @@ li {
   float:right;
 }
 
+.changetab {
+  text-align: center;
+  margin: 0 auto;
+}
 
-// ここまでmain
+.changetab a{
+  color: #f8f9fa;
+  text-decoration: none;
+  display: block;
+}
+
+
+.changetab-mypage{
+  border: solid 1px #e3dede;
+  padding: 10px 0px;
+  border-top-left-radius: 5px;
+}
+
+.changetab-favorite{
+  border: solid 1px #e3dede;
+  padding: 10px 0px;
+  border-top-right-radius: 5px;
+}
+
+.selected-tab{
+  background-color: #F6B352;
+}
+
+.not-selected-tab{
+  background-color: #e3dede;
+}
+
+
+
 
 .pagination {
   justify-content: center;
   margin-top: 15px;
   margin-bottom: 50px;
 }
+
+// ここまでmain
+
+
 
 // ここからfooter
 
