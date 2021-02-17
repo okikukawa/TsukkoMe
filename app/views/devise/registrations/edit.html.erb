@@ -12,7 +12,9 @@
     <div class="row">
       <div class="edit-profile-form col-8 offset-2">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-          <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="col-8 offset-2">
+            <%= render "devise/shared/error_messages", resource: resource %>
+          </div>
 
           <div class="field text-center">
             <%= f.file_field :image, autofocus: true %>
@@ -53,14 +55,14 @@
 
             <div class="field col-8 offset-2">
               <!-- <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br /> -->
-              <%= f.label :current_password %><br />
+              <%= f.label :current_password %>
               <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", placeholder: "パスワードを入力" %>
             </div>
 
-            <div class="actions update-btn col-8 offset-2">
+            <div class="actions update-btn text-center col-8 offset-2">
               <%= f.submit t('.update'), class: "btn btn-outline-primary" %>
             </div>
-            <div class="back-btn col-8 offset-2">
+            <div class="back-btn text-center col-8 offset-2">
               <%= link_to "更新せずにマイページに戻る", :back %>
             </div>
           </div>

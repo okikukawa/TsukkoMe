@@ -134,7 +134,7 @@ li {
 
 .top-button a:hover{
   background-color: #f9bc60;
-  color: #FFFFFF;
+  color: white;
   border: solid 1px #f9bc60;
 }
 
@@ -153,7 +153,7 @@ li {
   border-radius: 10px;
   // width: 60%;
   // margin: 0 auto;
-  background-color: #FFFFFF;
+  background-color: white;
   box-shadow: 2px 2px 4px #a3a1a1;
 }
 
@@ -223,7 +223,7 @@ li {
 // シチュエーション新規投稿、投稿ボタンのhover時のcss
 // .submit-button a:hover{
 //   background-color: #f9bc60;
-//   color: #FFFFFF;
+//   color: white;
 //   border: solid 1px #f9bc60;
 // }
 
@@ -234,7 +234,7 @@ li {
 // シチュエーション/showの戻るボタンここから
 // .situation-list-button a:hover{
 //   background-color: #e3dede;
-//   color: #FFFFFF;
+//   color: white;
 //   border: solid 1px #e3dede;
 // }
 //
@@ -256,7 +256,7 @@ li {
 
 .new-tsukkomi-button a:hover{
   background-color: #f9bc60;
-  color: #FFFFFF;
+  color: white;
   border: solid 1px #f9bc60;
 }
 
@@ -351,7 +351,7 @@ li {
 
 // .comment-button a:hover{
 //   background-color: #f9bc60;
-//   color: #FFFFFF;
+//   color: white;
 //   border: solid 1px #f9bc60;
 // }
 
@@ -366,7 +366,7 @@ li {
   padding: 50px;
   border: solid 1px #e3dede;
   border-radius: 10px;
-  background-color: #FFFFFF;
+  background-color: white;
   box-shadow: 2px 2px 4px #a3a1a1;
 }
 
@@ -454,17 +454,43 @@ li {
 
 .update-btn{
   padding: 10px 15px ;
-  text-align: right;
 }
 
 .back-btn {
-  text-align: right;
   padding-top: 20px;
 }
 
 .back-btn a{
   text-decoration: none;
   color: #52616a;
+}
+
+.signup-title{
+  text-align: center;
+  font-size: 2rem;
+  background-color: white;
+  padding: 20px;
+  color: #52616a;
+}
+
+.signup-btn{
+  text-align: center;
+}
+
+.guide-to-login{
+  background-color: whiteF;
+  padding: 30px;
+}
+
+.btn-outline-warning{
+  border-radius: 10px;
+  background-color: #ffc107;
+  color: white;
+}
+
+.btn-outline-warning:hover{
+  color: white;
+  opacity: 0.7;
 }
 
 .pagination {
@@ -522,4 +548,9 @@ footer {
   height: 50px;
   border-radius: 100px;
   object-fit: cover;
+}
+
+.error-messages{
+  color: #E71D36;
+  font-weight: bold;
 }
