@@ -110,9 +110,6 @@ li {
   height: 200px;
   background-size: cover;
   margin-bottom: 30px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   position: relative;
 }
 
@@ -490,6 +487,75 @@ li {
   background-color: #ff8906;
   color: white;
 }
+
+.top-wrapper-center-fungo{
+  background-image: url("wood.jpeg");
+  // background-color: #09015f;
+  height: 200px;
+  background-size: cover;
+  margin-bottom: 30px;
+  position: relative;
+  background-color:rgba(255,255,255,0.5);
+  background-blend-mode:lighten;
+  color: #534847;
+}
+
+.top-wrapper-center-fungo p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  font-size: 3rem;
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+}
+
+.main-fungo{
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+}
+
+.message-fungo{
+  font-size: 2rem;
+  padding-bottom: 30px;
+}
+
+.situation-content-fungo a{
+  color: #534847;
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: block;
+}
+
+.situation-content-fungo a:hover{
+  color: #E53A40;
+  transition: 0.3s;
+}
+
+.next-btn-fungo {
+  text-align: right;
+}
+
+.next-btn-fungo a{
+  text-align: right;
+  text-decoration: none;
+}
+
+.tsukkomilist-fungo{
+  padding: 50px 0px;
+}
+
+.message-tsukkomilist-fungo{
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+  font-size: 1.5rem;
+}
+
+.notice-tsukkomilist-fungo{
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+}
+
 
 .pagination {
   justify-content: center;
