@@ -83,7 +83,7 @@ li {
 
 // トップ部分
 .top-wrapper{
-  // background-image: url("circle-blues.png");
+  background-image: url("circle-blues.png");
   background-color: #09015f;
   height: 500px;
   background-size: cover;
@@ -105,7 +105,7 @@ li {
 }
 
 .top-wrapper-center{
-  // background-image: url("circle-blues.png");
+  background-image: url("circle-blues.png");
   background-color: #09015f;
   height: 200px;
   background-size: cover;
@@ -490,23 +490,31 @@ li {
 
 .top-wrapper-center-fungo{
   background-image: url("wood.jpeg");
-  // background-color: #09015f;
-  height: 200px;
+  height: 250px;
   background-size: cover;
   margin-bottom: 30px;
   position: relative;
-  background-color:rgba(255,255,255,0.5);
+  background-color:rgba(220,220,220,0.7);
   background-blend-mode:lighten;
   color: #534847;
 }
 
-.top-wrapper-center-fungo p{
+.top-title-fungo{
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   -webkit-transform : translate(-50%,-50%);
   transform : translate(-50%,-50%);
   font-size: 3rem;
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+}
+
+.top-message-fungo{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
   font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
 }
 
@@ -572,9 +580,9 @@ li {
 footer {
   width: 100%;
   height: 80px;
-  // background-image: url("circle-blues.png");
-  background-size: cover;
+  background-image: url("circle-blues.png");
   background-color: #09015f;
+  background-size: cover;
   padding: 24px 30px;
   margin: auto;
   color: #f8f9fa;
