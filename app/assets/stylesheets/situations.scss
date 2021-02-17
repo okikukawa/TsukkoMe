@@ -247,17 +247,14 @@ li {
 }
 
 .situation-detail-content{
-  float: left;
-  padding-left: 30px;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .search-form{
-  float: right;
-  padding-right: 30px;
+  margin-top: 5px;
+  margin-right: 20px;
   position: absolute;
   right: 0;
-  bottom: 0;
 }
 
 .search-form a{
@@ -270,6 +267,10 @@ li {
   // height: 35px;
   padding: 0px 6px;
   border: solid 1px #8b8687;
+}
+
+.search-clear{
+  padding:0px;
 }
 
 .tsukkomi-detail-content{

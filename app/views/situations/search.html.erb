@@ -54,16 +54,21 @@
     <%= link_to "このシチュエーションにツッコむ！", new_situation_tsukkomi_path(@situation.id), class:"btn btn-warning" %>
   </div>
 
+  <div class="search-clear col-8 offset-2 text-right">
+    <%= link_to "検索ワードをクリア", situation_path(@situation) %>
+  </div>
+
   <div class="search-wrapper">
-    <div class="situation-detail-content">
-      みんなのツッコミ
-    </div>
-    <div class="search-form">
-      <%= link_to "検索ワードをクリア", situation_path(@situation) %>
-      <%= search_form_for @search, url: search_situation_path(@situation) do |f| %>
-        <%= f.search_field :phrase_cont, placeholder: "ツッコミをさがす" %>
-        <%= f.submit '検索' %>
-      <% end %>
+    <div class="row">
+      <div class="situation-detail-content col-4 offset-2">
+        みんなのツッコミ
+      </div>
+      <div class="search-form col-5 offset-1">
+        <%= search_form_for @search, url: search_situation_path(@situation) do |f| %>
+          <%= f.search_field :phrase_cont, placeholder: "ツッコミをさがす" %>
+          <%= f.submit '検索' %>
+        <% end %>
+      </div>
     </div>
   </div>
 
