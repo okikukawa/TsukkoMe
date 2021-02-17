@@ -58,8 +58,10 @@ li {
 }
 
 .header_right li:hover{
-  background-color: #f9bc60;
-  transition: 0.2s ;
+  // background-color: #f9bc60;
+  background-color: #ffc107;
+  // background-color: #09015f;
+  transition: 0.5s ;
 }
 
 .header_right ul{
@@ -81,7 +83,7 @@ li {
 
 // トップ部分
 .top-wrapper{
-  // background-image: url("circle-blues.png");
+  background-image: url("circle-blues.png");
   background-color: #09015f;
   height: 500px;
   background-size: cover;
@@ -103,14 +105,11 @@ li {
 }
 
 .top-wrapper-center{
-  // background-image: url("circle-blues.png");
+  background-image: url("circle-blues.png");
   background-color: #09015f;
   height: 200px;
   background-size: cover;
   margin-bottom: 30px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   position: relative;
 }
 
@@ -134,25 +133,34 @@ li {
 
 .top-button a:hover{
   background-color: #f9bc60;
-  color: #FFFFFF;
+  color: white;
   border: solid 1px #f9bc60;
 }
 
 .btn-warning{
-  background-color: #ff8e3c;
+  background-color: #ffc107;
   border-radius: 20px;
-  border: solid 1px #ff8e3c;
+  border: solid 1px #ffc107;
   padding: 16px 32px;
   color: #f8f9fa;
 }
 
+
+.btn-warning:hover{
+  background-color: #ff8906;
+  color: white;
+  border: solid 1px #ffc107;
+}
+
 .main-post{
   padding: 15px 25px;
-  margin-bottom: 10px;
-  border: solid 1px #a79c8e;
+  margin-bottom: 20px;
+  border: solid 1px #e3dede;
   border-radius: 10px;
   // width: 60%;
   // margin: 0 auto;
+  background-color: white;
+  box-shadow: 2px 2px 4px #a3a1a1;
 }
 
 .post-menu{
@@ -204,48 +212,23 @@ li {
 }
 
 .submit-form{
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
-.submit-form input[type="text"] {
-  width: 400px;
-  height: 35px;
-  padding: 20px 15px;
-}
+// .submit-form input[type="text"] {
+//   width: 400px;
+//   height: 35px;
+//   padding: 20px 15px;
+// }
 
 .submit-button{
   margin-bottom: 80px;
 }
 
-// シチュエーション新規投稿、投稿ボタンのhover時のcss
-// .submit-button a:hover{
-//   background-color: #f9bc60;
-//   color: #FFFFFF;
-//   border: solid 1px #f9bc60;
-// }
-
 .hint{
   color:#f25f4c;
 }
-
-// シチュエーション/showの戻るボタンここから
-// .situation-list-button a:hover{
-//   background-color: #e3dede;
-//   color: #FFFFFF;
-//   border: solid 1px #e3dede;
-// }
-//
-// .btn-secondary{
-//   background-color: #a3a1a1;
-//   border-radius: 6px;
-//   border: solid 1px #a3a1a1;
-//   padding: 8px 16px;
-//   color: #f0f5f9;
-// }
-// ここまで
-
-
 
 .new-tsukkomi-button{
   padding-top: 40px;
@@ -254,7 +237,7 @@ li {
 
 .new-tsukkomi-button a:hover{
   background-color: #f9bc60;
-  color: #FFFFFF;
+  color: white;
   border: solid 1px #f9bc60;
 }
 
@@ -264,17 +247,14 @@ li {
 }
 
 .situation-detail-content{
-  float: left;
-  padding-left: 30px;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .search-form{
-  float: right;
-  padding-right: 30px;
+  margin-top: 5px;
+  margin-right: 20px;
   position: absolute;
   right: 0;
-  bottom: 0;
 }
 
 .search-form a{
@@ -289,8 +269,13 @@ li {
   border: solid 1px #8b8687;
 }
 
+.search-clear{
+  padding:0px;
+}
+
 .tsukkomi-detail-content{
   padding-top: 60px;
+  padding-bottom: 20px;
   font-size: 1.25rem;
 }
 
@@ -311,14 +296,17 @@ li {
   width: 70% ;
   height: 150px;
   padding: 10px;
+  margin: 0 auto;
   border: solid 1px #a79c8e;
   border-radius: 10px;
+
 }
 
 .comment-edit-form textarea {
   width: 70% ;
   height: 80px;
   padding: 10px;
+  margin: 0 auto;
   border: solid 1px #a79c8e;
   border-radius: 10px;
 }
@@ -328,6 +316,8 @@ li {
   margin-bottom: 10px;
   border: solid 1px #a79c8e;
   border-radius: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 4px #a3a1a1;
 }
 
 .comment-content{
@@ -349,14 +339,236 @@ li {
 
 // .comment-button a:hover{
 //   background-color: #f9bc60;
-//   color: #FFFFFF;
+//   color: white;
 //   border: solid 1px #f9bc60;
 // }
-
 
 .new-tsukkomi-content{
   margin-top: 60px;
 }
+
+.profile-wrapper{
+  height: 280px;
+  width: 70%;
+  margin: 40px auto;
+  padding: 50px;
+  border: solid 1px #e3dede;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 4px #a3a1a1;
+}
+
+.big-icon-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.profile-image{
+  float: left;
+}
+
+.profile-text{
+  float: left;
+  padding-left: 40px;
+  color: #52616a;
+}
+
+.profile-username{
+  font-size: 2rem;
+}
+
+.profile-message{
+  float: left;
+  // background-color: #f25042;
+}
+
+.profile-edit{
+  float:right;
+}
+
+.changetab {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.changetab a{
+  color: #f8f9fa;
+  text-decoration: none;
+  display: block;
+}
+
+.changetab-mypage{
+  border: solid 1px #e3dede;
+  padding: 10px 0px;
+  border-top-left-radius: 5px;
+}
+
+.changetab-favorite{
+  border: solid 1px #e3dede;
+  padding: 10px 0px;
+  border-top-right-radius: 5px;
+}
+
+.selected-tab{
+  background-color: #ff8906;
+}
+
+.selected-tab:hover{
+}
+
+.not-selected-tab{
+  background-color: #e3dede;
+}
+
+.not-selected-tab:hover{
+  background-color: #a79c8e;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.edit-profile-image{
+  background-color: white;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.edit-profile-form{
+  background-color: white;
+  padding: 20px;
+}
+
+.field{
+  padding: 15px;
+}
+
+.update-btn{
+  padding: 10px 15px ;
+}
+
+.back-btn {
+  padding-top: 20px;
+}
+
+.back-btn a{
+  text-decoration: none;
+  color: #52616a;
+}
+
+.signup-title{
+  text-align: center;
+  font-size: 2rem;
+  background-color: white;
+  padding: 20px;
+  color: #52616a;
+}
+
+.signup-btn{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-password{
+  margin-bottom: 20px;
+}
+
+.login-btn{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.guide-to-login-or-signup{
+  padding: 30px;
+}
+
+.btn-outline-warning{
+  border-radius: 10px;
+  background-color: #ffc107;
+  color: white;
+}
+
+.btn-outline-warning:hover{
+  background-color: #ff8906;
+  color: white;
+}
+
+.top-wrapper-center-fungo{
+  background-image: url("wood.jpeg");
+  height: 250px;
+  background-size: cover;
+  margin-bottom: 30px;
+  position: relative;
+  background-color:rgba(220,220,220,0.7);
+  background-blend-mode:lighten;
+  color: #534847;
+}
+
+.top-title-fungo{
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  font-size: 3rem;
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+}
+
+.top-message-fungo{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+}
+
+.main-fungo{
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+}
+
+.message-fungo{
+  font-size: 2rem;
+  padding-bottom: 30px;
+}
+
+.situation-content-fungo a{
+  color: #534847;
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: block;
+}
+
+.situation-content-fungo a:hover{
+  color: #E53A40;
+  transition: 0.3s;
+}
+
+.next-btn-fungo {
+  text-align: right;
+}
+
+.next-btn-fungo a{
+  text-align: right;
+  text-decoration: none;
+}
+
+.tsukkomilist-fungo{
+  padding: 50px 0px;
+}
+
+.message-tsukkomilist-fungo{
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+  font-size: 1.5rem;
+}
+
+.notice-tsukkomilist-fungo{
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+}
+
 
 .pagination {
   justify-content: center;
@@ -367,14 +579,15 @@ li {
 // ここまでmain
 
 
+
 // ここからfooter
 
 footer {
   width: 100%;
   height: 80px;
-  // background-image: url("circle-blues.png");
-  background-size: cover;
+  background-image: url("circle-blues.png");
   background-color: #09015f;
+  background-size: cover;
   padding: 24px 30px;
   margin: auto;
   color: #f8f9fa;
@@ -407,16 +620,14 @@ footer {
   color: #a3a1a1;
 }
 
-.big-icon-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 100px;
-  object-fit: cover;
-}
-
 .small-icon-image{
   width: 50px;
   height: 50px;
   border-radius: 100px;
   object-fit: cover;
+}
+
+.error-messages{
+  color: #E71D36;
+  font-weight: bold;
 }

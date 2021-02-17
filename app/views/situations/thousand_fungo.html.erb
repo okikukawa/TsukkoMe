@@ -1,30 +1,81 @@
-<h2>千本ノック</h2>
-<h1>例えツッコみまくれ！！</h1>
-<h2>シチュエーション：<%= @situation.title %></h2>
+<div class="top-wrapper-center-fungo">
+  <p class="top-title-fungo text-center">千本ノック</p>
+  <div class="top-message-fungo text-center">
+    このページでは例えの練習ができます。次々と表示されるシチュエーションを例えてみましょう！
+  </div>
+</div>
 
-<%= link_to "次のツッコミへ >>", thousand_fungo_situations_path %>
-
-<% if @tsukkomis.present? %>
-  <h3>他の人のツッコミ</h3>
-  <p><%= notice %></p>
-  <% @tsukkomis.each do|tsukkomi| %>
-  <%= link_to tsukkomi.user.name, user_path(tsukkomi.user) %>
-  <%= tsukkomi.created_at.strftime("%Y/%-m/%-d %-H:%M") %>
-  <% if user_signed_in? %>
-    <% if tsukkomi.user_id == current_user.id %>
-      <%= link_to "削除", situation_tsukkomi_path(@situation, tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
-      <% end %>
-    <% end %>
-  <div class="">
-    <%= link_to tsukkomi.phrase, situation_tsukkomi_path(@situation, tsukkomi.id) %>
+<div class="container">
+  <div class="main-fungo">
+    <div class="message-fungo text-center">
+      例えツッコめ！！
+    </div>
+    <div class="row">
+      <div class="main-post text-center col-8 offset-2">
+        <div class="situation-content-fungo">
+          <%= link_to @situation.title, situation_path(@situation) %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="next-btn-fungo text-right col-8 offset-2">
+        <%= link_to "次のツッコミへ >>", thousand_fungo_situations_path %>
+      </div>
+    </div>
   </div>
 
-  <!-- todo：お気に入り、コメント数はアイコン -->
-  お気に入り数：<%= tsukkomi.favorites.count %>
-  コメント数：<%= tsukkomi.comments.count %>
-  <br>
-  <!-- デザイン調整時、以下消してよし -->
-  <br>
-  <!-- ここまで -->
-  <% end %>
-<% end %>
+  <div class="tsukkomilist-fungo">
+    <div class="message-tsukkomilist-fungo text-center">
+      他の人のツッコミ
+    </div>
+    <div class="notice-tsukkomilist-fungo text-center">
+      <%= notice %>
+    </div>
+    <% if @tsukkomis.present? %>
+      <% @tsukkomis.each do|tsukkomi| %>
+      <div class="row">
+        <div class="main-post col-8 offset-2">
+          <% if tsukkomi.user.image.present? %>
+            <%= link_to image_tag(tsukkomi.user.image.url, class:"small-icon-image"), user_path(tsukkomi.user) %>
+          <% else %>
+            <%= link_to image_tag("profile_icon.png", class: "small-icon-image"), user_path(tsukkomi.user) %>
+          <% end %>
+          <%= link_to tsukkomi.user.name, user_path(tsukkomi.user) %>
+          <%= tsukkomi.created_at.strftime("%Y/%-m/%-d %-H:%M") %>
+          <% if user_signed_in? %>
+            <% if tsukkomi.user_id == current_user.id %>
+              <div class="dropdown post-menu">
+                <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <i class="fas fa-ellipsis-v"></i>
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li class="post-delete">
+                    <i class="far fa-trash-alt small-icon"></i>
+                    <%= link_to "削除", situation_tsukkomi_path(@situation, tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+                  </li>
+                </ul>
+              </div>
+            <% end %>
+          <% end %>
+          <div class="post-content text-center">
+            <%= link_to tsukkomi.phrase, situation_tsukkomi_path(@situation, tsukkomi.id) %>
+          </div>
+          <div class="post-icons">
+            <% if user_signed_in? %>
+              <% if tsukkomi.favorites.find_by(user_id: current_user.id).present? %>
+                <i class="far fa-grin-squint-tears fa-lg squint-tears"></i>  <%= tsukkomi.favorites.count %>
+              <% else %>
+                <i class="far fa-grin-squint-tears fa-lg"></i>  <%= tsukkomi.favorites.count %>
+              <% end %>
+            <% else %>
+              <i class="far fa-grin-squint-tears fa-lg"></i>  <%= tsukkomi.favorites.count %>
+            <% end %>
+            <i class="far fa-comment-dots fa-lg"></i>  <%= tsukkomi.comments.count %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

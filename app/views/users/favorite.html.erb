@@ -29,28 +29,28 @@
   <div class="row">
     <div class="changetab col-8 offset-2">
       <div class="row">
-        <div class="changetab-mypage selected-tab col-6">
+        <div class="changetab-mypage not-selected-tab col-6">
           <%= link_to "投稿したツッコミ", user_path(@user) %>
         </div>
-        <div class="changetab-favorite not-selected-tab col-6">
+        <div class="changetab-favorite selected-tab col-6">
           <%= link_to "お気に入り", favorite_user_path(@user) %>
         </div>
       </div>
     </div>
   </div>
 
-  <% @tsukkomis.each do|tsukkomi| %>
+  <% @favorites.each do|fav| %>
     <div class="row">
       <div class="main-post col-8 offset-2">
-        <% if tsukkomi.user.image.present? %>
-          <%= link_to image_tag(tsukkomi.user.image.url, class:"small-icon-image"), user_path(tsukkomi.user) %>
+        <% if fav.tsukkomi.user.image.present? %>
+          <%= link_to image_tag(fav.tsukkomi.user.image.url, class:"small-icon-image"), user_path(fav.tsukkomi.user) %>
         <% else %>
-          <%= link_to image_tag("profile_icon.png", class: "small-icon-image"), user_path(tsukkomi.user) %>
+          <%= link_to image_tag("profile_icon.png", class: "small-icon-image"), user_path(fav.tsukkomi.user) %>
         <% end %>
-        <%= link_to tsukkomi.user.name, user_path(tsukkomi.user) %>
-        <%= tsukkomi.created_at.strftime("%Y/%-m/%-d %-H:%M") %>
+        <%= link_to fav.tsukkomi.user.name, user_path(fav.user) %>
+        <%= fav.tsukkomi.created_at.strftime("%Y/%-m/%-d %-H:%M") %>
         <% if user_signed_in? %>
-          <% if tsukkomi.user_id == current_user.id %>
+          <% if fav.tsukkomi.user_id == current_user.id %>
             <div class="dropdown post-menu">
               <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 <i class="fas fa-ellipsis-v"></i>
@@ -59,33 +59,33 @@
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li class="post-edit">
                   <i class="far fa-edit small-icon"></i>
-                  <%= link_to "編集", edit_situation_tsukkomi_path(tsukkomi.situation, tsukkomi) %>
+                  <%= link_to "編集", edit_situation_tsukkomi_path(fav.tsukkomi.situation, fav.tsukkomi) %>
                 </li>
                 <li class="post-delete">
                   <i class="far fa-trash-alt small-icon"></i>
-                  <%= link_to "削除", situation_tsukkomi_path(tsukkomi.situation, tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+                  <%= link_to "削除", situation_tsukkomi_path(fav.tsukkomi.situation, fav.tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
                 </li>
               </ul>
             </div>
           <% end %>
         <% end %>
         <div class="post-content text-center">
-          <%= link_to tsukkomi.phrase, situation_tsukkomi_path(tsukkomi.situation_id, tsukkomi.id) %><br>
+          <%= link_to fav.tsukkomi.phrase, situation_tsukkomi_path(fav.tsukkomi.situation_id, fav.tsukkomi.id) %><br>
         </div>
         <div class="post-icons">
           <% if user_signed_in? %>
-            <% if tsukkomi.favorites.find_by(user_id: current_user.id).present? %>
-              <i class="far fa-grin-squint-tears fa-lg squint-tears"></i>  <%= tsukkomi.favorites.count %>
+            <% if fav.tsukkomi.favorites.find_by(user_id: current_user.id).present? %>
+              <i class="far fa-grin-squint-tears fa-lg squint-tears"></i>  <%= fav.tsukkomi.favorites.count %>
             <% else %>
-              <i class="far fa-grin-squint-tears fa-lg"></i>  <%= tsukkomi.favorites.count %>
+              <i class="far fa-grin-squint-tears fa-lg"></i>  <%= fav.tsukkomi.favorites.count %>
             <% end %>
           <% else %>
-            <i class="far fa-grin-squint-tears fa-lg"></i>  <%= tsukkomi.favorites.count %>
+            <i class="far fa-grin-squint-tears fa-lg"></i>  <%= fav.tsukkomi.favorites.count %>
           <% end %>
-          <i class="far fa-comment-dots fa-lg"></i>  <%= tsukkomi.comments.count %>
+          <i class="far fa-comment-dots fa-lg"></i>  <%= fav.tsukkomi.comments.count %>
         </div>
       </div>
     </div>
   <% end %>
-  <%= paginate @tsukkomis %>
+  <%= paginate @favorites %>
 </div>
