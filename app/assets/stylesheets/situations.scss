@@ -215,49 +215,23 @@ li {
 }
 
 .submit-form{
-  margin-top: 40px;
-  margin-bottom: 20px;
-  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
-.submit-form input[type="text"] {
-  width: 400px;
-  height: 35px;
-  padding: 20px 15px;
-}
+// .submit-form input[type="text"] {
+//   width: 400px;
+//   height: 35px;
+//   padding: 20px 15px;
+// }
 
 .submit-button{
   margin-bottom: 80px;
 }
 
-// シチュエーション新規投稿、投稿ボタンのhover時のcss
-// .submit-button a:hover{
-//   background-color: #f9bc60;
-//   color: white;
-//   border: solid 1px #f9bc60;
-// }
-
 .hint{
   color:#f25f4c;
 }
-
-// シチュエーション/showの戻るボタンここから
-// .situation-list-button a:hover{
-//   background-color: #e3dede;
-//   color: white;
-//   border: solid 1px #e3dede;
-// }
-//
-// .btn-secondary{
-//   background-color: #a3a1a1;
-//   border-radius: 6px;
-//   border: solid 1px #a3a1a1;
-//   padding: 8px 16px;
-//   color: #f0f5f9;
-// }
-// ここまで
-
-
 
 .new-tsukkomi-button{
   padding-top: 40px;

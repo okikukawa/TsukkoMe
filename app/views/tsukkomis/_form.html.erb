@@ -1,4 +1,4 @@
-<div class="">
+<div>
   <%= form_with(model: [@situation, @tsukkomi], local: true) do |f| %>
     <% if @tsukkomi.errors.any? %>
       <div id="error_explanation">
@@ -9,15 +9,16 @@
         </ul>
       </div>
     <% end %>
-
-    <!-- <div class="new-tsukkomi-content">
+    <div class="new-tsukkomi-content">
       <p>このシチュエーションを何かに例えてみましょう！</p>
-    </div> -->
-    <div class="submit-form">
-      <%= f.text_field :phrase, placeholder: "ツッコミを入力" %>
+    </div>
+    <div class="row justify-content-center">
+      <div class="submit-form col-5">
+        <%= f.text_field :phrase, class: "form-control", placeholder: "ツッコミを入力" %>
+      </div>
     </div>
     <div class="submit-button">
-      <%= f.submit class: "btn btn-warning" %>
+      <%= f.submit class: "btn btn-outline-warning" %>
     </div>
   <% end %>
 </div>
