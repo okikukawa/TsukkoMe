@@ -1,6 +1,8 @@
 <%= form_with(model: [situation, tsukkomi, comment]) do |form| %>
-  <div class="field">
-    <%= form.text_area :content %>
+  <div class="row">
+    <div class="field col-12">
+      <%= form.text_area :content, class: "form-control", placeholder: "コメントを入力" %>
+    </div>
   </div>
   <div class="actions post-comment-button">
     <%= form.submit "コメントを投稿する", class: "btn btn-warning" %>

@@ -58,8 +58,10 @@ li {
 }
 
 .header_right li:hover{
-  background-color: #f9bc60;
-  transition: 0.2s ;
+  // background-color: #f9bc60;
+  background-color: #ffc107;
+  // background-color: #09015f;
+  transition: 0.5s ;
 }
 
 .header_right ul{
@@ -139,11 +141,18 @@ li {
 }
 
 .btn-warning{
-  background-color: #ff8e3c;
+  background-color: #ffc107;
   border-radius: 20px;
-  border: solid 1px #ff8e3c;
+  border: solid 1px #ffc107;
   padding: 16px 32px;
   color: #f8f9fa;
+}
+
+
+.btn-warning:hover{
+  background-color: #ff8906;
+  color: white;
+  border: solid 1px #ffc107;
 }
 
 .main-post{
@@ -208,6 +217,7 @@ li {
 .submit-form{
   margin-top: 40px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .submit-form input[type="text"] {
@@ -313,14 +323,17 @@ li {
   width: 70% ;
   height: 150px;
   padding: 10px;
+  margin: 0 auto;
   border: solid 1px #a79c8e;
   border-radius: 10px;
+
 }
 
 .comment-edit-form textarea {
   width: 70% ;
   height: 80px;
   padding: 10px;
+  margin: 0 auto;
   border: solid 1px #a79c8e;
   border-radius: 10px;
 }
@@ -330,6 +343,8 @@ li {
   margin-bottom: 10px;
   border: solid 1px #a79c8e;
   border-radius: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 4px #a3a1a1;
 }
 
 .comment-content{
@@ -498,8 +513,8 @@ li {
 }
 
 .btn-outline-warning:hover{
+  background-color: #ff8906;
   color: white;
-  opacity: 0.7;
 }
 
 .pagination {
