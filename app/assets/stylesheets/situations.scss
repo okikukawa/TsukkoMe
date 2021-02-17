@@ -274,6 +274,7 @@ li {
 
 .tsukkomi-detail-content{
   padding-top: 60px;
+  padding-bottom: 20px;
   font-size: 1.25rem;
 }
 
@@ -410,7 +411,10 @@ li {
 }
 
 .selected-tab{
-  background-color: #F6B352;
+  background-color: #ff8906;
+}
+
+.selected-tab:hover{
 }
 
 .not-selected-tab{
