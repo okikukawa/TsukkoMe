@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 RSpec.describe User, type: :model do
   describe '新規作成機能' do
     context 'バリデーションチェック' do
