@@ -9,13 +9,12 @@ RSpec.describe 'シチュエーション機能' ,type: :system do
     context '一覧画面に遷移した場合' do
       it '作成済みのシチュエーションが表示される' do
         visit situations_path
-        # save_and_open_page
         expect(page).to have_content 'シチュエーションのタイトル1'
       end
     end
   end
   describe '新規作成機能' do
-    context '新しくシチュエーションを作成した場合' do
+    context 'ログインしている場合' do
       it '作成したシチュエーションが表示される' do
         visit new_user_session_path
         fill_in 'Eメール', with: 'user1@test.com'
@@ -25,6 +24,12 @@ RSpec.describe 'シチュエーション機能' ,type: :system do
         fill_in 'situation_title', with: 'new_situation1'
         click_button '投稿する！'
         expect(page).to have_content 'new_situation1'
+      end
+    end
+    context 'ログインしていない場合' do
+      it 'ログイン画面に遷移する' do
+        visit new_user_session_path
+        expect(page).to have_content 'ログイン'
       end
     end
   end
