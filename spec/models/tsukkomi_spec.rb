@@ -6,7 +6,13 @@ RSpec.describe Situation, type: :model do
         tsukkomi = Tsukkomi.new(phrase: "")
         tsukkomi.valid?
         expect(tsukkomi.errors.messages[:phrase]).to include('を入力してください')
-        binding.irb
+      end
+    end
+    context 'phraseを50文字より多く登録した場合' do
+      it 'バリデーションに引っかかる' do
+        tsukkomi = Tsukkomi.new(phrase: "あ" * 51)
+        tsukkomi.valid?
+        expect(tsukkomi.errors.messages[:phrase]).to include('は50文字以内で入力してください')
       end
     end
   end

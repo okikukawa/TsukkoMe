@@ -7,11 +7,9 @@
     <%= form_with(model: @situation, local: true) do |f| %>
       <% if @situation.errors.any? %>
         <div id="error_explanation">
-          <ul>
           <% @situation.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
+            <p class="error-messages"><%= msg %></p>
           <% end %>
-          </ul>
         </div>
       <% end %>
       <div class="new-situation-content">

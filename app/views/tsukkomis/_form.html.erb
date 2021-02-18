@@ -2,11 +2,9 @@
   <%= form_with(model: [@situation, @tsukkomi], local: true) do |f| %>
     <% if @tsukkomi.errors.any? %>
       <div id="error_explanation">
-        <ul>
         <% @tsukkomi.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+          <p class="error-messages"><%= msg %></p>
         <% end %>
-        </ul>
       </div>
     <% end %>
     <div class="new-tsukkomi-content">

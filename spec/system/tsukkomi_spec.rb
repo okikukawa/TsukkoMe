@@ -5,10 +5,9 @@ RSpec.describe 'ツッコミ機能' ,type: :system do
     user2 = FactoryBot.create(:user2)
     @situation = FactoryBot.create(:situation, user: user2)
     @tsukkomi = FactoryBot.create(:tsukkomi, situation: @situation, user: user)
-    # @tsukkomi2 = FactoryBot.create(:tsukkomi2, situation: @situation, user: user2)
   end
   describe '新規作成機能' do
-    context '新しくツッコミを作成した場合' do
+    context 'ログインしている場合' do
       it '作成したツッコミが表示される' do
         visit new_user_session_path
         fill_in 'Eメール', with: 'user1@test.com'
@@ -18,6 +17,12 @@ RSpec.describe 'ツッコミ機能' ,type: :system do
         fill_in 'tsukkomi_phrase', with: 'new_tsukkomi1'
         click_button '投稿する！'
         expect(page).to have_content 'new_tsukkomi1'
+      end
+    end
+    context 'ログインしていない場合' do
+      it 'ログイン画面に遷移する' do
+        visit new_situation_tsukkomi_path(@situation)
+        expect(page).to have_content 'アカウント登録もしくはログインしてください。'
       end
     end
   end

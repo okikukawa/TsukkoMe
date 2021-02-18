@@ -3,6 +3,8 @@ RSpec.describe 'ユーザー機能' ,type: :system do
   before do
     @user1 = FactoryBot.create(:user)
     @user2 = FactoryBot.create(:user2)
+    @situation = FactoryBot.create(:situation, user: @user2)
+    @tsukkomi = FactoryBot.create(:tsukkomi, situation: @situation, user: @user1)
   end
   describe '新規ユーザー作成' do
     context '新しくユーザーを作成した場合' do
@@ -12,7 +14,7 @@ RSpec.describe 'ユーザー機能' ,type: :system do
         fill_in 'Eメール', with: 'bob@bob.com'
         fill_in 'パスワード', with: 'password'
         fill_in 'パスワード（確認用）', with: 'password'
-        click_button 'アカウント登録'
+        click_button '登録'
         expect(page).to have_content 'アカウント登録が完了しました。'
       end
     end
@@ -36,9 +38,21 @@ RSpec.describe 'ユーザー機能' ,type: :system do
       end
     end
     context 'マイページに遷移した場合' do
-      it 'ログイン中のユーザー名が表示される' do
+      before  do
         visit user_path(@user1)
+      end
+      it 'ログイン中のユーザー名が表示される' do
         expect(page).to have_content 'ユーザー1'
+      end
+      it '投稿済みのツッコミが表示される' do
+        expect(page).to have_content 'ツッコミ1'
+      end
+      it 'お気に入りしたツッコミが表示される' do
+        visit situation_tsukkomi_path(@situation, @tsukkomi)
+        click_link 'favorite-icon'
+        visit user_path(@user1)
+        click_link 'お気に入り'
+        expect(page).to have_content 'ツッコミ1'
       end
     end
     context '他のユーザーページに遷移した場合' do
@@ -62,9 +76,7 @@ RSpec.describe 'ユーザー機能' ,type: :system do
         click_button '更新'
         visit user_path(@user1)
         expect(page).to have_content 'アリス'
-        expect(page).to have_content 'alice@alice.com'
         expect(page).to have_content 'こんにちは！'
-        save_and_open_page
       end
     end
   end

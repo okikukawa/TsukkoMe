@@ -1,5 +1,6 @@
 class Tsukkomi < ApplicationRecord
   validates :phrase, presence: true
+  validates :phrase, length: { maximum: 50 }
   belongs_to :situation
   belongs_to :user
   has_many :favorites, dependent: :destroy
