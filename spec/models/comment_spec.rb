@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe Situation, type: :model do
+RSpec.describe Comment, type: :model do
   describe '新規作成機能' do
     context 'contentを空で登録した場合' do
       it 'バリデーションに引っかかる' do
