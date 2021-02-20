@@ -82,27 +82,6 @@ li {
 // ここからmain
 
 // トップ部分
-.top-wrapper{
-  background-image: url("circle-blues.png");
-  background-color: #09015f;
-  height: 500px;
-  background-size: cover;
-  margin-bottom: 50px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  position: relative;
-}
-
-.top-content{
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  -webkit-transform : translate(-50%,-50%);
-  transform : translate(-50%,-50%);
-  color: #f8f9fa;
-  font-size: 2.5rem;
-}
 
 .top-wrapper-center{
   background-image: url("circle-blues.png");
@@ -124,17 +103,8 @@ li {
 }
 
 .top-button{
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  -webkit-transform : translate(-50%,-50%);
-  transform : translate(-50%,-50%);
-}
-
-.top-button a:hover{
-  background-color: #f9bc60;
-  color: white;
-  border: solid 1px #f9bc60;
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
 
 .btn-warning{
