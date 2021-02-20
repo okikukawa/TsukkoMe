@@ -127,10 +127,17 @@ li {
   margin-bottom: 20px;
   border: solid 1px #e3dede;
   border-radius: 10px;
-  // width: 60%;
-  // margin: 0 auto;
   background-color: white;
   box-shadow: 2px 2px 4px #a3a1a1;
+}
+
+.main-post:hover{
+  box-shadow: 4px 4px 8px #a3a1a1;
+  transition: 0.3s;
+}
+
+.main-post a{
+  text-decoration: none;
 }
 
 .post-menu{
