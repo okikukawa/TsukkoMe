@@ -22,7 +22,7 @@ class SituationsController < ApplicationController
   end
 
   def show
-    @situations = @situation.tsukkomis.sort_created_at.page(params[:page]).per(10)
+    @tsukkomis = @situation.tsukkomis.sort_created_at.page(params[:page]).per(10)
   end
 
   def destroy
