@@ -318,44 +318,47 @@ li {
 }
 
 .profile-wrapper{
+  float: left;
   height: 280px;
   width: 70%;
   margin: 40px auto;
-  padding: 50px;
+  padding: 40px 40px;
   border: solid 1px #e3dede;
   border-radius: 10px;
   background-color: white;
   box-shadow: 2px 2px 4px #a3a1a1;
+  float: left;
 }
 
 .big-icon-image {
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
   border-radius: 100px;
   object-fit: cover;
 }
 
-.profile-image{
-  float: left;
+.profile-image {
+  width: 160px;
+  height: 160px;
+}
+
+.profile-edit{
+  padding-top: 15px;
 }
 
 .profile-text{
   float: left;
-  padding-left: 40px;
+  padding-left: 15px;
   color: #52616a;
 }
 
 .profile-username{
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .profile-message{
   float: left;
-  // background-color: #f25042;
-}
-
-.profile-edit{
-  float:right;
+  padding-top: 15px;
 }
 
 .changetab {
