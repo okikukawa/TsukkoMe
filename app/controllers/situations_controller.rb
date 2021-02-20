@@ -15,7 +15,7 @@ class SituationsController < ApplicationController
   def create
     @situation = current_user.situations.create(situation_params)
     if @situation.save
-      redirect_to situations_path, notice: "シチュエーションを作成しました。"
+      redirect_to situations_path, notice: "お題を作成しました。"
     else
       render :new
     end
@@ -27,7 +27,7 @@ class SituationsController < ApplicationController
 
   def destroy
     @situation.destroy
-    redirect_to situations_path, alert: "シチュエーションを削除しました。"
+    redirect_to situations_path, alert: "お題を削除しました。"
   end
 
   def thousand_fungo
