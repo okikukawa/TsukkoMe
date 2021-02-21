@@ -36,36 +36,21 @@ li {
 }
 
 .header_logo a{
-  float: left;
   font-size: 1.5rem;
   padding: 20px 30px;
   display: block;
   // font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-.header_right{
-  float: right;
-}
-
-.header_right li{
-  float: left;
-  font-size: 1rem;
-}
-
 .header_right a{
   padding:27px 10px;
-  display: block;
+  display: inline-block;
 }
 
-.header_right li:hover{
-  // background-color: #f9bc60;
+//
+.header_right a:hover{
   background-color: #ffc107;
-  // background-color: #09015f;
   transition: 0.5s ;
-}
-
-.header_right ul{
-  text-align: right;
 }
 
 .fa-hand-paper{
