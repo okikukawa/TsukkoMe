@@ -87,6 +87,10 @@
           <% end %>
           <i class="far fa-comment-dots fa-lg"></i>  <%= fav.tsukkomi.comments.count %>
         </div>
+        <hr>
+        <div class="post-under text-center">
+          お題：<%= link_to fav.tsukkomi.situation.title, situation_path(fav.tsukkomi.situation) %>
+        </div>
       </div>
     </div>
   <% end %>
