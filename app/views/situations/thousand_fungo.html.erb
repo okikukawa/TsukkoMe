@@ -25,13 +25,13 @@
   </div>
 
   <div class="tsukkomilist-fungo">
-    <% if @tsukkomis.present? %>
     <div class="message-tsukkomilist-fungo text-center">
       他の人のツッコミ
     </div>
     <div class="notice-tsukkomilist-fungo text-center">
       <%= notice %>
     </div>
+    <% if @tsukkomis.present? %>
       <% @tsukkomis.each do|tsukkomi| %>
       <div class="row">
         <div class="main-post col-8 offset-2">

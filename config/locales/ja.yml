@@ -8,7 +8,7 @@ ja:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
     models:
-      situation: お題
+      situation: シチュエーション
       tsukkomi: ツッコミ
       user: ユーザー
     attributes:
