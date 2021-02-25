@@ -4,11 +4,12 @@
   <%= content_tag(:div, value, class: "alert alert-#{key} text-center") %>
 <% end %>
 
-<div class="top-wrapper">
-  <p class="top-content text-center">シチュエーション</p>
-  <div class="top-button text-center">
-    <%= link_to "シチュエーションを投稿する！", new_situation_path, class:"btn btn-warning" %>
-  </div>
+<div class="top-wrapper-center">
+  <p class="top-content-center text-center">お題一覧</p>
+</div>
+
+<div class="top-button text-center">
+  <%= link_to "お題を投稿する！", new_situation_path, class:"btn btn-warning" %>
 </div>
 
 <div class="container">
@@ -39,7 +40,7 @@
           </div>
           <% end %>
         <% end %>
-        <div class="text-center">
+        <div class="post-content text-center">
           <%= link_to situation.title, situation_path(situation) %>
         </div>
         <div class="post-icons">
