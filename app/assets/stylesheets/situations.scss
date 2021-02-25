@@ -71,7 +71,7 @@ li {
 .top-wrapper{
   background-image: url("circle-blues.png");
   background-color: #09015f;
-  height: 250px;
+  height: 300px;
   background-size: cover;
   margin-bottom: 30px;
   position: relative;
@@ -98,7 +98,6 @@ li {
 }
 
 .top-button{
-  padding-top: 20px;
   padding-bottom: 50px;
 }
 
@@ -114,6 +113,29 @@ li {
   border: solid 1px #ffc107;
   padding: 16px 32px;
   color: #f8f9fa;
+}
+
+.btn-primary{
+  background-color: #ffc107;
+  border-radius: 20px;
+  border: solid 1px #ffc107;
+  padding: 10px 20px;
+  color: #f8f9fa;
+  font-size: 0.9rem;
+}
+
+.new-tsukkomi-button{
+  position: absolute;
+  top: 77.5%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+}
+
+.new-tsukkomi-button a:hover{
+  background-color: #f9bc60;
+  color: white;
+  border: solid 1px #f9bc60;
 }
 
 .main-post:hover{
@@ -211,23 +233,17 @@ li {
 }
 
 .hint{
-  color:#ffd803;
+  color: #FFBC42;
 }
 
-.new-tsukkomi-button{
-  padding-top: 40px;
-  padding-bottom: 60px;
-}
-
-.new-tsukkomi-button a:hover{
-  background-color: #f9bc60;
-  color: white;
-  border: solid 1px #f9bc60;
+.tsukkomi-show-wrapper{
+  margin-bottom: 100px;
 }
 
 .search-wrapper{
   height: 50px;
   position: relative;
+  margin-top: 100px;
 }
 
 .situation-detail-content{
@@ -323,6 +339,16 @@ li {
 
 .new-tsukkomi-content{
   margin-top: 60px;
+}
+
+table th{
+  font-weight: bold;
+  padding: 10px;
+}
+
+table td{
+  padding: 5px;
+  padding-right: 20px;
 }
 
 .profile-wrapper{
@@ -569,7 +595,7 @@ li {
 .pagination {
   justify-content: center;
   margin-top: 15px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 // ここまでmain
