@@ -36,35 +36,21 @@ li {
 }
 
 .header_logo a{
-  float: left;
   font-size: 1.5rem;
   padding: 20px 30px;
   display: block;
   // font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-.header_right{
-  float: right;
-}
-
-.header_right li{
-  float: left;
-  font-size: 1rem;
-}
-
 .header_right a{
   padding:27px 10px;
-  display: block;
+  display: inline-block;
 }
 
 .header_right a:hover{
   background-color: #ffc107;
   // background-color: #09015f;
   transition: 0.5s ;
-}
-
-.header_right ul{
-  text-align: right;
 }
 
 .fa-hand-paper{
@@ -81,27 +67,6 @@ li {
 // ここからmain
 
 // トップ部分
-.top-wrapper{
-  background-image: url("circle-blues.png");
-  background-color: #09015f;
-  height: 500px;
-  background-size: cover;
-  margin-bottom: 50px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  position: relative;
-}
-
-.top-content{
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  -webkit-transform : translate(-50%,-50%);
-  transform : translate(-50%,-50%);
-  color: #f8f9fa;
-  font-size: 2.5rem;
-}
 
 .top-wrapper-center{
   background-image: url("circle-blues.png");
@@ -123,17 +88,8 @@ li {
 }
 
 .top-button{
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  -webkit-transform : translate(-50%,-50%);
-  transform : translate(-50%,-50%);
-}
-
-.top-button a:hover{
-  background-color: #f9bc60;
-  color: white;
-  border: solid 1px #f9bc60;
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
 
 .top-button a:hover{
@@ -148,6 +104,15 @@ li {
   border: solid 1px #ffc107;
   padding: 16px 32px;
   color: #f8f9fa;
+}
+
+.main-post:hover{
+  box-shadow: 4px 4px 8px #a3a1a1;
+  transition: 0.3s;
+}
+
+.main-post a{
+  text-decoration: none;
 }
 
 
@@ -355,6 +320,7 @@ li {
 }
 
 .profile-wrapper{
+  float: left;
   height: 280px;
   width: 70%;
   margin: 40px auto;
@@ -366,8 +332,8 @@ li {
 }
 
 .big-icon-image {
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
   border-radius: 100px;
   object-fit: cover;
 }
@@ -377,22 +343,26 @@ li {
   height: 160px;
 }
 
+.profile-edit{
+}
+
 .profile-edit a{
   text-align: center;
 }
 
 .profile-text{
   float: left;
-  padding-left: 40px;
+  padding-left:15px;
   color: #52616a;
 }
 
 .profile-username{
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .profile-message{
   float: left;
+  padding-top: 15px;
   // background-color: #f25042;
 }
 
@@ -638,6 +608,16 @@ footer {
 
 .fa-user{
   color: #a3a1a1;
+}
+
+.fa-comment-dots{
+  margin-left: 10px;
+  margin-right: 2px;
+}
+
+.fa-grin-squint-tears{
+  margin-left: 10px;
+  margin-right: 2px;
 }
 
 .small-icon-image{
