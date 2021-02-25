@@ -1,7 +1,7 @@
 <div class="top-wrapper-center-fungo">
   <p class="top-title-fungo text-center">千本ノック</p>
   <div class="top-message-fungo text-center">
-    このページでは例えの練習ができます。次々と表示されるシチュエーションを例えてみましょう！
+    このページでは例えの練習ができます。次々と表示されるお題を例えてみましょう！
   </div>
 </div>
 
@@ -25,57 +25,60 @@
   </div>
 
   <div class="tsukkomilist-fungo">
-    <div class="message-tsukkomilist-fungo text-center">
-      他の人のツッコミ
-    </div>
-    <div class="notice-tsukkomilist-fungo text-center">
-      <%= notice %>
-    </div>
     <% if @tsukkomis.present? %>
-      <% @tsukkomis.each do|tsukkomi| %>
-      <div class="row">
-        <div class="main-post col-8 offset-2">
-          <% if tsukkomi.user.image.present? %>
-            <%= link_to image_tag(tsukkomi.user.image.url, class:"small-icon-image"), user_path(tsukkomi.user) %>
-          <% else %>
-            <%= link_to image_tag("profile_icon.png", class: "small-icon-image"), user_path(tsukkomi.user) %>
-          <% end %>
-          <%= link_to tsukkomi.user.name, user_path(tsukkomi.user) %>
-          <%= tsukkomi.created_at.strftime("%Y/%-m/%-d %-H:%M") %>
-          <% if user_signed_in? %>
-            <% if tsukkomi.user_id == current_user.id %>
-              <div class="dropdown post-menu">
-                <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  <i class="fas fa-ellipsis-v"></i>
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                  <li class="post-delete">
-                    <i class="far fa-trash-alt small-icon"></i>
-                    <%= link_to "削除", situation_tsukkomi_path(@situation, tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
-                  </li>
-                </ul>
-              </div>
+      <div class="message-tsukkomilist-fungo text-center">
+        <p class="other-tsukkomi-fungo">
+          <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            他の人のツッコミ（<%= @tsukkomis.count%>件）
+          </a>
+        </p>
+      </div>
+      <div class="collapse" id="collapseExample">
+        <% @tsukkomis.each do|tsukkomi| %>
+        <div class="row">
+          <div class="main-post col-8 offset-2">
+            <% if tsukkomi.user.image.present? %>
+              <%= link_to image_tag(tsukkomi.user.image.url, class:"small-icon-image"), user_path(tsukkomi.user) %>
+            <% else %>
+              <%= link_to image_tag("profile_icon.png", class: "small-icon-image"), user_path(tsukkomi.user) %>
             <% end %>
-          <% end %>
-          <div class="post-content text-center">
-            <%= link_to tsukkomi.phrase, situation_tsukkomi_path(@situation, tsukkomi.id) %>
-          </div>
-          <div class="post-icons">
+            <%= link_to tsukkomi.user.name, user_path(tsukkomi.user) %>
+            <%= tsukkomi.created_at.strftime("%Y/%-m/%-d %-H:%M") %>
             <% if user_signed_in? %>
-              <% if tsukkomi.favorites.find_by(user_id: current_user.id).present? %>
-                <i class="far fa-grin-squint-tears fa-lg squint-tears"></i>  <%= tsukkomi.favorites.count %>
+              <% if tsukkomi.user_id == current_user.id %>
+                <div class="dropdown post-menu">
+                  <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <i class="fas fa-ellipsis-v"></i>
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li class="post-delete">
+                      <i class="far fa-trash-alt small-icon"></i>
+                      <%= link_to "削除", situation_tsukkomi_path(@situation, tsukkomi), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+                    </li>
+                  </ul>
+                </div>
+              <% end %>
+            <% end %>
+            <div class="post-content text-center">
+              <%= link_to tsukkomi.phrase, situation_tsukkomi_path(@situation, tsukkomi.id) %>
+            </div>
+            <div class="post-icons">
+              <% if user_signed_in? %>
+                <% if tsukkomi.favorites.find_by(user_id: current_user.id).present? %>
+                  <i class="far fa-grin-squint-tears fa-lg squint-tears"></i>  <%= tsukkomi.favorites.count %>
+                <% else %>
+                  <i class="far fa-grin-squint-tears fa-lg"></i>  <%= tsukkomi.favorites.count %>
+                <% end %>
               <% else %>
                 <i class="far fa-grin-squint-tears fa-lg"></i>  <%= tsukkomi.favorites.count %>
               <% end %>
-            <% else %>
-              <i class="far fa-grin-squint-tears fa-lg"></i>  <%= tsukkomi.favorites.count %>
-            <% end %>
-            <i class="far fa-comment-dots fa-lg"></i>  <%= tsukkomi.comments.count %>
+              <i class="far fa-comment-dots fa-lg"></i>  <%= tsukkomi.comments.count %>
+            </div>
           </div>
         </div>
+        <% end %>
       </div>
-      <% end %>
     <% end %>
   </div>
 </div>
