@@ -87,16 +87,6 @@ li {
   font-size: 2rem;
 }
 
-.top-content-title{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform : translate(-50%,-50%);
-  transform : translate(-50%,-50%);
-  color: #f8f9fa;
-  font-size: 2rem;
-}
-
 .top-content-under{
   position: absolute;
   top: 72%;
@@ -205,10 +195,6 @@ li {
   margin-top: 20px;
 }
 
-.new-situation-content p{
-  text-align: left;
-}
-
 .submit-form{
   margin-top: 20px;
   margin-bottom: 30px;
@@ -225,7 +211,7 @@ li {
 }
 
 .hint{
-  color:#f25f4c;
+  color:#ffd803;
 }
 
 .new-tsukkomi-button{
