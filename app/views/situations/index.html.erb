@@ -6,11 +6,7 @@
 
 <div class="top-wrapper">
   <p class="top-content text-center">お題一覧</p>
-  <p class="top-content-under">お題を一つえらび、ツッコんでみましょう！</p>
-</div>
-
-<div class="top-button text-center">
-  <%= link_to "お題を投稿する！", new_situation_path, class:"btn btn-warning" %>
+  <p class="top-content-under">お題を一つえらび、さっそく例えツッコんでみましょう！</p>
 </div>
 
 <div class="container">
@@ -55,5 +51,8 @@
   </div>
   <div class="pagination">
     <%= paginate @situations %>
+  </div>
+  <div class="top-button text-center">
+    <%= link_to "お題を投稿する！", new_situation_path, class:"btn btn-warning" %>
   </div>
 </div>
