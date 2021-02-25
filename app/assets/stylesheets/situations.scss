@@ -57,8 +57,7 @@ li {
   display: block;
 }
 
-.header_right li:hover{
-  // background-color: #f9bc60;
+.header_right a:hover{
   background-color: #ffc107;
   // background-color: #09015f;
   transition: 0.5s ;
@@ -129,6 +128,12 @@ li {
   left: 50%;
   -webkit-transform : translate(-50%,-50%);
   transform : translate(-50%,-50%);
+}
+
+.top-button a:hover{
+  background-color: #f9bc60;
+  color: white;
+  border: solid 1px #f9bc60;
 }
 
 .top-button a:hover{
@@ -345,12 +350,6 @@ li {
   padding-bottom: 60px;
 }
 
-// .comment-button a:hover{
-//   background-color: #f9bc60;
-//   color: white;
-//   border: solid 1px #f9bc60;
-// }
-
 .new-tsukkomi-content{
   margin-top: 60px;
 }
@@ -359,7 +358,7 @@ li {
   height: 280px;
   width: 70%;
   margin: 40px auto;
-  padding: 50px;
+  padding: 40px;
   border: solid 1px #e3dede;
   border-radius: 10px;
   background-color: white;
@@ -373,8 +372,13 @@ li {
   object-fit: cover;
 }
 
-.profile-image{
-  float: left;
+.profile-image {
+  width: 160px;
+  height: 160px;
+}
+
+.profile-edit a{
+  text-align: center;
 }
 
 .profile-text{
@@ -390,6 +394,10 @@ li {
 .profile-message{
   float: left;
   // background-color: #f25042;
+}
+
+.profile-edit{
+  float:right;
 }
 
 .profile-edit{
