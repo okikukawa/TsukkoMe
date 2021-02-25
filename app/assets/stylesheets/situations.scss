@@ -68,16 +68,16 @@ li {
 
 // トップ部分
 
-.top-wrapper-center{
+.top-wrapper{
   background-image: url("circle-blues.png");
   background-color: #09015f;
-  height: 200px;
+  height: 250px;
   background-size: cover;
   margin-bottom: 30px;
   position: relative;
 }
 
-.top-content-center{
+.top-content{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -85,6 +85,26 @@ li {
   transform : translate(-50%,-50%);
   color: #f8f9fa;
   font-size: 2rem;
+}
+
+.top-content-title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  color: #f8f9fa;
+  font-size: 2rem;
+}
+
+.top-content-under{
+  position: absolute;
+  top: 72%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  color: #f8f9fa;
+  font-size: 1rem;
 }
 
 .top-button{
@@ -479,7 +499,7 @@ li {
   color: white;
 }
 
-.top-wrapper-center-fungo{
+.top-wrapper-fungo{
   background-image: url("wood.jpeg");
   height: 250px;
   background-size: cover;
