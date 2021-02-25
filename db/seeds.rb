@@ -7,37 +7,38 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 @user = User.create!(
-  name: "ユーザー1",
-  email: "test1@test.com",
+  name: "ツッコミ先生",
+  email: "test@test.com",
   password: "password",
   profile: "よろしくおねがいします。"
 )
 
-15.times do |n|
-  @user.situations.create!(
-    title: "お題#{n + 1}"
-  )
-end
+@situation = @user.situations.create(title: "めちゃくちゃ落ち着く")
+@situation = @situation.tsukkomis.create(phrase: "飛行機で飲むコンソメスープくらい落ち着く", user_id: 1)
 
-@situation = @user.situations.create!(
-  title: "このお題にツッコミが紐づく"
-)
+@situation = @user.situations.create(title: "怒らせてはいけない")
+@situation = @situation.tsukkomis.create(phrase: "半沢直樹くらい怒らせてはいけない", user_id: 1)
 
-15.times do |n|
-  @situation.tsukkomis.create!(
-    phrase: "ツッコミ#{n + 1}",
-    user_id: 1
-  )
-end
+@situation = @user.situations.create(title: "一番眠たい")
+@situation = @situation.tsukkomis.create(phrase: "水泳の授業の後の国語の授業くらい眠たい", user_id: 1)
 
-@tsukkomi = @situation.tsukkomis.create!(
-  phrase: "このツッコミにコメントが紐づく",
-  user_id: 1
-)
+@situation = @user.situations.create(title: "めちゃくちゃ優しい")
+@situation = @situation.tsukkomis.create(phrase: "映画版のジャイアンくらい優しい", user_id: 1)
 
-15.times do |n|
-  @tsukkomi.comments.create!(
-    content: "コメント#{n + 1}",
-    user_id: 1
-  )
-end
+@situation = @user.situations.create(title: "一言も喋らない")
+@situation = @situation.tsukkomis.create(phrase: "カニ食べてる？", user_id: 1)
+
+@situation = @user.situations.create(title: "すぐ時間が経つ")
+@situation = @situation.tsukkomis.create(phrase: "USJおるときくらいすぐ時間が経つ", user_id: 1)
+
+@situation = @user.situations.create(title: "一番信用できない")
+@situation = @situation.tsukkomis.create(phrase: "毎日投稿始めますって言うyoutuberくらい信用できない", user_id: 1)
+
+@situation = @user.situations.create(title: "たくさんかき集める人に対して")
+@situation = @situation.tsukkomis.create(phrase: "甲子園の砂くらいかき集めるやん", user_id: 1)
+
+@situation = @user.situations.create(title: "ややこしい")
+@situation = @situation.tsukkomis.create(phrase: "ノーバン始球式くらいややこしい", user_id: 1)
+
+@situation = @user.situations.create(title: "直角")
+@situation = @situation.tsukkomis.create(phrase: "エジプトくらい直角", user_id: 1)
