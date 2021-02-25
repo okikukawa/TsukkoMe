@@ -8,7 +8,7 @@
           <% else %>
             <%= image_tag("profile_icon.png", class: "big-icon-image") %>
           <% end %>
-          <div class="profile-edit">
+          <div class="profile-edit col-12">
             <% if user_signed_in? %>
               <% if @user.id == current_user.id %>
                 <%= link_to "プロフィールを編集", edit_user_registration_path(current_user), class:"btn btn-outline-secondary btn-sm" %>
@@ -16,7 +16,6 @@
             <% end %>
           </div>
         </div>
-
         <div class="profile-text col-8">
           <div class="profile-username">
             <%= @user.name %>
