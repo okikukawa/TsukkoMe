@@ -15,12 +15,12 @@
 
 15.times do |n|
   @user.situations.create!(
-    title: "シチュエーション#{n + 1}"
+    title: "お題#{n + 1}"
   )
 end
 
 @situation = @user.situations.create!(
-  title: "このシチュエーションにツッコミが紐づく"
+  title: "このお題にツッコミが紐づく"
 )
 
 15.times do |n|

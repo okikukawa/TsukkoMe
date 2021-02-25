@@ -25,13 +25,6 @@
           </div>
         </div>
       </div>
-      <div class="profile-edit">
-        <% if user_signed_in? %>
-          <% if @user.id == current_user.id %>
-            <%= link_to "プロフィールを編集する", edit_user_registration_path(current_user), class:"btn btn-outline-secondary btn-sm" %>
-          <% end %>
-        <% end %>
-      </div>
     </div>
   </div>
 
