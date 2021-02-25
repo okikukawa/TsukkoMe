@@ -7,16 +7,45 @@
         <% end %>
       </div>
     <% end %>
-    <div class="new-tsukkomi-content">
-      <p>このお題を何かに例えてみましょう！</p>
+    <div class="new-tsukkomi-content col-12 offset-1">
+      <p>このお題を例えてみましょう！</p>
+      <br>
+      <p><i class="far fa-lightbulb hint">ヒント</i> お題から連想されるものを、「〜くらい〇〇」という形にすると例えやすいかも？！</p>
+      <p>例えば・・・</p>
+      <table>
+        <tr>
+          <th>お題</th>
+          <th>例えツッコミ</th>
+        </tr>
+        <tr>
+          <td>・めちゃくちゃ暑い</td>
+          <td>夏の甲子園球場くらい暑い</td>
+        </tr>
+        <tr>
+          <td>・今までで一番おいしい</td>
+          <td>風邪ひいたときの雑炊くらいおいしい</td>
+        </tr>
+        <tr>
+          <td>・全然笑っていない</td>
+          <td>ラグビーの稲垣くらい笑ってない</td>
+        </tr>
+        <tr>
+          <td>・地味にテンション上がる</td>
+          <td>差し入れでミスドもらったときくらいテンション上がる</td>
+        </tr>
+      </table>
+      <br>
+      <p>などなど</p>
     </div>
-    <div class="row justify-content-center">
-      <div class="submit-form col-5">
-        <%= f.text_field :phrase, class: "form-control", placeholder: "ツッコミを入力" %>
+    <div class="text-center">
+      <div class="row justify-content-center">
+        <div class="submit-form col-9">
+          <%= f.text_field :phrase, class: "form-control", placeholder: "ツッコミを入力" %>
+        </div>
       </div>
-    </div>
-    <div class="submit-button">
-      <%= f.submit class: "btn btn-outline-warning" %>
+      <div class="submit-button">
+        <%= f.submit class: "btn btn-outline-warning" %>
+      </div>
     </div>
   <% end %>
 </div>

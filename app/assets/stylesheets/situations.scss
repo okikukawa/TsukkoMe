@@ -68,16 +68,16 @@ li {
 
 // トップ部分
 
-.top-wrapper-center{
+.top-wrapper{
   background-image: url("circle-blues.png");
   background-color: #09015f;
-  height: 200px;
+  height: 300px;
   background-size: cover;
   margin-bottom: 30px;
   position: relative;
 }
 
-.top-content-center{
+.top-content{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -87,8 +87,17 @@ li {
   font-size: 2rem;
 }
 
+.top-content-under{
+  position: absolute;
+  top: 72%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  color: #f8f9fa;
+  font-size: 1rem;
+}
+
 .top-button{
-  padding-top: 20px;
   padding-bottom: 50px;
 }
 
@@ -104,6 +113,29 @@ li {
   border: solid 1px #ffc107;
   padding: 16px 32px;
   color: #f8f9fa;
+}
+
+.btn-primary{
+  background-color: #ffc107;
+  border-radius: 20px;
+  border: solid 1px #ffc107;
+  padding: 10px 20px;
+  color: #f8f9fa;
+  font-size: 0.9rem;
+}
+
+.new-tsukkomi-button{
+  position: absolute;
+  top: 77.5%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+}
+
+.new-tsukkomi-button a:hover{
+  background-color: #f9bc60;
+  color: white;
+  border: solid 1px #f9bc60;
 }
 
 .main-post:hover{
@@ -185,10 +217,6 @@ li {
   margin-top: 20px;
 }
 
-.new-situation-content p{
-  text-align: left;
-}
-
 .submit-form{
   margin-top: 20px;
   margin-bottom: 30px;
@@ -205,23 +233,17 @@ li {
 }
 
 .hint{
-  color:#f25f4c;
+  color: #FFBC42;
 }
 
-.new-tsukkomi-button{
-  padding-top: 40px;
-  padding-bottom: 60px;
-}
-
-.new-tsukkomi-button a:hover{
-  background-color: #f9bc60;
-  color: white;
-  border: solid 1px #f9bc60;
+.tsukkomi-show-wrapper{
+  margin-bottom: 100px;
 }
 
 .search-wrapper{
   height: 50px;
   position: relative;
+  margin-top: 100px;
 }
 
 .situation-detail-content{
@@ -319,6 +341,16 @@ li {
   margin-top: 60px;
 }
 
+table th{
+  font-weight: bold;
+  padding: 10px;
+}
+
+table td{
+  padding: 5px;
+  padding-right: 20px;
+}
+
 .profile-wrapper{
   float: left;
   height: 280px;
@@ -344,6 +376,7 @@ li {
 }
 
 .profile-edit{
+  padding-top: 15px;
 }
 
 .profile-edit a{
@@ -479,7 +512,7 @@ li {
   color: white;
 }
 
-.top-wrapper-center-fungo{
+.top-wrapper-fungo{
   background-image: url("wood.jpeg");
   height: 250px;
   background-size: cover;
@@ -563,7 +596,7 @@ li {
 .pagination {
   justify-content: center;
   margin-top: 15px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 // ここまでmain

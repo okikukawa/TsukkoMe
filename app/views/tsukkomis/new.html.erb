@@ -1,5 +1,5 @@
-<div class="top-wrapper-center">
-  <p class="top-content-center text-center">ツッコミを投稿する</p>
+<div class="top-wrapper">
+  <p class="top-content text-center">例えツッコミを投稿する</p>
 </div>
 
 <div class="container">
@@ -37,9 +37,8 @@
         <%= @situation.tsukkomis.count %>
       </div>
     </div>
+    <div class="col-8 offset-2">
+      <%= render 'form' %>
+    </div>
   </div>
-</div>
-
-<div class="text-center">
-  <%= render 'form' %>
 </div>
