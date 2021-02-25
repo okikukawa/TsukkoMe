@@ -13,24 +13,28 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9e3a2c505e5ca6492c4932ac22fe054ec6165fd0
   </head>
   <body>
     <header>
       <div class="container">
-        <div class="header row">
-          <div class="header_logo col-4">
-            <%= link_to "TsukkoMe", situations_path %>
-          </div>
-          <div class="header_right col-8 text-right">
-            <%= link_to "ツッコミをみる", situations_path %>
-            <%= link_to "ツッコミをきたえる", thousand_fungo_situations_path %>
-            <% if user_signed_in? %>
-              <%= link_to "マイページ", user_path(current_user) %>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            <% else %>
-              <%= link_to "ログイン", new_user_session_path %>
-            <% end %>
-          </div>
+        <div class="header header_logo">
+          <%= link_to "TsukkoMe", situations_path %>
+        </div>
+        <div class="header header_right">
+          <ul>
+            <li><%= link_to "ツッコミをみる", situations_path %></li>
+            <li><%= link_to "ツッコミをきたえる", thousand_fungo_situations_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "マイページ", user_path(current_user) %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "ログイン", new_user_session_path %></li>
+          <% end %>
+          </ul>
         </div>
       </div>
     </header>

@@ -35,7 +35,7 @@
           </div>
         <% end %>
       <% end %>
-      <div class= "post-content text-center">
+      <div class="text-center">
         <%= @situation.title %>
       </div>
       <div class="post-icons">
@@ -48,27 +48,25 @@
 
 
   <div class="new-tsukkomi-button text-center">
-    <%= link_to "このお題にツッコむ！", new_situation_tsukkomi_path(@situation.id), class:"btn btn-warning" %>
+    <%= link_to "このシチュエーションにツッコむ！", new_situation_tsukkomi_path(@situation.id), class:"btn btn-warning" %>
   </div>
 
-  <% if @tsukkomis.present? %>
-    <div class="search-wrapper">
-      <div class="row">
-        <div class="situation-detail-content col-4 offset-2">
-          みんなのツッコミ
-        </div>
-        <div class="search-form col-5 offset-1">
-          <%= search_form_for @search, url: search_situation_path(@situation) do |f| %>
-            <%= f.search_field :phrase_cont, placeholder: "ツッコミをさがす" %>
-            <%= f.submit '検索' %>
-          <% end %>
-        </div>
+  <div class="search-wrapper">
+    <div class="row">
+      <div class="situation-detail-content col-4 offset-2">
+        みんなのツッコミ
+      </div>
+      <div class="search-form col-5 offset-1">
+        <%= search_form_for @search, url: search_situation_path(@situation) do |f| %>
+          <%= f.search_field :phrase_cont, placeholder: "ツッコミをさがす" %>
+          <%= f.submit '検索' %>
+        <% end %>
       </div>
     </div>
-  <% end %>
+  </div>
 
   <div class="tsukkomis-post">
-    <% @tsukkomis.each do |tsukkomi| %>
+    <% @situations.each do |tsukkomi| %>
     <div class="row">
       <div class="main-post col-8 offset-2">
         <% if tsukkomi.user.image.present? %>
@@ -117,5 +115,5 @@
     </div>
     <% end %>
   </div>
-  <%= paginate @tsukkomis %>
+  <%= paginate @situations %>
 </div>
