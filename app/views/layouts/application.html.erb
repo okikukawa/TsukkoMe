@@ -23,7 +23,7 @@
           </div>
           <div class="header_right col-8 text-right">
             <%= link_to "ツッコむ", situations_path %>
-            <%= link_to "ツッコミをきたえる", thousand_fungo_situations_path %>
+            <%= link_to "きたえる", thousand_fungo_situations_path %>
             <% if user_signed_in? %>
               <%= link_to "マイページ", user_path(current_user) %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
