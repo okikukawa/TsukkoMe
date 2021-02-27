@@ -23,7 +23,7 @@ body {
 
 header {
   background-color: #ff8906;
-  height: 78px
+  height: 65px
 }
 
 li {
@@ -36,21 +36,20 @@ li {
 }
 
 .header_logo a{
-  font-size: 1.5rem;
-  padding: 20px 30px;
+  font-size: 1.25rem;
+  padding: 16px 30px;
   display: block;
   // font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 .header_right a{
-  padding:27px 10px;
+  padding: 20.5px 10px;
   display: inline-block;
 }
 
 .header_right a:hover{
   background-color: #ffc107;
-  // background-color: #09015f;
-  transition: 0.5s ;
+  transition: 0.4s ;
 }
 
 .fa-hand-paper{
@@ -607,11 +606,11 @@ table td{
 
 footer {
   width: 100%;
-  height: 80px;
+  height: 65px;
   background-image: url("circle-blues.png");
   background-color: #09015f;
   background-size: cover;
-  padding: 24px 30px;
+  padding: 18px 0px;
   margin: auto;
   color: #f8f9fa;
   font-size: 0.75rem;
