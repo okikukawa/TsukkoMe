@@ -29,6 +29,7 @@
               <%= link_to "マイページ", user_path(current_user) %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
             <% else %>
+              <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
               <%= link_to "ログイン", new_user_session_path %>
             <% end %>
           </div>
