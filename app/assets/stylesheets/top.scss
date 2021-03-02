@@ -25,9 +25,30 @@
 }
 
 .navi{
-  min-height: 150px;
+  min-height: 300px;
 }
 
 .function-wrapper{
-  min-height: 200px;
+  min-height: 400px;
+  background-color: #c9d6de;
+  // background-color: #252c41;
+}
+//
+.top-icon{
+  font-size: 8rem;
+}
+
+.function-contents{
+  margin:50px 0px;
+  color: #52616a;
+  // color: #f8f9fa;
+}
+
+.function-content{
+  padding: 70px;
+}
+
+.function-message{
+  padding-top: 70px;
+  text-align: left;
 }
