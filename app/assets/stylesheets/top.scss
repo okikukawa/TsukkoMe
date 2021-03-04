@@ -17,7 +17,7 @@
 }
 
 .top-image p{
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   letter-spacing: 5px;
   text-align: center;
   position: absolute;
@@ -29,26 +29,35 @@
 
 .navi{
   min-height: 700px;
+  padding: 100px 0px;
+  font-size: 1.25rem;
+  letter-spacing: 1.5px;
 }
 
 .function-wrapper{
   min-height: 400px;
+  color: #52616a;
   background-color: #c9d6de;
-  // background-color: #252c41;
 }
-//
+
+.function-label{
+  padding-top: 60px;
+  padding-bottom: 40px;
+  font-size: 2rem;
+  letter-spacing: 3px;
+}
+
 .top-icon{
   font-size: 8rem;
 }
 
 .function-contents{
   margin:50px 0px;
-  color: #52616a;
-  // color: #f8f9fa;
 }
 
 .function-content{
-  padding: 70px 25px;
+  padding: 0px 25px;
+  padding-bottom: 70px;
 }
 
 .function-message{
