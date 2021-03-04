@@ -22,7 +22,7 @@ body {
 // ここからheader
 
 header {
-  background-color: #ff8906;
+  background: linear-gradient(135deg, #FF4E50, #F9D423);
   height: 65px
 }
 
@@ -47,10 +47,10 @@ li {
   display: inline-block;
 }
 
-.header_right a:hover{
-  background-color: #ffc107;
-  transition: 0.4s ;
-}
+// .header_right a:hover{
+//   color: #0052D4;
+//   transition: 0.4s ;
+// }
 
 .fa-hand-paper{
   transform: rotate(45deg);
