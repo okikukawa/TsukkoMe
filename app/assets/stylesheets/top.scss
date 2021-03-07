@@ -28,11 +28,28 @@
 }
 
 .navi{
-  min-height: 700px;
+  min-height: 400px;
   padding: 100px 0px;
   font-size: 1.25rem;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.25px;
 }
+
+.how-to-use{
+  min-height: 300px;
+  padding: 100px 0px;
+}
+
+.how-to-use-title{
+  font-size: 2rem;
+  letter-spacing: 3px;
+  padding-bottom: 50px;
+}
+
+.how-to-use-icon{
+  height: 200px;
+  width: 200px;
+}
+
 
 .function-wrapper{
   min-height: 400px;
@@ -65,14 +82,9 @@
   text-align: left;
 }
 
-.how-to-use{
-  min-height: 400px;
-  background-color: white;
-}
-
 .tsukkomi-example{
   padding-top: 100px;
-  margin-bottom: 200px;
+  margin-bottom: 60px;
 }
 
 .tsukkomi-example-title{
