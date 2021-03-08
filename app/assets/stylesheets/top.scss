@@ -45,11 +45,28 @@
   padding-bottom: 50px;
 }
 
-.how-to-use-icon{
-  height: 200px;
-  width: 200px;
+.step-content{
+  min-height: 175px;
+  position:  relative;
 }
 
+.step-message{
+  font-size: 1.25rem;
+  letter-spacing: 2.5px;
+  text-align: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+}
+
+.how-to-use-icon{
+  height: 175px;
+  width: 175px;
+  float: left;
+}
 
 .function-wrapper{
   min-height: 400px;
