@@ -1,0 +1,150 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="top-image-bg">
+      <div class="top-image">
+        <p>たとえるチカラを、あなたに。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="navi text-center">
+    TsukkoMe（ツッコミー）は、”たとえ”の上達をお手伝いするWebアプリケーションです。
+    <br>
+    <br>
+    <br>
+    お題に対して<b>例えツッコミ</b>という形で自分のたとえを投稿したり、他のユーザーのツッコミを閲覧することで様々な”たとえ”に触れ合うことができます。
+    <br>
+    <br>
+    <br>
+    また、お題がランダムに表示される千本ノック機能では、次々と表示されるお題に対して例えツッコミを繰り返すことで、”たとえ”の定着を図ることができます。
+  </div>
+</div>
+
+<div class="container how-to-use">
+  <div class="how-to-use-title text-center">
+    つかいかた
+  </div>
+  <div class="row">
+    <div class="step-contents col-10 offset-1">
+      <div class="step-content">
+        <%= image_tag("select.png", class: "step-icon") %>
+        <div class="step-message">
+          <h4>Step1</h4>
+          <br>
+          <p>まず、<%= link_to "お題一覧", situations_path %>の中からたとえてみたいお題を選んでみましょう。</p>
+        </div>
+      </div>
+      <div class="step-content">
+        <%= image_tag("tsukkomi.png", class: "step-icon") %>
+        <div class="step-message">
+          <h4>Step2</h4>
+          <br>
+          お題に対して例えツッコミを投稿してみましょう。
+        </div>
+      </div>
+      <div class="step-content">
+        <%= image_tag("batter.png", class: "step-icon") %>
+        <div class="step-message">
+          <h4>Step3</h4>
+          <br>
+          ランダムにお題が表示される<%= link_to "千本ノック機能", thousand_fungo_situations_path %>を使って、いろんなシチュエーションをたとえる練習をしましょう。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="function-wrapper text-center">
+  <div class="function-label">
+    主な機能
+  </div>
+  <div class="container">
+    <div class="function-contents row">
+      <div class="function-content function-col-sm-12 col-md-4">
+        <i class="fas fa-hand-paper fa-rotate-225 top-icon"></i>
+        <div class="row">
+          <div class="col-sm-10 offset-sm-1">
+            <div class="function-message">
+              <p class="text-center">ツッコミ機能</p>
+              さまざまなお題に対して例えツッコむことができます。
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="function-content function-col-sm-12 col-md-4">
+        <i class="fas fa-grin-squint-tears top-icon"></i>
+        <div class="row">
+          <div class="col-sm-10 offset-sm-1">
+            <div class="function-message">
+              <p class="text-center">ナイスツッコミ！機能</p>
+              ツッコミにナイスツッコミ！ボタンを押すことで、お気に入りのツッコミを保存することができます。
+              <br>
+              保存したツッコミはマイページで確認することができます。
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="function-content function-col-sm-12 col-md-4">
+        <i class="fas fa-hand-rock top-icon"></i>
+        <div class="row">
+          <div class="col-sm-10 offset-sm-1">
+            <div class="function-message">
+              <p class="text-center">千本ノック機能</p>
+              画面上部の「きたえる」からは、お題がランダムにされる機能（千本ノック）を利用することができます。
+              <br>
+              次々と表示されるお題を例えていき、例えるチカラを向上させましょう！
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tsukkomi-example">
+  <div class="tsukkomi-example-title text-center">
+    最近投稿されたお題
+  </div>
+  <div class="container">
+    <div class="situations-post">
+      <% @situations.each do |situation| %>
+      <div class="row">
+        <div class="main-post col-8 offset-2">
+          <% if situation.user.image.present? %>
+            <%= link_to image_tag(situation.user.image.url, class:"small-icon-image"), user_path(situation.user) %>
+          <% else %>
+            <%= link_to image_tag("profile_icon.png", class: "small-icon-image"), user_path(situation.user) %>
+          <% end %>
+          <%= link_to situation.user.name, user_path(situation.user) %>
+          <%= situation.created_at.strftime("%Y/%-m/%-d %-H:%M") %>
+          <% if user_signed_in? %>
+            <% if situation.user_id == current_user.id %>
+            <div class="dropdown post-menu">
+              <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <i class="fas fa-ellipsis-v"></i>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li class="post-delete small-icon">
+                  <i class="far fa-trash-alt"></i>
+                  <%= link_to "削除する", situation_path(situation), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+                </li>
+              </ul>
+            </div>
+            <% end %>
+          <% end %>
+          <div class="post-content text-center">
+            <%= link_to situation.title, situation_path(situation) %>
+          </div>
+          <div class="post-icons">
+            <i class="far fa-hand-paper fa-lg fa-rotate-225"></i>
+            <%= image_tag("surprise_yellow.png", class: "logo-image") %>
+            <%= situation.tsukkomis.count %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+</div>
