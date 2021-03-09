@@ -29,14 +29,16 @@
 
 .navi{
   min-height: 400px;
-  padding-top: 100px;
+  padding: 100px 0px;
   font-size: 1.25rem;
   letter-spacing: 1.25px;
 }
 
 .how-to-use{
   min-height: 300px;
-  padding: 100px 0px;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  background-color: #FFFFFF;
 }
 
 .how-to-use-title{
@@ -44,6 +46,7 @@
   letter-spacing: 3px;
   padding-bottom: 20px;
 }
+
 .step-content{
   padding: 40px 0px;
 }
