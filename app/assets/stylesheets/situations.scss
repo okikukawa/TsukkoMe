@@ -513,7 +513,7 @@ table td{
 
 .top-wrapper-fungo{
   background-image: url("wood.jpeg");
-  height: 250px;
+  height: 300px;
   background-size: cover;
   margin-bottom: 30px;
   position: relative;
@@ -524,7 +524,7 @@ table td{
 
 .top-title-fungo{
   position: absolute;
-  top: 35%;
+  top: 50%;
   left: 50%;
   -webkit-transform : translate(-50%,-50%);
   transform : translate(-50%,-50%);
@@ -534,7 +534,7 @@ table td{
 
 .top-message-fungo{
   position: absolute;
-  top: 70%;
+  top: 75%;
   left: 50%;
   -webkit-transform : translate(-50%,-50%);
   transform : translate(-50%,-50%);
@@ -606,7 +606,7 @@ table td{
 
 footer {
   width: 100%;
-  height: 65px;
+  height: 100px;
   background-image: url("circle-blues.png");
   background-color: #09015f;
   background-size: cover;
