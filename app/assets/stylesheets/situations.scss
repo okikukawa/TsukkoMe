@@ -598,6 +598,10 @@ table td{
   margin-bottom: 20px;
 }
 
+.mypage_and_favorite{
+  margin-bottom: 200px;
+}
+
 // ここまでmain
 
 
@@ -610,16 +614,12 @@ footer {
   background-image: url("circle-blues.png");
   background-color: #09015f;
   background-size: cover;
-  padding: 18px 0px;
+  padding: 35px 0px;
   margin: auto;
   color: #f8f9fa;
   font-size: 0.75rem;
   position: absolute;
   bottom: 0;
-}
-
-.footer_logo{
-  padding-top: 15px;
 }
 
 .footer_logo a{
