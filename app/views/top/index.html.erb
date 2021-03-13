@@ -123,18 +123,18 @@
           <%= situation.created_at.strftime("%Y/%-m/%-d %-H:%M") %>
           <% if user_signed_in? %>
             <% if situation.user_id == current_user.id %>
-            <div class="dropdown post-menu">
-              <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                <i class="fas fa-ellipsis-v"></i>
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li class="post-delete small-icon">
-                  <i class="far fa-trash-alt"></i>
-                  <%= link_to "削除する", situation_path(situation), method: :delete, data: { confirm: "本当に削除しますか？" } %>
-                </li>
-              </ul>
-            </div>
+              <div class="dropdown post-menu">
+                <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <i class="fas fa-ellipsis-v"></i>
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li class="post-delete small-icon">
+                    <i class="far fa-trash-alt"></i>
+                    <%= link_to "削除する", situation_path(situation), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+                  </li>
+                </ul>
+              </div>
             <% end %>
           <% end %>
           <div class="post-content text-center">
@@ -149,4 +149,8 @@
       </div>
       <% end %>
     </div>
+    <div class="top-post-button text-center">
+      <%= link_to "他の投稿を見る >>", situations_path, class:"btn btn-primary" %>
+    </div>
+  </div>
 </div>
