@@ -47,11 +47,6 @@ li {
   display: inline-block;
 }
 
-// .header_right a:hover{
-//   color: #0052D4;
-//   transition: 0.4s ;
-// }
-
 .fa-hand-paper{
   transform: rotate(45deg);
 }
@@ -160,8 +155,6 @@ li {
   margin-bottom: 20px;
   border: solid 1px #e3dede;
   border-radius: 10px;
-  // width: 60%;
-  // margin: 0 auto;
   background-color: white;
   box-shadow: 2px 2px 4px #a3a1a1;
 }
@@ -223,12 +216,6 @@ li {
   margin-bottom: 30px;
 }
 
-// .submit-form input[type="text"] {
-//   width: 400px;
-//   height: 35px;
-//   padding: 20px 15px;
-// }
-
 .submit-button{
   margin-bottom: 80px;
 }
@@ -265,7 +252,6 @@ li {
 
 .search-form input[type="search"] {
   width: 240px;
-  // height: 35px;
   padding: 0px 6px;
   border: solid 1px #8b8687;
 }
@@ -283,7 +269,6 @@ li {
 .comment-wrapper{
   width: 70%;
   margin: 0 auto;
-  // border: solid 0.75px #8b8687;
   padding-bottom: 80px;
   padding-top: 30px;
 }
@@ -593,7 +578,6 @@ table td{
   text-decoration: none;
 }
 
-
 .pagination {
   justify-content: center;
   margin-top: 15px;
@@ -603,8 +587,6 @@ table td{
 .mypage_and_favorite{
   margin-bottom: 200px;
 }
-
-
 
 // ここまでmain
 
