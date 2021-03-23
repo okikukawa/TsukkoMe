@@ -278,12 +278,12 @@ li {
 }
 
 .comment-list{
-  width:70%;
+  width:85%;
   margin: 0 auto;
 }
 
 .comment-new-form textarea {
-  width: 70% ;
+  width: 85% ;
   height: 150px;
   padding: 10px;
   margin: 0 auto;
@@ -293,16 +293,20 @@ li {
 }
 
 .comment-edit-form textarea {
-  width: 70% ;
+  width: 90% ;
   height: 80px;
-  padding: 10px;
+  padding-bottom: 10px;
   margin: 0 auto;
   border: solid 1px #a79c8e;
   border-radius: 10px;
 }
 
+.comment-edit-form{
+  padding-top: 10px;
+}
+
 .comment-main-post{
-  padding: 10px 25px;
+  padding: 20px 25px;
   margin-bottom: 10px;
   border: solid 1px #a79c8e;
   border-radius: 10px;
@@ -312,7 +316,7 @@ li {
 
 .comment-content{
   text-align: center;
-  padding: 8px 0px;
+  padding-top: 15px;
 }
 
 .very-small-icon-image{

@@ -4,7 +4,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="main-post col-10 offset-1">
+    <div class="main-post col-10 offset-1 col-lg-8 offset-lg-2">
       <% if @situation.user.image.present? %>
         <%= link_to image_tag(@situation.user.image.url, class:"small-icon-image"), user_path(@situation.user) %>
       <% else %>
@@ -37,7 +37,7 @@
         <%= @situation.tsukkomis.count %>
       </div>
     </div>
-    <div class="col-10 offset-1">
+    <div class="col-10 offset-1 col-lg-8 offset-lg-2">
       <%= render 'form' %>
     </div>
   </div>
