@@ -54,10 +54,6 @@ li {
   transform: rotate(45deg);
 }
 
-.alert{
-  margin-bottom: 0px;
-}
-
 // ここまでheader
 
 
@@ -100,26 +96,6 @@ li {
   margin-bottom: 100px;
 }
 
-// .top-button a:hover{
-//   background-color: #f9bc60;
-//   color: white;
-//   border: solid 1px #f9bc60;
-// }
-
-// .btn-warning{
-//   background-color: #ffc107;
-//   border-radius: 100px;
-//   border: solid 1px #ffc107;
-//   padding: 16px 32px;
-//   color: #f8f9fa;
-// }
-//
-// .btn-warning:hover{
-//   background-color: #ff8906;
-//   color: white;
-//   border: solid 1px #ffc107;
-// }
-
 .btn-primary{
   background-color: #faae2b;
   border-radius: 20px;
@@ -137,11 +113,6 @@ li {
   transform : translate(-50%,-50%);
 }
 
-.main-post:hover{
-  box-shadow: 4px 4px 8px #a3a1a1;
-  transition: 0.3s;
-}
-
 .main-post{
   padding: 15px 25px;
   margin-bottom: 20px;
@@ -149,6 +120,11 @@ li {
   border-radius: 10px;
   background-color: white;
   box-shadow: 2px 2px 4px #a3a1a1;
+}
+
+.main-post:hover{
+  box-shadow: 4px 4px 8px #a3a1a1;
+  transition: 0.3s;
 }
 
 .post-menu{
@@ -498,17 +474,6 @@ table td{
   padding: 30px 0px;
   padding-bottom: 100px;
 }
-
-// .btn-outline-warning{
-//   border-radius: 10px;
-//   background-color: #ffc107;
-//   color: white;
-// }
-//
-// .btn-outline-warning:hover{
-//   background-color: #ff8906;
-//   color: white;
-// }
 
 .top-wrapper-fungo{
   background-image: url("wood.jpeg");
