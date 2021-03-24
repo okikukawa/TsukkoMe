@@ -5,7 +5,7 @@ RSpec.describe Situation, type: :model do
       it 'バリデーションに引っかかる' do
         situation = Situation.new(title: "")
         situation.valid?
-        expect(situation.errors.messages[:title]).to include('を入力してください')
+        expect(situation.errors.messages[:title]).to include('を入力してください。')
       end
     end
     context 'titleを50文字より多く登録した場合' do

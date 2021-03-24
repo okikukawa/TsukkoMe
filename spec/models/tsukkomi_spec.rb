@@ -5,7 +5,7 @@ RSpec.describe Tsukkomi, type: :model do
       it 'バリデーションに引っかかる' do
         tsukkomi = Tsukkomi.new(phrase: "")
         tsukkomi.valid?
-        expect(tsukkomi.errors.messages[:phrase]).to include('を入力してください')
+        expect(tsukkomi.errors.messages[:phrase]).to include('を入力してください。')
       end
     end
     context 'phraseを50文字より多く登録した場合' do

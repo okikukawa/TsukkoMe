@@ -1,6 +1,9 @@
 <div class="container">
   <div class="edit-profile-wrapper">
     <div class="row">
+      <div class="col-10 offset-1 col-lg-8 offset-lg-2 text-center">
+        <%= render "devise/shared/error_messages", resource: resource %>
+      </div>
       <div class="edit-profile-image col-10 offset-1 col-lg-8 offset-lg-2">
         <% if @user.image.url %>
           <p><%= image_tag @user.image.url, class:"big-icon-image" %></p>
@@ -12,57 +15,42 @@
     <div class="row">
       <div class="edit-profile-form col-10 offset-1 col-lg-8 offset-lg-2">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-          <div class="col-10 offset-1 col-lg-8 offset-lg-2">
-            <%= render "devise/shared/error_messages", resource: resource %>
-          </div>
-
           <div class="field text-center">
             <%= f.file_field :image, autofocus: true %>
           </div>
-
           <div class="row">
             <div class="field col-10 offset-1 col-lg-8 offset-lg-2">
               <%= f.label :name %><br />
               <%= f.text_field :name, autofocus: true, class:"form-control" %>
             </div>
-
             <div class="field field col-10 offset-1 col-lg-8 offset-lg-2">
               <%= f.label :email %><br />
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
             </div>
-
-
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
             <% end %>
-
             <div class="field col-10 offset-1 col-lg-8 offset-lg-2">
               <%= f.label :profile %><br />
               <%= f.text_area :profile, autofocus: true, class:"form-control", placeholder: "プロフィールを入力" %>
             </div>
-
-
             <div class="field col-10 offset-1 col-lg-8 offset-lg-2">
               <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i><br />
               <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
             </div>
-
             <div class="field col-10 offset-1 col-lg-8 offset-lg-2">
               <%= f.label :password_confirmation %>
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
             </div>
-
             <div class="field col-10 offset-1 col-lg-8 offset-lg-2">
               <br>
               <br>
-              <%= f.label "現在のパスワード（変更を反映するには現在のパスワードを入力してください）"%>
+              <%= f.label "現在のパスワード（変更を反映するには現在のパスワードを入力してください。）"%>
               <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", placeholder: "パスワードを入力" %>
             </div>
-
             <div class="actions update-btn button-orange text-center col-10 offset-1 col-lg-8 offset-lg-2">
               <%= f.submit "更新する", class: "btn btn-warning" %>
             </div>
-
             <div class="back-link text-center col-10 offset-1 col-lg-8 offset-lg-2">
               <%= link_to "更新せずにマイページに戻る", :back %>
             </div>

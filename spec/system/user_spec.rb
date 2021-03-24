@@ -72,7 +72,7 @@ RSpec.describe 'ユーザー機能' ,type: :system do
         fill_in '名前', with: 'アリス'
         fill_in 'Eメール', with: 'alice@alice.com'
         fill_in 'プロフィール', with: 'こんにちは！'
-        fill_in '現在のパスワード（変更を反映するには現在のパスワードを入力してください）', with: 'password'
+        fill_in '現在のパスワード（変更を反映するには現在のパスワードを入力してください。）', with: 'password'
         click_button '更新'
         visit user_path(@user1)
         expect(page).to have_content 'アリス'

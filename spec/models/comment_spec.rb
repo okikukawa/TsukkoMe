@@ -5,7 +5,7 @@ RSpec.describe Comment, type: :model do
       it 'バリデーションに引っかかる' do
         comment = Comment.new(content: "")
         comment.valid?
-        expect(comment.errors.messages[:content]).to include('を入力してください')
+        expect(comment.errors.messages[:content]).to include('を入力してください。')
       end
     end
     context 'contentを200文字より多く登録した場合' do
