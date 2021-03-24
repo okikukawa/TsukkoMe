@@ -268,51 +268,6 @@ li {
   margin-top: 100px;
 }
 
-@media screen and (max-width:768px){
-  .situation-detail-content{
-    font-size: 1.1rem;
-  }
-  .search-form input[type="search"] {
-    width: 165px;
-    padding: 0px 6px;
-    border: solid 1px #8b8687;
-    border-radius: 2px;
-  }
-  .search-form input[type="submit"] {
-    float: right;
-    margin-right: 30px;
-    margin-top: 5px;
-  }
-  .search-wrapper{
-    height: 80px;
-    position: relative;
-    margin-top: 100px;
-  }
-  .searched-wrapper{
-    height: 80px;
-    position: relative;
-  }
-}
-
-@media screen and (max-width:576px){
-  .situation-detail-content{
-    font-size: 1rem;
-    vertical-align: text-bottom;
-  }
-  .search-form input[type="search"] {
-    width: 155px;
-    padding: 0px 6px;
-    border: solid 1px #8b8687;
-    border-radius: 2px;
-  }
-  .search-form input[type="submit"] {
-    float: right;
-    margin-right: 25px;
-    margin-top: 5px;
-  }
-}
-
-
 .tsukkomi-detail-content{
   padding-top: 60px;
   padding-bottom: 20px;
@@ -396,7 +351,7 @@ table td{
 
 .profile-wrapper{
   float: left;
-  height: 280px;
+  height: 320px;
   width: 70%;
   margin: 40px auto;
   padding: 40px;
@@ -476,7 +431,8 @@ table td{
   background-color: #ff8906;
 }
 
-.selected-tab:hover{
+.selected-tab a:hover{
+  color: white;
 }
 
 .not-selected-tab{
@@ -487,6 +443,10 @@ table td{
   background-color: #a79c8e;
   opacity: 0.8;
   transition: 0.3s;
+}
+
+.not-selected-tab a:hover{
+  color: white;
 }
 
 .edit-profile-image{
@@ -710,4 +670,54 @@ footer {
 
 .table{
   border-bottom: 1px solid #dfdfdf;
+}
+
+// 以下、レスポンシブデザイン
+
+@media screen and (max-width:992px){
+
+}
+
+@media screen and (max-width:768px){
+  .situation-detail-content{
+    font-size: 1.1rem;
+  }
+  .search-form input[type="search"] {
+    width: 165px;
+    padding: 0px 6px;
+    border: solid 1px #8b8687;
+    border-radius: 2px;
+  }
+  .search-form input[type="submit"] {
+    float: right;
+    margin-right: 30px;
+    margin-top: 5px;
+  }
+  .search-wrapper{
+    height: 80px;
+    position: relative;
+    margin-top: 100px;
+  }
+  .searched-wrapper{
+    height: 80px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width:576px){
+  .situation-detail-content{
+    font-size: 1rem;
+    vertical-align: text-bottom;
+  }
+  .search-form input[type="search"] {
+    width: 155px;
+    padding: 0px 6px;
+    border: solid 1px #8b8687;
+    border-radius: 2px;
+  }
+  .search-form input[type="submit"] {
+    float: right;
+    margin-right: 25px;
+    margin-top: 5px;
+  }
 }
