@@ -5,12 +5,12 @@
 <% end %>
 
 <div class="container">
-  <div class="edit-profile-wrapper">
+  <div class="new-profile-wrapper">
     <div class="row">
       <div class="signup-title col-10 offset-1 col-lg-8 offset-lg-2 ">
         新規会員登録
       </div>
-      <div class="edit-profile-form col-10 offset-1 col-lg-8 offset-lg-2">
+      <div class="new-profile-form col-10 offset-1 col-lg-8 offset-lg-2">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <div class="row">
             <div class="col-10 offset-1 col-lg-8 offset-lg-2">
@@ -34,8 +34,8 @@
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
               <br>
             </div>
-            <div class="actions signup-btn col-10 offset-1 col-lg-8 offset-lg-2">
-              <%= f.submit "登録", class: "btn btn-outline-warning w-50" %>
+            <div class="actions signup-btn button-orange col-10 offset-1 col-lg-8 offset-lg-2">
+              <%= f.submit "登録", class: "btn btn-warning w-50" %>
             </div>
           </div>
         <% end %>
