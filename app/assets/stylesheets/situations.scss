@@ -456,8 +456,9 @@ table td{
 }
 
 .edit-profile-form{
-  background-color: white;
+  background-color: #f5f5f5;
   padding: 20px;
+  border-radius: 5px;
 }
 
 .field{
@@ -625,16 +626,6 @@ footer {
   position: absolute;
   bottom: 0;
 }
-
-// .footer_logo{
-//   width: 100px;
-// }
-//
-// .footer_logo a{
-//   font-size: 1rem;
-//   color: #f8f9fa;
-//   padding: 0px 30px;
-// }
 
 .copyright{
   font-size: 0.9rem;
