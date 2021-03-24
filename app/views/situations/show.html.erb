@@ -50,18 +50,13 @@
       </div>
     </div>
 
-
-    <!-- <div class="new-tsukkomi-button text-center">
-      <%= link_to "このお題に例えツッコむ！", new_situation_tsukkomi_path(@situation.id), class:"btn btn-warning" %>
-    </div> -->
-
     <% if @tsukkomis.present? %>
       <div class="search-wrapper">
         <div class="row">
-          <div class="situation-detail-content col-4 offset-2">
+          <div class="situation-detail-content col-4 offset-1 col-lg-3 offset-lg-2">
             みんなのツッコミ
           </div>
-          <div class="search-form col-5 offset-1">
+          <div class="search-form col-5 offset-2 col-lg-5 offset-lg-2">
             <%= search_form_for @search, url: search_situation_path(@situation) do |f| %>
               <%= f.search_field :phrase_cont, placeholder: "ツッコミをさがす" %>
               <%= f.submit '検索' %>

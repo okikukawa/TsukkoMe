@@ -97,7 +97,7 @@
           <div class="col-sm-10 offset-sm-1">
             <div class="function-message">
               <p class="text-center">千本ノック機能</p>
-              　画面上部の「きたえる」からは、お題がランダムにされる機能（千本ノック）を利用することができます。
+              　画面上部の「<%= link_to "きたえる", thousand_fungo_situations_path %>」からは、お題がランダムにされる機能（千本ノック）を利用することができます。
               <br>
               <br>
               　次々と表示されるお題を例えていき、例えるチカラを向上させましょう！
@@ -154,7 +154,7 @@
       <% end %>
     </div>
     <div class="top-post-button text-center">
-      <%= link_to "他の投稿を見る >>", situations_path, class:"btn btn-primary" %>
+      <%= link_to "他の投稿を見る >>", situations_path, class:"btn btn-warning" %>
     </div>
   </div>
 </div>
