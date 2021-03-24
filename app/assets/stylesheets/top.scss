@@ -99,7 +99,7 @@
 
 .tsukkomi-example{
   padding-top: 100px;
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 }
 
 .tsukkomi-example-title{
@@ -108,13 +108,30 @@
   padding: 60px 0px;
 }
 
-.top-post-button{
-  margin-top: 50px;
-  margin-bottom: 150px;
+.tsukkomi-example-post{
+  margin-bottom: 50px;
 }
 
-.top-post-button a:hover{
-  background-color: #f9bc60;
+.button-orange a{
+  border-radius: 25px;
+  padding: 10px 20px;
   color: white;
-  border: solid 1px #f9bc60;
+}
+
+.button-orange a:hover{
+  background-color: #ffda8e;
+  color: white;
+  border: solid 1px #ffda8e;
+}
+
+.button-orange input[type="submit"]{
+  border-radius: 25px;
+  padding: 10px 20px;
+  color: white;
+}
+
+.button-orange input[type="submit"]:hover{
+  background-color: #ffda8e;
+  color: white;
+  border: solid 1px #ffda8e;
 }

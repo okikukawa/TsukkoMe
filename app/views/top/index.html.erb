@@ -114,7 +114,7 @@
     最近投稿されたお題
   </div>
   <div class="container">
-    <div class="situations-post">
+    <div class="situations-post tsukkomi-example-post">
       <% @situations.each do |situation| %>
       <div class="row">
         <div class="main-post col-10 offset-1 col-lg-8 offset-lg-2">
@@ -153,7 +153,7 @@
       </div>
       <% end %>
     </div>
-    <div class="top-post-button text-center">
+    <div class="button-orange text-center">
       <%= link_to "他の投稿を見る >>", situations_path, class:"btn btn-warning" %>
     </div>
   </div>
