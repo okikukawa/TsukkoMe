@@ -9,21 +9,25 @@ html {
   // box-sizing: border-box;
 }
 
+html a{
+  text-decoration: none;
+}
+
+html a:hover{
+  text-decoration: none;
+}
+
 body {
   width: 100%;
   background-color: #f0f5f9;
   font-family: 'Noto Sans JP', sans-serif;
 }
 
-.text-center{
-  text-align: center;
-}
-
 // ここからheader
 
 header {
   background: linear-gradient(135deg, #FF4E50, #F9D423);
-  height: 65px
+  // height: 65px
 }
 
 li {
@@ -32,32 +36,21 @@ li {
 
 .header a{
   color: #f8f9fa;
-  text-decoration: none;
 }
 
-.header_logo a{
-  font-size: 1.25rem;
-  padding: 16px 30px;
-  display: block;
-  // font-family: 'M PLUS Rounded 1c', sans-serif;
+.navbar-toggler{
+  border-color: #f8f9fa;
+  border-radius: 10px;
 }
 
-.header_right a{
-  padding: 20.5px 10px;
-  display: inline-block;
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath
+                         stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10'
+                         stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
-
-// .header_right a:hover{
-//   color: #0052D4;
-//   transition: 0.4s ;
-// }
 
 .fa-hand-paper{
   transform: rotate(45deg);
-}
-
-.alert{
-  margin-bottom: 0px;
 }
 
 // ここまでheader
@@ -99,21 +92,7 @@ li {
 .top-button{
   padding-bottom: 50px;
   margin-top: 50px;
-  margin-bottom: 100px;
-}
-
-.top-button a:hover{
-  background-color: #f9bc60;
-  color: white;
-  border: solid 1px #f9bc60;
-}
-
-.btn-warning{
-  background-color: #ffc107;
-  border-radius: 20px;
-  border: solid 1px #ffc107;
-  padding: 16px 32px;
-  color: #f8f9fa;
+  margin-bottom: 50px;
 }
 
 .btn-primary{
@@ -133,10 +112,13 @@ li {
   transform : translate(-50%,-50%);
 }
 
-.new-tsukkomi-button a:hover{
-  background-color: #f9bc60;
-  color: white;
-  border: solid 1px #f9bc60;
+.main-post{
+  padding: 15px 25px;
+  margin-bottom: 20px;
+  border: solid 1px #e3dede;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 4px #a3a1a1;
 }
 
 .main-post:hover{
@@ -144,34 +126,11 @@ li {
   transition: 0.3s;
 }
 
-.main-post a{
-  text-decoration: none;
-}
-
-
-.btn-warning:hover{
-  background-color: #ff8906;
-  color: white;
-  border: solid 1px #ffc107;
-}
-
-.main-post{
-  padding: 15px 25px;
-  margin-bottom: 20px;
-  border: solid 1px #e3dede;
-  border-radius: 10px;
-  // width: 60%;
-  // margin: 0 auto;
-  background-color: white;
-  box-shadow: 2px 2px 4px #a3a1a1;
-}
-
 .post-menu{
   float:right;
 }
 
 .dropdown-menu a{
-  text-decoration: none;
   color: #333030;
 }
 
@@ -180,7 +139,6 @@ li {
 }
 
 .post-delete  a{
-  text-decoration: none;
   color: red;
 }
 
@@ -206,14 +164,13 @@ li {
 }
 
 .post-icons a{
-  text-decoration: none;
   color: #333030;
 }
 
 .new-situation{
-  padding: 0px 200px;
   margin-top: 50px;
 }
+
 .new-situation-content{
   margin-top: 20px;
 }
@@ -222,12 +179,6 @@ li {
   margin-top: 20px;
   margin-bottom: 30px;
 }
-
-// .submit-form input[type="text"] {
-//   width: 400px;
-//   height: 35px;
-//   padding: 20px 15px;
-// }
 
 .submit-button{
   margin-bottom: 80px;
@@ -248,30 +199,32 @@ li {
 }
 
 .situation-detail-content{
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .search-form{
-  margin-top: 5px;
-  margin-right: 20px;
   position: absolute;
   right: 0;
 }
 
 .search-form a{
-  text-decoration: none;
   color: #8b8687;
 }
 
 .search-form input[type="search"] {
-  width: 240px;
-  // height: 35px;
+  width: 175px;
   padding: 0px 6px;
   border: solid 1px #8b8687;
+  border-radius: 2px;
+}
+
+.searched-wrapper{
+  height: 50px;
+  position: relative;
 }
 
 .search-clear{
-  padding:0px;
+  margin-top: 100px;
 }
 
 .tsukkomi-detail-content{
@@ -283,18 +236,17 @@ li {
 .comment-wrapper{
   width: 70%;
   margin: 0 auto;
-  // border: solid 0.75px #8b8687;
   padding-bottom: 80px;
   padding-top: 30px;
 }
 
 .comment-list{
-  width:70%;
+  width:85%;
   margin: 0 auto;
 }
 
 .comment-new-form textarea {
-  width: 70% ;
+  width: 85% ;
   height: 150px;
   padding: 10px;
   margin: 0 auto;
@@ -304,16 +256,20 @@ li {
 }
 
 .comment-edit-form textarea {
-  width: 70% ;
+  width: 90% ;
   height: 80px;
-  padding: 10px;
+  padding-bottom: 10px;
   margin: 0 auto;
   border: solid 1px #a79c8e;
   border-radius: 10px;
 }
 
+.comment-edit-form{
+  padding-top: 10px;
+}
+
 .comment-main-post{
-  padding: 10px 25px;
+  padding: 20px 25px;
   margin-bottom: 10px;
   border: solid 1px #a79c8e;
   border-radius: 10px;
@@ -323,7 +279,7 @@ li {
 
 .comment-content{
   text-align: center;
-  padding: 8px 0px;
+  padding-top: 15px;
 }
 
 .very-small-icon-image{
@@ -354,7 +310,7 @@ table td{
 
 .profile-wrapper{
   float: left;
-  height: 280px;
+  height: 320px;
   width: 70%;
   margin: 40px auto;
   padding: 40px;
@@ -369,24 +325,13 @@ table td{
   height: 160px;
   border-radius: 100px;
   object-fit: cover;
-}
-
-.profile-image {
-  width: 160px;
-  height: 160px;
-}
-
-.profile-edit{
-  padding-top: 15px;
-}
-
-.profile-edit a{
-  text-align: center;
+  margin-top: 30px;
 }
 
 .profile-text{
   float: left;
   padding-left:15px;
+  padding-top:10px;
   color: #52616a;
 }
 
@@ -397,16 +342,64 @@ table td{
 .profile-message{
   float: left;
   padding-top: 15px;
-  // background-color: #f25042;
 }
 
 .profile-edit{
-  float:right;
+  padding:8px;
+  padding-left: 15px;
 }
 
-.profile-edit{
-  float:right;
+.btn-outline-warning{
+  border-radius: 25px;
+  padding:5px 10px;
 }
+
+.btn-outline-warning:hover{
+  color: white;
+}
+
+@media screen and (max-width:768px){
+  .profile-wrapper{
+    float: left;
+    height: 465px;
+    width: 70%;
+    margin: 40px auto;
+    padding: 40px;
+    border: solid 1px #e3dede;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 4px #a3a1a1;
+  }
+  .big-icon-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 100px;
+    object-fit: cover;
+    margin-top: 0px;
+  }
+  .profile-username{
+    text-align: center;
+    padding:0px;
+    font-size: 1.4rem;
+  }
+  .profile-text{
+    float: left;
+    padding-left:15px;
+    padding-top:0px;
+    color: #52616a;
+  }
+  .profile-message{
+    float: left;
+    padding-top: 30px;
+  }
+  .profile-edit{
+    text-align: center;
+  }
+  .profile-edit-btn{
+    margin-top: 20px;
+  }
+}
+
 
 .changetab {
   text-align: center;
@@ -415,7 +408,6 @@ table td{
 
 .changetab a{
   color: #f8f9fa;
-  text-decoration: none;
   display: block;
 }
 
@@ -435,7 +427,8 @@ table td{
   background-color: #ff8906;
 }
 
-.selected-tab:hover{
+.selected-tab a:hover{
+  color: white;
 }
 
 .not-selected-tab{
@@ -448,15 +441,28 @@ table td{
   transition: 0.3s;
 }
 
+.not-selected-tab a:hover{
+  color: white;
+}
+
 .edit-profile-image{
   background-color: white;
   text-align: center;
-  padding-top: 50px;
 }
 
 .edit-profile-form{
   background-color: white;
+  border: 1px solid #e1e1e1;
   padding: 20px;
+  border-radius: 5px;
+  margin-top: 75px;
+}
+
+.new-profile-form{
+  background-color: white;
+  border: 1px solid #e1e1e1;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .field{
@@ -464,28 +470,27 @@ table td{
 }
 
 .update-btn{
-  padding: 10px 15px ;
+  padding: 20px 15px ;
 }
 
-.back-btn {
+.back-link{
   padding-top: 20px;
 }
 
 .back-btn a{
-  text-decoration: none;
   color: #52616a;
 }
 
 .signup-title{
   text-align: center;
   font-size: 2rem;
-  background-color: white;
   padding: 20px;
   color: #52616a;
 }
 
 .signup-btn{
   text-align: center;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 
@@ -495,22 +500,13 @@ table td{
 
 .login-btn{
   text-align: center;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 
 .guide-to-login-or-signup{
-  padding: 30px;
-}
-
-.btn-outline-warning{
-  border-radius: 10px;
-  background-color: #ffc107;
-  color: white;
-}
-
-.btn-outline-warning:hover{
-  background-color: #ff8906;
-  color: white;
+  padding: 30px 0px;
+  padding-bottom: 100px;
 }
 
 .top-wrapper-fungo{
@@ -537,7 +533,7 @@ table td{
 .top-message-fungo{
   position: absolute;
   top: 75%;
-  left: 50%;
+  left: 42%;
   -webkit-transform : translate(-50%,-50%);
   transform : translate(-50%,-50%);
   font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
@@ -554,7 +550,6 @@ table td{
 
 .situation-content-fungo a{
   color: #534847;
-  text-decoration: none;
   font-size: 1.5rem;
   display: block;
 }
@@ -570,11 +565,11 @@ table td{
 
 .next-btn-fungo a{
   text-align: right;
-  text-decoration: none;
 }
 
 .tsukkomilist-fungo{
   padding: 50px 0px;
+  margin-bottom: 100px;
 }
 
 .message-tsukkomilist-fungo{
@@ -589,11 +584,6 @@ table td{
   font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
 }
 
-.other-tsukkomi-fungo a{
-  text-decoration: none;
-}
-
-
 .pagination {
   justify-content: center;
   margin-top: 15px;
@@ -604,8 +594,6 @@ table td{
   margin-bottom: 200px;
 }
 
-
-
 // ここまでmain
 
 
@@ -614,11 +602,12 @@ table td{
 
 footer {
   width: 100%;
-  height: 100px;
+  height: 50px;
+  float: left;
   background-image: url("circle-blues.png");
   background-color: #09015f;
   background-size: cover;
-  padding: 35px 0px;
+  padding: 15px 0px;
   margin: auto;
   color: #f8f9fa;
   font-size: 0.75rem;
@@ -626,9 +615,8 @@ footer {
   bottom: 0;
 }
 
-.footer_logo a{
-  font-size: 1.25rem;
-  text-decoration: none;
+.copyright{
+  font-size: 0.9rem;
   color: #f8f9fa;
   padding: 0px 30px;
 }
@@ -672,4 +660,50 @@ footer {
 
 .table{
   border-bottom: 1px solid #dfdfdf;
+}
+
+// 以下、レスポンシブデザイン
+
+@media screen and (max-width:768px){
+  .situation-detail-content{
+    font-size: 1.1rem;
+  }
+  .search-form input[type="search"] {
+    width: 165px;
+    padding: 0px 6px;
+    border: solid 1px #8b8687;
+    border-radius: 2px;
+  }
+  .search-form input[type="submit"] {
+    float: right;
+    margin-right: 30px;
+    margin-top: 5px;
+  }
+  .search-wrapper{
+    height: 80px;
+    position: relative;
+    margin-top: 100px;
+  }
+  .searched-wrapper{
+    height: 80px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width:576px){
+  .situation-detail-content{
+    font-size: 1rem;
+    vertical-align: text-bottom;
+  }
+  .search-form input[type="search"] {
+    width: 155px;
+    padding: 0px 6px;
+    border: solid 1px #8b8687;
+    border-radius: 2px;
+  }
+  .search-form input[type="submit"] {
+    float: right;
+    margin-right: 25px;
+    margin-top: 5px;
+  }
 }

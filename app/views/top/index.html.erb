@@ -9,18 +9,20 @@
 </div>
 
 <div class="container">
-  <div class="navi text-center">
-    TsukkoMe（ツッコミー）は、”たとえ”の上達をお手伝いするWebアプリケーションです。
-    <br>
-    <br>
-    <br>
-    <br>
-    お題に対して<b>例えツッコミ</b>という形で自分のたとえを投稿したり、他のユーザーのツッコミを閲覧することで様々な”たとえ”に触れ合うことができます。
-    <br>
-    <br>
-    <br>
-    <br>
-    また、お題がランダムに表示される千本ノック機能では、次々と表示されるお題に対して例えツッコミを繰り返すことで、”たとえ”の定着を図ることができます。
+  <div class="row">
+    <div class="navi text-center col-lg-10 offset-lg-1 ">
+      TsukkoMe（ツッコミー）は、”たとえ”の上達をお手伝いするWebアプリケーションです。
+      <br>
+      <br>
+      <br>
+      <br>
+      お題に対して<b>例えツッコミ</b>という形で自分のたとえを投稿したり、他のユーザーのツッコミを閲覧することで様々な”たとえ”に触れ合うことができます。
+      <br>
+      <br>
+      <br>
+      <br>
+      また、お題がランダムに表示される千本ノック機能では、次々と表示されるお題に対して例えツッコミを繰り返すことで、”たとえ”の定着を図ることができます。
+    </div>
   </div>
 </div>
 
@@ -29,7 +31,7 @@
     つかいかた
   </div>
   <div class="row">
-    <div class="step-contents col-8 offset-2">
+    <div class="step-contents col-10 offset-1 col-lg-8 offset-lg-2">
       <div class="step-content">
         <%= image_tag("select.png", class: "step-icon") %>
         <div class="step-message">
@@ -64,13 +66,13 @@
   </div>
   <div class="container">
     <div class="function-contents row">
-      <div class="function-content function-col-sm-12 col-md-4">
+      <div class="function-content function col-sm-12 col-md-4">
         <i class="fas fa-hand-paper fa-rotate-225 top-icon"></i>
         <div class="row">
           <div class="col-sm-10 offset-sm-1">
             <div class="function-message">
               <p class="text-center">ツッコミ機能</p>
-              さまざまなお題に対して例えツッコむことができます。
+              　さまざまなお題に対して例えツッコむことができます。
             </div>
           </div>
         </div>
@@ -81,9 +83,10 @@
           <div class="col-sm-10 offset-sm-1">
             <div class="function-message">
               <p class="text-center">ナイスツッコミ！機能</p>
-              ツッコミにナイスツッコミ！ボタンを押すことで、お気に入りのツッコミを保存することができます。
+              　ツッコミにナイスツッコミ！ボタンを押すことで、お気に入りのツッコミを保存することができます。
               <br>
-              保存したツッコミはマイページで確認することができます。
+              <br>
+              　保存したツッコミはマイページで確認することができます。
             </div>
           </div>
         </div>
@@ -94,9 +97,10 @@
           <div class="col-sm-10 offset-sm-1">
             <div class="function-message">
               <p class="text-center">千本ノック機能</p>
-              画面上部の「きたえる」からは、お題がランダムにされる機能（千本ノック）を利用することができます。
+              　画面上部の「<%= link_to "きたえる", thousand_fungo_situations_path %>」からは、お題がランダムにされる機能（千本ノック）を利用することができます。
               <br>
-              次々と表示されるお題を例えていき、例えるチカラを向上させましょう！
+              <br>
+              　次々と表示されるお題を例えていき、例えるチカラを向上させましょう！
             </div>
           </div>
         </div>
@@ -110,10 +114,10 @@
     最近投稿されたお題
   </div>
   <div class="container">
-    <div class="situations-post">
+    <div class="situations-post tsukkomi-example-post">
       <% @situations.each do |situation| %>
       <div class="row">
-        <div class="main-post col-8 offset-2">
+        <div class="main-post col-10 offset-1 col-lg-8 offset-lg-2">
           <% if situation.user.image.present? %>
             <%= link_to image_tag(situation.user.image.url, class:"small-icon-image"), user_path(situation.user) %>
           <% else %>
@@ -149,8 +153,8 @@
       </div>
       <% end %>
     </div>
-    <div class="top-post-button text-center">
-      <%= link_to "他の投稿を見る >>", situations_path, class:"btn btn-primary" %>
+    <div class="button-orange text-center">
+      <%= link_to "他のお題をみる >>", situations_path, class:"btn btn-warning" %>
     </div>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <% flash.each do |key,value| %>
   <% key = "success" if key == "notice" %>
   <% key = "danger" if key == "alert" %>
-  <%= content_tag(:div, value, class: "alert alert-#{key} text-center") %>
+  <%= content_tag(:div, value, class: "alert alert-#{key} text-center mb-0") %>
 <% end %>
 
 <div class="top-wrapper">
@@ -13,7 +13,7 @@
   <div class="situations-post">
     <% @situations.each do |situation| %>
     <div class="row">
-      <div class="main-post col-8 offset-2">
+      <div class="main-post col-10 offset-1 col-lg-8 offset-lg-2">
         <% if situation.user.image.present? %>
           <%= link_to image_tag(situation.user.image.url, class:"small-icon-image"), user_path(situation.user) %>
         <% else %>
@@ -52,7 +52,7 @@
   <div class="pagination">
     <%= paginate @situations %>
   </div>
-  <div class="top-button text-center">
+  <div class="top-button button-orange text-center">
     <%= link_to "お題を投稿する！", new_situation_path, class:"btn btn-warning" %>
   </div>
 </div>

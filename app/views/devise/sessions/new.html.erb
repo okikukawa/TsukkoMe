@@ -1,46 +1,38 @@
 <% flash.each do |key,value| %>
   <% key = "success" if key == "notice" %>
   <% key = "danger" if key == "alert" %>
-  <%= content_tag(:div, value, class: "alert alert-#{key} text-center") %>
+  <%= content_tag(:div, value, class: "alert alert-#{key} text-center mb-0") %>
 <% end %>
 
 <div class="container">
   <div class="edit-profile-wrapper">
     <div class="row">
-      <div class="signup-title col-8 offset-2 ">
+      <div class="signup-title col-10 offset-1 col-lg-8 offset-lg-2 ">
         ログイン
       </div>
-
-      <div class="edit-profile-form col-8 offset-2">
+      <div class="new-profile-form col-10 offset-1 col-lg-8 offset-lg-2">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="row">
-            <div class="field field col-8 offset-2">
+            <div class="field field col-10 offset-1 col-lg-8 offset-lg-2">
               <%= f.label :email %>
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "メールアドレスを入力" %>
             </div>
-
-
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
             <% end %>
-
-
-            <div class="field login-password col-8 offset-2">
+            <div class="field login-password col-10 offset-1 col-lg-8 offset-lg-2">
               <%= f.label :password %>
               <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder: "パスワードを入力" %>
             </div>
-
-            <div class="actions login-btn col-8 offset-2">
-              <%= f.submit "ログイン", class: "btn btn-outline-warning w-50" %>
+            <div class="actions login-btn button-orange col-10 offset-1 col-lg-8 offset-lg-2">
+              <%= f.submit "ログイン", class: "btn btn-warning w-50" %>
             </div>
           </div>
         <% end %>
       </div>
-
-      <div class="guide-to-login-or-signup col-8 offset-2 text-center">
+      <div class="guide-to-login-or-signup col-10 offset-1 col-lg-8 offset-lg-2 text-center">
         TsukkoMeのアカウントを持ってない場合は<%= link_to "新規登録", new_user_registration_path %>から。
       </div>
-
     </div>
   </div>
 </div>
