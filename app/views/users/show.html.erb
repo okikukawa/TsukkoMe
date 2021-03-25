@@ -8,26 +8,35 @@
   <div class="row">
     <div class="profile-wrapper col-10 offset-1 col-lg-8 offset-lg-2">
       <div class="row">
-        <div class="profile-image col-4 text-center">
+        <div class="profile-image col-12 col-md-4 text-center">
           <% if @user.image.url %>
             <p><%= image_tag @user.image.url, class:"big-icon-image" %></p>
           <% else %>
             <%= image_tag("profile_icon.png", class: "big-icon-image") %>
           <% end %>
-          <div class="profile-edit col-12">
-            <% if user_signed_in? %>
-              <% if @user.id == current_user.id && current_user.email != "guest@example.com"  %>
-                <%= link_to "編集", edit_user_registration_path(current_user), class:"btn btn-outline-secondary btn-sm" %>
-              <% end %>
-            <% end %>
-          </div>
         </div>
-        <div class="profile-text col-8">
-          <div class="profile-username">
-            <%= @user.name %>
+        <div class="profile-text col-12 col-md-8">
+          <div class="row">
+            <div class="profile-username col-md-5">
+              <%= @user.name %>
+            </div>
+            <div class="profile-edit col-md-3 offset-md-4 d-none d-md-block">
+              <% if user_signed_in? %>
+                <% if @user.id == current_user.id && current_user.email != "guest@example.com"  %>
+                  <%= link_to "編集", edit_user_registration_path(current_user), class:"btn btn-outline-warning btn-sm" %>
+                <% end %>
+              <% end %>
+            </div>
           </div>
           <div class="profile-message">
             <%= @user.profile %>
+          </div>
+          <div class="profile-edit col-12 d-block d-md-none">
+            <% if user_signed_in? %>
+              <% if @user.id == current_user.id && current_user.email != "guest@example.com"  %>
+                <%= link_to "編集", edit_user_registration_path(current_user), class:"btn btn-outline-warning btn-sm profile-edit-btn" %>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>

@@ -1,19 +1,19 @@
 <div class="container">
-  <div class="edit-profile-wrapper">
     <div class="row">
-      <div class="col-10 offset-1 col-lg-8 offset-lg-2 text-center">
-        <%= render "devise/shared/error_messages", resource: resource %>
-      </div>
-      <div class="edit-profile-image col-10 offset-1 col-lg-8 offset-lg-2">
-        <% if @user.image.url %>
-          <p><%= image_tag @user.image.url, class:"big-icon-image" %></p>
-        <% else %>
-          <%= image_tag("profile_icon.png", class: "big-icon-image") %>
-        <% end %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="new-profile-form col-10 offset-1 col-lg-8 offset-lg-2">
+      <div class="edit-profile-form col-10 offset-1 col-lg-8 offset-lg-2">
+        <div class="edit-profile-wrapper">
+          <div class="row">
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2 text-center">
+              <%= render "devise/shared/error_messages", resource: resource %>
+            </div>
+            <div class="edit-profile-image col-10 offset-1 col-lg-8 offset-lg-2">
+              <% if @user.image.url %>
+                <p><%= image_tag @user.image.url, class:"big-icon-image" %></p>
+              <% else %>
+                <%= image_tag("profile_icon.png", class: "big-icon-image") %>
+              <% end %>
+            </div>
+          </div>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <div class="field text-center">
             <%= f.file_field :image, autofocus: true %>
@@ -54,9 +54,9 @@
           </div>
         <% end %>
         </div>
-        <div class="back-link text-center col-10 offset-1 col-lg-8 offset-lg-2">
-          <%= link_to "更新せずにマイページに戻る", :back %>
-        </div>
+      </div>
+      <div class="back-link text-center col-10 offset-1 col-lg-8 offset-lg-2">
+        <%= link_to "更新せずにマイページに戻る", :back %>
       </div>
     </div>
   </div>

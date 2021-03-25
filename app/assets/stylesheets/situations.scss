@@ -324,24 +324,13 @@ table td{
   height: 160px;
   border-radius: 100px;
   object-fit: cover;
-}
-
-.profile-image {
-  width: 160px;
-  height: 160px;
-}
-
-.profile-edit{
-  padding-top: 15px;
-}
-
-.profile-edit a{
-  text-align: center;
+  margin-top: 30px;
 }
 
 .profile-text{
   float: left;
   padding-left:15px;
+  padding-top:10px;
   color: #52616a;
 }
 
@@ -352,16 +341,59 @@ table td{
 .profile-message{
   float: left;
   padding-top: 15px;
-  // background-color: #f25042;
 }
 
 .profile-edit{
-  float:right;
+  padding:8px;
+  padding-left: 15px;
 }
 
-.profile-edit{
-  float:right;
+.btn-outline-warning:hover{
+  color: white;
 }
+
+@media screen and (max-width:768px){
+  .profile-wrapper{
+    float: left;
+    height: 465px;
+    width: 70%;
+    margin: 40px auto;
+    padding: 40px;
+    border: solid 1px #e3dede;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 4px #a3a1a1;
+  }
+  .big-icon-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 100px;
+    object-fit: cover;
+    margin-top: 0px;
+  }
+  .profile-username{
+    text-align: center;
+    padding:0px;
+    font-size: 1.4rem;
+  }
+  .profile-text{
+    float: left;
+    padding-left:15px;
+    padding-top:0px;
+    color: #52616a;
+  }
+  .profile-message{
+    float: left;
+    padding-top: 30px;
+  }
+  .profile-edit{
+    text-align: center;
+  }
+  .profile-edit-btn{
+    margin-top: 20px;
+  }
+}
+
 
 .changetab {
   text-align: center;
@@ -410,12 +442,14 @@ table td{
 .edit-profile-image{
   background-color: white;
   text-align: center;
-  padding-top: 50px;
 }
 
 .edit-profile-form{
+  background-color: white;
+  border: 1px solid #e1e1e1;
   padding: 20px;
   border-radius: 5px;
+  margin-top: 75px;
 }
 
 .new-profile-form{
@@ -439,10 +473,6 @@ table td{
 
 .back-btn a{
   color: #52616a;
-}
-
-.edit-profile-wrapper{
-  margin-top: 50px;
 }
 
 .signup-title{
@@ -627,10 +657,6 @@ footer {
 }
 
 // 以下、レスポンシブデザイン
-
-@media screen and (max-width:992px){
-
-}
 
 @media screen and (max-width:768px){
   .situation-detail-content{
