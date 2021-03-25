@@ -27,7 +27,7 @@ body {
 
 header {
   background: linear-gradient(135deg, #FF4E50, #F9D423);
-  height: 65px
+  // height: 65px
 }
 
 li {
@@ -38,16 +38,14 @@ li {
   color: #f8f9fa;
 }
 
-.header_logo a{
-  font-size: 1.25rem;
-  padding: 16px 30px;
-  display: block;
-  // font-family: 'M PLUS Rounded 1c', sans-serif;
+.navbar-toggler{
+  border-color: #f8f9fa;
 }
 
-.header_right a{
-  padding: 20.5px 10px;
-  display: inline-block;
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath
+                         stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10'
+                         stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .fa-hand-paper{
@@ -421,7 +419,8 @@ table td{
 }
 
 .new-profile-form{
-  background-color: #f6f6f6;
+  background-color: white;
+  border: 1px solid #e1e1e1;
   padding: 20px;
   border-radius: 5px;
 }
@@ -449,7 +448,6 @@ table td{
 .signup-title{
   text-align: center;
   font-size: 2rem;
-  background-color: white;
   padding: 20px;
   color: #52616a;
 }
