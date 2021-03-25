@@ -44,6 +44,11 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'launchy'
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -81,3 +86,7 @@ gem 'kaminari'
 gem 'fog-aws'
 
 gem 'dotenv-rails'
+
+gem 'unicorn'
+
+gem 'mini_racer', platforms: :ruby
