@@ -77,3 +77,7 @@ gem 'mini_magick'
 gem 'ransack'
 
 gem 'kaminari'
+
+gem 'fog-aws'
+
+gem 'dotenv-rails'
