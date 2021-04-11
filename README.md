@@ -81,10 +81,14 @@ https://docs.google.com/spreadsheets/d/1PkiYkDD6HnzTGXp5kTyyHpQcwfRkdtvBbSseIAvt
 
 ## 使用予定Gem
 * devise
+* devise-i18n
 * carrierwave
 * mini_magick
 * kaminari
 * ransack
+* fog-aws
+* dotenv-rails
+* unicorn
 
 ## 卒業課題要件
 * 就業Termの技術
