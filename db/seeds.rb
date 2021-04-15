@@ -42,3 +42,6 @@
 
 @situation = @user.situations.create(title: "直角")
 @situation = @situation.tsukkomis.create(phrase: "エジプトくらい直角", user_id: 1)
+
+@situation = @user.situations.create(title: "おいしい")
+@situation = @situation.tsukkomis.create(phrase: "風邪明けの雑炊くらいおいしい", user_id: 1)
