@@ -332,7 +332,8 @@ table td{
 }
 
 .profile-username{
-  font-size: 1.75rem;
+  font-size: 1.15rem;
+  padding: 10px 20px;
 }
 
 .profile-message{
@@ -342,7 +343,6 @@ table td{
 
 .profile-edit{
   padding:8px;
-  padding-left: 15px;
 }
 
 .btn-outline-warning{
@@ -357,7 +357,7 @@ table td{
 @media screen and (max-width:768px){
   .profile-wrapper{
     float: left;
-    height: 465px;
+    height: 485px;
     width: 70%;
     margin: 40px auto;
     padding: 40px;
@@ -375,8 +375,9 @@ table td{
   }
   .profile-username{
     text-align: center;
-    padding:0px;
-    font-size: 1.4rem;
+    padding: 0px;
+    padding-top:10px;
+    font-size: 1.25rem;
   }
   .profile-text{
     float: left;
@@ -387,12 +388,22 @@ table td{
   .profile-message{
     float: left;
     padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+
   }
   .profile-edit{
     text-align: center;
   }
   .profile-edit-btn{
     margin-top: 20px;
+  }
+}
+
+@media screen and (min-width:1200px){
+  .profile-message{
+    padding-top: 15px;
+    padding-right: 15px;
   }
 }
 
