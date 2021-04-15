@@ -45,7 +45,6 @@ RSpec.describe 'シチュエーション機能' ,type: :system do
   describe '削除機能' do
     context 'シチュエーションを削除した場合' do
       it 'シチュエーション一覧に表示されない' do
-        # ログインの重複をリファクタリング（let使う？）
         visit new_user_session_path
         fill_in 'Eメール', with: 'user1@test.com'
         fill_in 'パスワード', with: 'password'

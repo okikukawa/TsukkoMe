@@ -17,10 +17,10 @@
         </div>
         <div class="profile-text col-12 col-md-8">
           <div class="row">
-            <div class="profile-username col-md-5">
+            <div class="profile-username col-md-9">
               <%= @user.name %>
             </div>
-            <div class="profile-edit col-md-3 offset-md-4 d-none d-md-block">
+            <div class="profile-edit d-none d-md-block">
               <% if user_signed_in? %>
                 <% if @user.id == current_user.id && current_user.email != "guest@example.com"  %>
                   <%= link_to "編集", edit_user_registration_path(current_user), class:"btn btn-outline-warning btn-sm" %>
@@ -42,7 +42,6 @@
       </div>
     </div>
   </div>
-
   <div class="row">
     <div class="changetab col-10 offset-1 col-lg-8 offset-lg-2">
       <div class="row">
@@ -55,7 +54,6 @@
       </div>
     </div>
   </div>
-
   <% @tsukkomis.each do|tsukkomi| %>
     <div class="row">
       <div class="main-post col-10 offset-1 col-lg-8 offset-lg-2">

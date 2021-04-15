@@ -42,10 +42,8 @@ li {
   border-radius: 10px;
 }
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath
-                         stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10'
-                         stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+.fa-bars{
+  color: white;
 }
 
 .fa-hand-paper{
@@ -60,7 +58,7 @@ li {
 // トップ部分
 
 .top-wrapper{
-  background-image: url("circle-blues.png");
+  background-image: image-url("circle-blues.png");
   background-color: #09015f;
   height: 300px;
   background-size: cover;
@@ -251,7 +249,6 @@ li {
   margin: 0 auto;
   border: solid 1px #a79c8e;
   border-radius: 10px;
-
 }
 
 .comment-edit-form textarea {
@@ -335,7 +332,8 @@ table td{
 }
 
 .profile-username{
-  font-size: 1.75rem;
+  font-size: 1.15rem;
+  padding: 10px 20px;
 }
 
 .profile-message{
@@ -345,7 +343,6 @@ table td{
 
 .profile-edit{
   padding:8px;
-  padding-left: 15px;
 }
 
 .btn-outline-warning{
@@ -360,7 +357,7 @@ table td{
 @media screen and (max-width:768px){
   .profile-wrapper{
     float: left;
-    height: 465px;
+    height: 485px;
     width: 70%;
     margin: 40px auto;
     padding: 40px;
@@ -378,8 +375,9 @@ table td{
   }
   .profile-username{
     text-align: center;
-    padding:0px;
-    font-size: 1.4rem;
+    padding: 0px;
+    padding-top:10px;
+    font-size: 1.25rem;
   }
   .profile-text{
     float: left;
@@ -390,12 +388,22 @@ table td{
   .profile-message{
     float: left;
     padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+
   }
   .profile-edit{
     text-align: center;
   }
   .profile-edit-btn{
     margin-top: 20px;
+  }
+}
+
+@media screen and (min-width:1200px){
+  .profile-message{
+    padding-top: 15px;
+    padding-right: 15px;
   }
 }
 
@@ -509,7 +517,7 @@ table td{
 }
 
 .top-wrapper-fungo{
-  background-image: url("wood.jpeg");
+  background-image: image-url("wood.jpeg");
   height: 300px;
   background-size: cover;
   margin-bottom: 30px;
@@ -595,15 +603,13 @@ table td{
 
 // ここまでmain
 
-
-
 // ここからfooter
 
 footer {
   width: 100%;
   height: 50px;
   float: left;
-  background-image: url("circle-blues.png");
+  background-image: image-url("circle-blues.png");
   background-color: #09015f;
   background-size: cover;
   padding: 15px 0px;
