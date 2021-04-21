@@ -32,6 +32,12 @@
   letter-spacing: 1.25px;
 }
 
+.navi-content{
+  text-align: left;
+  padding: 35px 20px;
+}
+
+
 .how-to-use{
   min-height: 300px;
   padding-top: 100px;
@@ -165,9 +171,14 @@
   }
 
   .navi{
-    min-height: 600px;
-    padding: 50px 30px;
+    min-height: 300px;
+    padding: 50px 0px;
     font-size: 0.9rem;
     letter-spacing: 1px;
+  }
+
+  .navi-content{
+    padding: 20px 40px;
+    letter-spacing: 1.25px;
   }
 }
