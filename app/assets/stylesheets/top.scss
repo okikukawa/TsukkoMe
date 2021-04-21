@@ -135,3 +135,39 @@
   color: white;
   border: solid 1px #ffda8e;
 }
+
+@media screen and (max-width: 576px){
+  .top-image-bg{
+    padding-bottom: 15%;
+    width: 100%;
+    background-size: cover;
+    background-image: image-url("top-image.jpg");
+    background-position: center;
+    height: 500px;
+    color: white;
+  }
+
+  .top-image{
+    background-color: rgba(0,0,0,0.6);
+    height: 500px;
+    position: relative;
+  }
+
+  .top-image p{
+    font-size: 1.25rem;
+    letter-spacing: 5px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+  }
+
+  .navi{
+    min-height: 600px;
+    padding: 50px 30px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+}
