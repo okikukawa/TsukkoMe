@@ -178,7 +178,53 @@
   }
 
   .navi-content{
-    padding: 20px 40px;
+    padding: 30px 40px;
     letter-spacing: 1.25px;
+  }
+
+  .how-to-use{
+    min-height: 300px;
+    padding-top: 100px;
+    padding-bottom: 30px;
+    background-color: #FFFFFF;
+  }
+
+  .how-to-use-title{
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    padding-bottom: 20px;
+  }
+
+  .step-contents{
+    padding: 0px;
+  }
+
+  .step-content{
+    padding: 30px 0px;
+  }
+
+  .step-message{
+    font-size: 0.9rem;
+    letter-spacing: 1.25px;
+    min-height: 175px;
+  }
+
+  .step-message a{
+    text-decoration: none;
+  }
+
+  .step-message h4{
+    font-size: 1.25rem;
+    margin: 10px 0px;
+  }
+
+  .step-content-message{
+    margin-top: 20px;
+  }
+
+  .step-icon{
+    height: 150px;
+    width: 150px;
+    float: left;
   }
 }
