@@ -227,4 +227,33 @@
     width: 150px;
     float: left;
   }
+
+  .function-wrapper{
+    padding-top: 80px;
+    padding-bottom: 10px;
+    min-height: 350px;
+    color: #52616a;
+    background-color: #c9d6de;
+  }
+
+  .function-label{
+    padding-bottom: 20px;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+
+  .tsukkomi-example{
+    padding-top: 20px;
+    margin-bottom: 100px;
+  }
+
+  .tsukkomi-example-title{
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    padding: 60px 0px;
+  }
+
+  .tsukkomi-example-post{
+    margin-bottom: 50px;
+  }
 }
