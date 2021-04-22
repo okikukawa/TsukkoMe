@@ -357,7 +357,7 @@ table td{
 @media screen and (max-width:768px){
   .profile-wrapper{
     float: left;
-    height: 485px;
+    height: 520px;
     width: 70%;
     margin: 40px auto;
     padding: 40px;
@@ -388,8 +388,8 @@ table td{
   .profile-message{
     float: left;
     padding-top: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
 
   }
   .profile-edit{
@@ -700,12 +700,14 @@ footer {
     font-size: 1rem;
     vertical-align: text-bottom;
   }
+
   .search-form input[type="search"] {
     width: 155px;
     padding: 0px 6px;
     border: solid 1px #8b8687;
     border-radius: 2px;
   }
+
   .search-form input[type="submit"] {
     float: right;
     margin-right: 25px;
