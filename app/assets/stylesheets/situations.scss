@@ -109,6 +109,12 @@ li {
   transform : translate(-50%,-50%);
 }
 
+@media screen and (max-width:576px){
+  .top-content{
+    font-size: 1.3rem;
+  }
+}
+
 .main-post{
   padding: 15px 25px;
   margin-bottom: 20px;
