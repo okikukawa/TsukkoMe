@@ -50,6 +50,12 @@ li {
   transform: rotate(45deg);
 }
 
+@media screen and (max-width:576px){
+  .navbar-brand{
+    padding: 5px 0px;
+  }
+}
+
 // ここまでheader
 
 
