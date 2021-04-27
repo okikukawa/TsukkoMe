@@ -59,7 +59,7 @@
           <div class="search-form col-5 offset-2 col-lg-5 offset-lg-2">
             <%= search_form_for @search, url: search_situation_path(@situation) do |f| %>
               <%= f.search_field :phrase_cont, placeholder: "ツッコミをさがす" %>
-              <%= f.submit '検索' %>
+              <%= f.submit '検索', class: "search-box" %>
             <% end %>
           </div>
         </div>
