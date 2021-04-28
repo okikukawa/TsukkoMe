@@ -469,6 +469,12 @@ table td{
   text-align: center;
 }
 
+@media screen and (max-width:576px){
+  .edit-profile-image{
+    margin-bottom: 50px;
+  }
+}
+
 .edit-profile-form{
   background-color: white;
   border: 1px solid #e1e1e1;
