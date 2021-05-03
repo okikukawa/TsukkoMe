@@ -52,6 +52,7 @@ RSpec.describe 'シチュエーション機能' ,type: :system do
         situation = Situation.find_by(title: "シチュエーションのタイトル1")
         visit situation_path(situation)
         click_on 'dropdownMenu1'
+        save_and_open_page
         page.accept_confirm do
           click_link '削除', href: situation_path(situation)
         end
