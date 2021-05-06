@@ -40,6 +40,13 @@ RSpec.describe 'ユーザー機能' ,type: :system do
         expect(page).to have_content 'ログアウトしました。'
       end
     end
+    context 'ゲストログインした場合' do
+      it 'ゲストログイン完了のフラッシュメッセージが表示される' do
+        click_link 'ログアウト'
+        click_link 'かんたんログイン'
+        expect(page).to have_content 'ゲストユーザーでログインしました。'
+      end
+    end
     context 'マイページに遷移した場合' do
       before  do
         visit user_path(@user1)
