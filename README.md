@@ -61,7 +61,18 @@ TsukkoMe（ツッコミー）は、"たとえ"の上達をサポートするSNS�
 * お題ランダム表示機能
 * ページネーション機能
 
-<br>
+##使用技術
+* devise
+* devise-i18n
+* carrierwave
+* mini_magick
+* kaminari
+* ransack
+* fog-aws
+* dotenv-rails
+* unicorn
+
+<!-- <br>
 ※以下スプレッドシート内の「シチュエーション」は「お題」と同義です
 
 ## カタログ設計
@@ -74,15 +85,4 @@ https://docs.google.com/spreadsheets/d/1gvFp6IEJHOyJkfTX039dh3mxPQv4OLuSdx15bLHK
 https://docs.google.com/spreadsheets/d/1mzhu_-rIJsFz9g9WphY_5Jq9vtbqjq99VwNcJfI7JCU/edit#gid=0
 
 ## ワイヤーフレーム
-https://docs.google.com/spreadsheets/d/1PkiYkDD6HnzTGXp5kTyyHpQcwfRkdtvBbSseIAvtjzQ/edit#gid=0
-
-<!-- ## 使用予定Gem
-* devise
-* devise-i18n
-* carrierwave
-* mini_magick
-* kaminari
-* ransack
-* fog-aws
-* dotenv-rails
-* unicorn
+https://docs.google.com/spreadsheets/d/1PkiYkDD6HnzTGXp5kTyyHpQcwfRkdtvBbSseIAvtjzQ/edit#gid=0 -->
