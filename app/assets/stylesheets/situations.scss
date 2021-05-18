@@ -67,7 +67,7 @@ li {
 
 .top-content{
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   -webkit-transform : translate(-50%,-50%);
   transform : translate(-50%,-50%);
@@ -77,12 +77,20 @@ li {
 
 .top-content-under{
   position: absolute;
-  top: 72%;
+  top: 60%;
   left: 50%;
   -webkit-transform : translate(-50%,-50%);
   transform : translate(-50%,-50%);
   color: #f8f9fa;
   font-size: 1rem;
+}
+
+.top-wrapper-button{
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
 }
 
 .top-button{
@@ -120,6 +128,11 @@ li {
 .main-post:hover{
   box-shadow: 4px 4px 8px #a3a1a1;
   transition: 0.3s;
+}
+
+.posted-time{
+  margin-left:5px;
+  color: #a3a1a1;
 }
 
 .post-menu{
@@ -620,7 +633,17 @@ footer {
   }
 
   .top-content{
-    font-size: 1.3rem;
+    font-size: 1.75rem;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+  }
+
+  .top-content-under{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    font-size: 1rem;
   }
 
   .edit-profile-image{

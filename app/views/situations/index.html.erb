@@ -7,6 +7,9 @@
 <div class="top-wrapper">
   <p class="top-content text-center">お題一覧</p>
   <p class="top-content-under">お題を一つえらび、さっそく例えツッコんでみましょう！</p>
+  <div class="top-wrapper-button button-orange">
+    <%= link_to "お題を投稿する！", new_situation_path, class:"btn btn-warning" %>
+  </div>
 </div>
 
 <div class="container">
@@ -20,7 +23,7 @@
           <%= link_to image_tag("profile_icon.png", class: "small-icon-image"), user_path(situation.user) %>
         <% end %>
         <%= link_to situation.user.name, user_path(situation.user) %>
-        <%= situation.created_at.strftime("%Y/%-m/%-d %-H:%M") %>
+        <span class="posted-time"><%= situation.created_at.strftime("%Y/%-m/%-d %-H:%M") %></span>
         <% if user_signed_in? %>
           <% if situation.user_id == current_user.id %>
           <div class="dropdown post-menu">
