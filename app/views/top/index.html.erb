@@ -13,7 +13,7 @@
     <div class="navi col-lg-10 offset-lg-1 ">
       <p class="navi-content">　TsukkoMe（ツッコミー）は、”たとえ”の上達をお手伝いするWebアプリケーションです。</p>
       <p class="navi-content">　お題に対して<b>例えツッコミ</b>という形で自分のたとえを投稿したり、他のユーザーのツッコミを閲覧することで様々な”たとえ”に触れ合うことができます。</p>
-      <p class="navi-content">　また、お題がランダムに表示される千本ノック機能では、次々と表示されるお題に対して例えツッコミを繰り返すことで、”たとえ”の定着を図ることができます。</p>
+      <p class="navi-content">　また、お題がランダムに表示される<%= link_to "千本ノック機能", thousand_fungo_situations_path %>では、次々と表示されるお題に対して例えツッコミを繰り返すことで、”たとえ”の定着を図ることができます。</p>
     </div>
   </div>
 </div>
@@ -36,13 +36,14 @@
         <div class="step-message">
           <h4>Step2</h4>
           <p class="step-content-message">お題に対して例えツッコミを投稿してみましょう。</p>
+          <p class="step-content-message">（人目は気にせず気軽に！）</p>
         </div>
       </div>
       <div class="step-content">
         <%= image_tag("batter.png", class: "step-icon") %>
         <div class="step-message">
           <h4>Step3</h4>
-          <p class="step-content-message">ランダムにお題が表示される<%= link_to "千本ノック機能", thousand_fungo_situations_path %>を使って、いろんなシチュエーションをたとえる練習をしましょう。</p>
+          <p class="step-content-message">ランダムにお題が表示される<%= link_to "千本ノック機能", thousand_fungo_situations_path %>や、ほかの人のツッコミを保存できるナイスツッコミ！機能を使っていろんなシチュエーションをたとえる練習をしましょう。</p>
         </div>
       </div>
     </div>
