@@ -8,7 +8,7 @@
         <%= link_to image_tag("profile_icon.png", class: "very-small-icon-image"), user_path(comment.user) %>
       <% end %>
       <%= link_to comment.user.name, user_path(comment.user) %>
-      <%= comment.created_at.strftime("%Y/%-m/%-d %-H:%M") %>
+      <span class="posted-time"><%= comment.created_at.strftime("%Y/%-m/%-d %-H:%M") %></span>
       <% if user_signed_in? %>
         <% if comment.user_id == current_user.id %>
           <div class="dropdown post-menu">
