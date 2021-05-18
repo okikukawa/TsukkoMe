@@ -11,7 +11,7 @@ class TsukkomisController < ApplicationController
     @tsukkomi = @situation.tsukkomis.build(tsukkomi_params)
     @tsukkomi.user_id = current_user.id
     if @tsukkomi.save
-      redirect_to situation_path(@situation), notice: "ツッコミを登録しました。"
+      redirect_to situation_path(@situation), notice: "例えツッコミを登録しました！"
     else
       render :new
     end
@@ -31,7 +31,7 @@ class TsukkomisController < ApplicationController
 
   def update
     if @tsukkomi.update(tsukkomi_params)
-      redirect_to situation_tsukkomi_path(@situation, @tsukkomi), notice: "ツッコミを編集しました。"
+      redirect_to situation_tsukkomi_path(@situation, @tsukkomi), notice: "例えツッコミを編集しました。"
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class TsukkomisController < ApplicationController
 
   def destroy
     @tsukkomi.destroy
-    redirect_to situation_path(@situation), alert: "ツッコミを削除しました。"
+    redirect_to situation_path(@situation), alert: "例えツッコミを削除しました。"
   end
 
   private

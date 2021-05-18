@@ -15,7 +15,7 @@ class SituationsController < ApplicationController
   def create
     @situation = current_user.situations.create(situation_params)
     if @situation.save
-      redirect_to situations_path, notice: "お題を作成しました。"
+      redirect_to situations_path, notice: "お題を作成しました！"
     else
       render :new
     end
