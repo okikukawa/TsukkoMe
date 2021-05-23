@@ -65,7 +65,7 @@ li {
   position: relative;
 }
 
-.top-content{
+.situation-top-content{
   position: absolute;
   top: 40%;
   left: 50%;
@@ -75,7 +75,7 @@ li {
   font-size: 2rem;
 }
 
-.top-content-under{
+.situation-top-content-under{
   position: absolute;
   top: 60%;
   left: 50%;
@@ -85,12 +85,32 @@ li {
   font-size: 1rem;
 }
 
-.top-wrapper-button{
+.situation-top-wrapper-button{
   position: absolute;
   top: 80%;
   left: 50%;
   -webkit-transform : translate(-50%,-50%);
   transform : translate(-50%,-50%);
+}
+
+.top-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  color: #f8f9fa;
+  font-size: 2rem;
+}
+
+.top-content-under{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  color: #f8f9fa;
+  font-size: 1rem;
 }
 
 .top-button{
@@ -632,14 +652,14 @@ footer {
     padding: 5px 0px;
   }
 
-  .top-content{
+  .situation-top-content{
     font-size: 1.75rem;
     position: absolute;
     top: 35%;
     left: 50%;
   }
 
-  .top-content-under{
+  .situation-top-content-under{
     position: absolute;
     top: 55%;
     left: 50%;
