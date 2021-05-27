@@ -10,11 +10,12 @@ RSpec.describe 'ユーザー機能' ,type: :system do
     context '新しくユーザーを作成した場合' do
       it '登録完了のフラッシュメッセージが表示される' do
         visit new_user_registration_path
-        fill_in '名前', with: 'ボブ'
+        fill_in 'ニックネーム', with: 'ボブ'
         fill_in 'Eメール', with: 'bob@bob.com'
         fill_in 'パスワード', with: 'password'
         fill_in 'パスワード（確認用）', with: 'password'
         click_button '登録'
+        visit situations_path
         expect(page).to have_content 'アカウント登録が完了しました。'
       end
     end
@@ -28,13 +29,22 @@ RSpec.describe 'ユーザー機能' ,type: :system do
     end
     context 'ログインした場合' do
       it 'ログイン完了のフラッシュメッセージが表示される' do
+        visit situations_path
         expect(page).to have_content 'ログインしました。'
       end
     end
     context 'ログアウトした場合' do
       it 'ログアウト完了のフラッシュメッセージが表示される' do
         click_link 'ログアウト'
+        visit situations_path
         expect(page).to have_content 'ログアウトしました。'
+      end
+    end
+    context 'ゲストログインした場合' do
+      it 'ゲストログイン完了のフラッシュメッセージが表示される' do
+        click_link 'ログアウト'
+        click_link 'かんたんログイン'
+        expect(page).to have_content 'ゲストユーザーでログインしました。'
       end
     end
     context 'マイページに遷移した場合' do
@@ -51,7 +61,7 @@ RSpec.describe 'ユーザー機能' ,type: :system do
         visit situation_tsukkomi_path(@situation, @tsukkomi)
         click_link 'favorite-icon'
         visit user_path(@user1)
-        click_link 'お気に入り'
+        click_link 'ナイスツッコミ！'
         expect(page).to have_content 'ツッコミ1'
       end
     end
@@ -69,11 +79,11 @@ RSpec.describe 'ユーザー機能' ,type: :system do
     context 'ユーザー情報を編集した場合' do
       it '編集したユーザー情報が表示される' do
         visit edit_user_registration_path(@user1)
-        fill_in '名前', with: 'アリス'
+        fill_in 'ニックネーム', with: 'アリス'
         fill_in 'Eメール', with: 'alice@alice.com'
         fill_in 'プロフィール', with: 'こんにちは！'
-        fill_in '現在のパスワード（変更を反映するには現在のパスワードを入力してください。）', with: 'password'
-        click_button '更新'
+        fill_in 'user_current_password', with: 'password'
+        click_button '更新する'
         visit user_path(@user1)
         expect(page).to have_content 'アリス'
         expect(page).to have_content 'こんにちは！'

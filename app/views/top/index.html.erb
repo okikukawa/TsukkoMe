@@ -10,18 +10,10 @@
 
 <div class="container">
   <div class="row">
-    <div class="navi text-center col-lg-10 offset-lg-1 ">
-      TsukkoMe（ツッコミー）は、”たとえ”の上達をお手伝いするWebアプリケーションです。
-      <br>
-      <br>
-      <br>
-      <br>
-      お題に対して<b>例えツッコミ</b>という形で自分のたとえを投稿したり、他のユーザーのツッコミを閲覧することで様々な”たとえ”に触れ合うことができます。
-      <br>
-      <br>
-      <br>
-      <br>
-      また、お題がランダムに表示される千本ノック機能では、次々と表示されるお題に対して例えツッコミを繰り返すことで、”たとえ”の定着を図ることができます。
+    <div class="navi col-lg-10 offset-lg-1 ">
+      <p class="navi-content">　TsukkoMe（ツッコミー）は、”たとえ”の上達をお手伝いするWebアプリケーションです。</p>
+      <p class="navi-content">　お題に対して<b>例えツッコミ</b>という形で自分のたとえを投稿したり、他のユーザーのツッコミを閲覧することで様々な”たとえ”に触れ合うことができます。</p>
+      <p class="navi-content">　また、お題がランダムに表示される<%= link_to "千本ノック機能", thousand_fungo_situations_path %>では、次々と表示されるお題に対して例えツッコミを繰り返すことで、”たとえ”の定着を図ることができます。</p>
     </div>
   </div>
 </div>
@@ -36,24 +28,22 @@
         <%= image_tag("select.png", class: "step-icon") %>
         <div class="step-message">
           <h4>Step1</h4>
-          <br>
-          <p>まず、<%= link_to "お題一覧", situations_path %>の中からたとえてみたいお題を選んでみましょう。</p>
+          <p class="step-content-message">まず、<%= link_to "お題一覧", situations_path %>の中からたとえてみたいお題を選んでみましょう。</p>
         </div>
       </div>
       <div class="step-content">
         <%= image_tag("tsukkomi.png", class: "step-icon") %>
         <div class="step-message">
           <h4>Step2</h4>
-          <br>
-          お題に対して例えツッコミを投稿してみましょう。
+          <p class="step-content-message">お題に対して例えツッコミを投稿してみましょう。</p>
+          <p class="step-content-message">（人目は気にせず気軽に！）</p>
         </div>
       </div>
       <div class="step-content">
         <%= image_tag("batter.png", class: "step-icon") %>
         <div class="step-message">
           <h4>Step3</h4>
-          <br>
-          ランダムにお題が表示される<%= link_to "千本ノック機能", thousand_fungo_situations_path %>を使って、いろんなシチュエーションをたとえる練習をしましょう。
+          <p class="step-content-message">ランダムにお題が表示される<%= link_to "千本ノック機能", thousand_fungo_situations_path %>や、ほかの人のツッコミを保存できるナイスツッコミ！機能を使っていろんなシチュエーションをたとえる練習をしましょう。</p>
         </div>
       </div>
     </div>
@@ -124,7 +114,7 @@
             <%= link_to image_tag("profile_icon.png", class: "small-icon-image"), user_path(situation.user) %>
           <% end %>
           <%= link_to situation.user.name, user_path(situation.user) %>
-          <%= situation.created_at.strftime("%Y/%-m/%-d %-H:%M") %>
+          <span class="posted-time"><%= situation.created_at.strftime("%Y/%-m/%-d %-H:%M") %></span>
           <% if user_signed_in? %>
             <% if situation.user_id == current_user.id %>
               <div class="dropdown post-menu">
@@ -135,7 +125,7 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                   <li class="post-delete small-icon">
                     <i class="far fa-trash-alt"></i>
-                    <%= link_to "削除する", situation_path(situation), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+                    <%= link_to "削除", situation_path(situation), method: :delete, data: { confirm: "本当に削除しますか？" } %>
                   </li>
                 </ul>
               </div>

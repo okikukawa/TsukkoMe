@@ -17,7 +17,7 @@
         <%= link_to image_tag("profile_icon.png", class: "small-icon-image"), user_path(@tsukkomi.user) %>
       <% end %>
       <%= link_to @tsukkomi.user.name, user_path(@tsukkomi.user) %>
-      <%= @tsukkomi.created_at.strftime("%Y/%-m/%-d %-H:%M") %>
+      <span class="posted-time"><%= @tsukkomi.created_at.strftime("%Y/%-m/%-d %-H:%M") %></span>
       <% if user_signed_in? %>
         <% if @tsukkomi.user_id == current_user.id %>
           <div class="dropdown post-menu">
@@ -74,7 +74,7 @@
         <%= link_to image_tag("profile_icon.png", class: "small-icon-image"), user_path(@situation.user) %>
       <% end %>
       <%= link_to @situation.user.name, user_path(@situation.user) %>
-      <%= @situation.created_at.strftime("%Y/%-m/%-d %-H:%M") %>
+      <span class="posted-time"><%= @situation.created_at.strftime("%Y/%-m/%-d %-H:%M") %></span>
       <% if user_signed_in? %>
         <% if @situation.user_id == current_user.id %>
           <div class="dropdown post-menu">

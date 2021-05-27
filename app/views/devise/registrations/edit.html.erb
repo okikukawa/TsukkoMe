@@ -45,7 +45,7 @@
             <div class="field col-10 offset-1 col-lg-8 offset-lg-2">
               <br>
               <br>
-              <%= f.label "現在のパスワード（変更を反映するには現在のパスワードを入力してください。）"%>
+              <%= f.label :password_edit_permit %>
               <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", placeholder: "パスワードを入力" %>
             </div>
             <div class="actions update-btn button-orange text-center col-10 offset-1 col-lg-8 offset-lg-2">

@@ -52,7 +52,6 @@ li {
 
 // ここまでheader
 
-
 // ここからmain
 
 // トップ部分
@@ -64,6 +63,34 @@ li {
   background-size: cover;
   margin-bottom: 30px;
   position: relative;
+}
+
+.situation-top-content{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  color: #f8f9fa;
+  font-size: 2rem;
+}
+
+.situation-top-content-under{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  color: #f8f9fa;
+  font-size: 1rem;
+}
+
+.situation-top-wrapper-button{
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
 }
 
 .top-content{
@@ -78,7 +105,7 @@ li {
 
 .top-content-under{
   position: absolute;
-  top: 72%;
+  top: 50%;
   left: 50%;
   -webkit-transform : translate(-50%,-50%);
   transform : translate(-50%,-50%);
@@ -121,6 +148,11 @@ li {
 .main-post:hover{
   box-shadow: 4px 4px 8px #a3a1a1;
   transition: 0.3s;
+}
+
+.posted-time{
+  margin-left:5px;
+  color: #a3a1a1;
 }
 
 .post-menu{
@@ -354,60 +386,6 @@ table td{
   color: white;
 }
 
-@media screen and (max-width:768px){
-  .profile-wrapper{
-    float: left;
-    height: 485px;
-    width: 70%;
-    margin: 40px auto;
-    padding: 40px;
-    border: solid 1px #e3dede;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 2px 2px 4px #a3a1a1;
-  }
-  .big-icon-image {
-    width: 130px;
-    height: 130px;
-    border-radius: 100px;
-    object-fit: cover;
-    margin-top: 0px;
-  }
-  .profile-username{
-    text-align: center;
-    padding: 0px;
-    padding-top:10px;
-    font-size: 1.25rem;
-  }
-  .profile-text{
-    float: left;
-    padding-left:15px;
-    padding-top:0px;
-    color: #52616a;
-  }
-  .profile-message{
-    float: left;
-    padding-top: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
-
-  }
-  .profile-edit{
-    text-align: center;
-  }
-  .profile-edit-btn{
-    margin-top: 20px;
-  }
-}
-
-@media screen and (min-width:1200px){
-  .profile-message{
-    padding-top: 15px;
-    padding-right: 15px;
-  }
-}
-
-
 .changetab {
   text-align: center;
   margin: 0 auto;
@@ -491,7 +469,7 @@ table td{
 .signup-title{
   text-align: center;
   font-size: 2rem;
-  padding: 20px;
+  padding:50px 20px;
   color: #52616a;
 }
 
@@ -669,6 +647,75 @@ footer {
 
 // 以下、レスポンシブデザイン
 
+@media screen and (max-width:576px){
+  .navbar-brand{
+    padding: 5px 0px;
+  }
+
+  .situation-top-content{
+    font-size: 1.75rem;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+  }
+
+  .situation-top-content-under{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    font-size: 1rem;
+  }
+
+  .edit-profile-image{
+    margin-bottom: 50px;
+  }
+
+  .signup-title{
+    font-size: 1.5rem;
+    padding: 40px 0px;
+  }
+
+  .top-title-fungo{
+    top: 30%;
+    font-size: 2rem;
+  }
+
+  .top-message-fungo{
+    position: absolute;
+    top: 65%;
+  }
+
+  .message-fungo{
+    font-size: 1.5rem;
+  }
+
+  .situation-content-fungo a{
+    font-size: 1.25rem;
+  }
+
+  .message-tsukkomilist-fungo{
+    font-size: 1.25rem;
+  }
+
+  .situation-detail-content{
+    font-size: 1rem;
+    vertical-align: text-bottom;
+  }
+
+  .search-form input[type="search"] {
+    width: 155px;
+    padding: 0px 6px;
+    border: solid 1px #8b8687;
+    border-radius: 2px;
+  }
+
+  .search-form input[type="submit"] {
+    float: right;
+    margin-right: 0px;
+    margin-top: 5px;
+  }
+}
+
 @media screen and (max-width:768px){
   .situation-detail-content{
     font-size: 1.1rem;
@@ -693,22 +740,55 @@ footer {
     height: 80px;
     position: relative;
   }
+
+  .profile-wrapper{
+    float: left;
+    height: 520px;
+    width: 70%;
+    margin: 40px auto;
+    padding: 40px;
+    border: solid 1px #e3dede;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 4px #a3a1a1;
+  }
+  .big-icon-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 100px;
+    object-fit: cover;
+    margin-top: 0px;
+  }
+  .profile-username{
+    text-align: center;
+    padding: 0px;
+    padding-top:10px;
+    font-size: 1.25rem;
+  }
+  .profile-text{
+    float: left;
+    padding-left:15px;
+    padding-top:0px;
+    color: #52616a;
+  }
+  .profile-message{
+    float: left;
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+  }
+  .profile-edit{
+    text-align: center;
+  }
+  .profile-edit-btn{
+    margin-top: 20px;
+  }
 }
 
-@media screen and (max-width:576px){
-  .situation-detail-content{
-    font-size: 1rem;
-    vertical-align: text-bottom;
-  }
-  .search-form input[type="search"] {
-    width: 155px;
-    padding: 0px 6px;
-    border: solid 1px #8b8687;
-    border-radius: 2px;
-  }
-  .search-form input[type="submit"] {
-    float: right;
-    margin-right: 25px;
-    margin-top: 5px;
+@media screen and (min-width:1200px){
+  .profile-message{
+    padding-top: 15px;
+    padding-right: 15px;
   }
 }
