@@ -34,6 +34,7 @@ TsukkoMe（ツッコミー）は、"たとえ"の上達をサポートするSNS�
 * AWS
 * Capistrano3
 * RSpec
+* Docker Compose
 
 ## 機能一覧
 **ユーザー関連**
