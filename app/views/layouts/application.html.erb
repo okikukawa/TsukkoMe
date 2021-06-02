@@ -34,7 +34,7 @@
                   <%= link_to "マイページ", user_path(current_user), class: "nav-link" %>
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
                 <% else %>
-                  <%= link_to 'かんたんログイン', users_guest_sign_in_path, method: :post, class: "nav-link", class: "nav-link" %>
+                  <%= link_to 'かんたんログイン', users_guest_sign_in_path, method: :post, class: "nav-link" %>
                   <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
                 <% end %>
               </div>
