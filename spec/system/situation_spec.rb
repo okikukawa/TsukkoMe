@@ -63,7 +63,7 @@ RSpec.describe 'シチュエーション機能' ,type: :system do
     context 'ランダム表示画面に遷移した場合' do
       it 'シチュエーションが表示される' do
         visit thousand_fungo_situations_path
-        expect(page).to eq('シチュエーションのタイトル1').or eq('シチュエーションのタイトル2')
+        expect(page).to have_content('シチュエーションのタイトル1').or have_content('シチュエーションのタイトル2')
       end
     end
   end
