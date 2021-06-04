@@ -33,7 +33,6 @@ class SituationsController < ApplicationController
   def thousand_fungo
     @situation = Situation.order("RANDOM()").first
     @tsukkomis = @situation.tsukkomis.limit(10)
-    flash.now[:notice] = "最新のツッコミ#{@tsukkomis.count}件を表示しています"
   end
 
   def search
