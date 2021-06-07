@@ -52,7 +52,6 @@ RSpec.describe 'シチュエーション機能' ,type: :system do
         situation = Situation.find_by(title: "シチュエーションのタイトル1")
         visit situation_path(situation)
         click_on 'dropdownMenu1'
-        save_and_open_page
         page.accept_confirm do
           click_link '削除', href: situation_path(situation)
         end
@@ -64,7 +63,7 @@ RSpec.describe 'シチュエーション機能' ,type: :system do
     context 'ランダム表示画面に遷移した場合' do
       it 'シチュエーションが表示される' do
         visit thousand_fungo_situations_path
-        expect(page).to have_content 'シチュエーションのタイトル1' or 'シチュエーションのタイトル2'
+        expect(page).to have_content('シチュエーションのタイトル1').or have_content('シチュエーションのタイトル2')
       end
     end
   end
