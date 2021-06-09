@@ -1,46 +1,40 @@
-version: 2 # CircleCI 2.0 を使用します
-jobs: # 一連のステップ
-  build: # ワークフローを使用しない実行では、エントリポイントとして `build` ジョブが必要です
-    parallelism: 3 # このジョブのインスタンスを 3 つ並列実行します
-    docker: # Docker でステップを実行します
-      - image: circleci/ruby:2.6.5-node-browsers # このイメージをすべての `steps` が実行されるプライマリ コンテナとして使用します
-        environment: # プライマリ コンテナの環境変数
+version: 2
+jobs:
+  build:
+    parallelism: 3
+    docker:
+      - image: circleci/ruby:2.6.5-node-browsers
+        environment:
         # - BUNDLER_VERSION: 2.0.2
         - RAILS_ENV: test
-      - image: circleci/postgres:13.1-alpine # データベース イメージ
-        environment: # データベースの環境変数
+      - image: circleci/postgres:13.1-alpine
+        environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: app_test
           POSTGRES_PASSWORD: ""
-    steps: # 実行可能コマンドの集合
-      - checkout # ソース コードを作業ディレクトリにチェックアウトする特別なステップ
+    steps:
+      - checkout
 
-      # Bundler のバージョンを指定します
 
       - run:
           name: Bundler の指定
           command: bundle -v
-
-      # バンドル キャッシュを復元します
-      # 依存関係キャッシュについては https://circleci.com/ja/docs/2.0/caching/ をお読みください
 
       - restore_cache:
           keys:
             - rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
             - rails-demo-bundle-v2-
 
-      - run: # Ruby の依存関係をインストールします
+      - run:
           name: バンドル インストール
           command: bundle check --path vendor/bundle || bundle install --deployment
 
-      # Ruby の依存関係のバンドル キャッシュを保存します
 
       - save_cache:
           key: rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 
-      # アプリケーションで Webpacker または Yarn を他の何らかの方法で使用する場合にのみ必要です
 
       - restore_cache:
           keys:
@@ -51,7 +45,6 @@ jobs: # 一連のステップ
           name: Yarn のインストール
           command: yarn install --cache-folder ~/.cache/yarn
 
-      # Yarn または Webpacker のキャッシュを保存します
 
       - save_cache:
           key: rails-demo-yarn-{{ checksum "yarn.lock" }}
@@ -75,8 +68,6 @@ jobs: # 一連のステップ
                               --format progress \
                               $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
 
-      # タイミング解析のテスト結果を保存します
 
-      - store_test_results: # テスト サマリー (https://circleci.com/ja/docs/2.0/collect-test-data/) に表示するテスト結果をアップロードします
+      - store_test_results:
           path: test_results
-          # デプロイの構成例については https://circleci.com/ja/docs/2.0/deployment-integrations/ を参照してください
